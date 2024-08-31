@@ -1,22 +1,27 @@
 github_users:
-  - bkille
+  - treangenlab
   - treangen
-  - beleafs
-  - eh58
-  - kdc10
   - MGNute
   - mxwang66
+  - bkille
+  - eh58
+  - FelixMQuintana
+  - rdoughty10
   - Natalie-koks
-  - nsapoval
 
 repo_description_lines_max: 2
 
 github_repos:
+  - marbl/metamos
   - marbl/parsnp
+  - marbl/harvest
+  - marbl/gingr
   - marbl/mash
   - treangenlab/emu
+  - treangenlab/crykey
   - treangenlab/olivar
   - treangenlab/bakdrive
+  - treangenlab/lemur
   - treangenlab/magnet
   - treangenlab/rhea
   

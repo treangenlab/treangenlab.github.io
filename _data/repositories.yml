@@ -1,14 +1,22 @@
 github_users:
   - bkille
   - treangen
+  - beleafs
+  - eh58
+  - kdc10
+  - MGNute
+  - mxwang66
+  - Natalie-koks
+  - nsapoval
 
 repo_description_lines_max: 2
 
 github_repos:
   - marbl/parsnp
   - marbl/mash
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-
-
+  - treangenlab/emu
+  - treangenlab/olivar
+  - treangenlab/bakdrive
+  - treangenlab/magnet
+  - treangenlab/rhea
+  

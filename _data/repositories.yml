@@ -1,15 +1,14 @@
 github_users:
-  - torvalds
-  - alshedivat
   - bkille
   - treangen
 
 repo_description_lines_max: 2
 
 github_repos:
+  - marbl/parsnp
+  - marbl/mash
   - alshedivat/al-folio
   - jekyll/jekyll
   - twbs/bootstrap
-  - marbl/parsnp
-  - marbl/mash
+
 

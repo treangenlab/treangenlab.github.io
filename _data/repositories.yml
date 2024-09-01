@@ -1,5 +1,4 @@
 github_users:
-  - treangenlab
   - treangen
   - MGNute
   - mxwang66
@@ -9,7 +8,7 @@ github_users:
   - rdoughty10
   - Natalie-koks
 
-repo_description_lines_max: 2
+repo_description_lines_max: 3
 
 github_repos:
   - marbl/metamos
@@ -19,9 +18,10 @@ github_repos:
   - marbl/mash
   - treangenlab/emu
   - treangenlab/crykey
-  - treangenlab/olivar
-  - treangenlab/bakdrive
+  - treangenlab/komb
   - treangenlab/lemur
   - treangenlab/magnet
+  - treangenlab/methphaser
+  - treangenlab/olivar
   - treangenlab/rhea
-  
+  - treangenlab/vulcan

@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /repositories/
-title: Treangen lab Github repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
+title: Github repositories
+description: Treangen lab Github user trophies and repositories (we also have a few repos on Gitlab, such as [SeqScreen](https://gitlab.com/treangenlab/seqscreen)).
 nav: true
 nav_order: 4
 ---

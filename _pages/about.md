@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Todd J. Treangen, Ph.D</p>
-    <p>Associate Professor, Computer Science</p>
+    <p>Associate Professor Computer Science</p>
     <p>Rice University, Houston, TX</p>
 
 news: true # includes a list of news items
@@ -18,8 +18,8 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Welcome to the Treangen lab website, a bioinformatics and computational biology research group at Rice University, led by Dr. Todd J. Treangen (Associate Professor in the Department of Computer Science and affiliated Associate Professor in the Department of Bioengineering). The Treangen lab was launched during the summer of 2018, with Dr. Qi Wang and Dr. Advait Balaji as the founding Ph.D. students (now bioinformatics/computational scientists at Illumina and Oxy, respectively). 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to (i) identifying and tracking intentionally and unintentionally created biothreats, (ii) detecting and characterizing microbial pathogens, and (iii) tracking microbial genome and microbiome variation across time and space in the environment and human-host-associated microbiomes.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Our lab is funded by CDC, DOD (DTRA), NIH (NIAID), and NSF (EF, IIS, SHF).

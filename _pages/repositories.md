@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /repositories/
-title: Github repositories
-description: Treangen lab Github user trophies and repositories (we also have a few repos on Gitlab, such as [SeqScreen](https://gitlab.com/treangenlab/seqscreen)).
+title: github
+description: Treangen lab Github repositories.
 nav: true
 nav_order: 4
 ---

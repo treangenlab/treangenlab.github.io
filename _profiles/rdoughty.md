@@ -3,8 +3,8 @@ layout: page
 title: Ryan Doughty
 description: 1st Year Ph.D. student
 img: rdoughty.jpg
-importance: 1
-category: phd
+importance: 2
+category: phd students
 related_publications: true
 ---
 

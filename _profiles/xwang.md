@@ -3,8 +3,8 @@ layout: page
 title: Michael Wang
 description: 5th Year Ph.D. student
 img: xwang.jpg
-importance: 1
-category: phd
+importance: 7
+category: phd students
 related_publications: true
 ---
 

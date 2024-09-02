@@ -4,7 +4,7 @@ title: Dr. Michael Nute
 description: Research Scientist
 img: mnute.jpg
 importance: 1
-category: postdoc
+category: research scientists
 related_publications: true
 ---
 

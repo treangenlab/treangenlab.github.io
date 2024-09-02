@@ -3,8 +3,8 @@ layout: page
 title: Natalie Kokroko
 description: 2nd Year Ph.D. student
 img: nkokroko.jpg
-importance: 1
-category: phd
+importance: 3
+category: phd students
 related_publications: true
 ---
 

@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: github
-description: Treangen lab Github repositories.
+description: Treangen lab Github repositories
 nav: true
 nav_order: 4
 ---

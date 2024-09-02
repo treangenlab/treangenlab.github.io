@@ -3,8 +3,8 @@ layout: page
 title: Eddy Huang
 description: 3rd Year Ph.D. student
 img: ehuang.jpg
-importance: 1
-category: phd
+importance: 4
+category: phd students
 related_publications: true
 ---
 

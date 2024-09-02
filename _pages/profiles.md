@@ -5,7 +5,7 @@ title: people
 description: Treangen lab members
 nav: true
 nav_order: 1
-display_categories: [phd, alumni, postdoc, scientist, developer, undergrad]
+display_categories: [phd, postdoc, developer, undergrad]
 horizontal: false
 ---
 

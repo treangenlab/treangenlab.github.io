@@ -2,7 +2,7 @@
 layout: page
 title: Bryce Kille
 description: 4th Year Ph.D. student
-img: bryce.jpg
+img: assets/img/bryce.jpg
 importance: 1
 category: phd
 related_publications: true

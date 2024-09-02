@@ -7,6 +7,13 @@ nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+Classes I'm currently teaching (Fall 2024):
+- COMP 416/519: Genome-scale algorithms
 
-Organize your courses by years, topics, or universities, however you like!
+Upcoming classes (Spring 2025):
+- COMP 182: Algorithmic Thinking
+
+Classes I've previously taught at Rice:
+- COMP 182 during Spring 2022, 2023, 2024
+- COMP 347/547 during Spring 2019, 2020, 2021
+- COMP 416/519 during Fall 2020, 2021, 2022, 2023, 2024

@@ -18,7 +18,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to the Treangen lab website, a bioinformatics and computational biology research group at Rice University, led by Dr. Todd J. Treangen (Associate Professor in the Department of Computer Science and affiliated Associate Professor in the Department of Bioengineering). The Treangen lab was launched during the summer of 2018, with Dr. Qi Wang and Dr. Advait Balaji as the founding Ph.D. students (now bioinformatics/computational scientists at Illumina and Oxy, respectively). 
+Welcome to the Treangen lab website, a bioinformatics and computational biology research group at Rice University, led by Dr. Todd J. Treangen (Associate Professor in the Department of Computer Science and affiliated Associate Professor in the Department of Bioengineering). 
 
 Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to (i) identifying and tracking intentionally and unintentionally created biothreats, (ii) detecting and characterizing microbial pathogens, and (iii) tracking microbial genome and microbiome variation across time and space in the environment and human-host-associated microbiomes.
 

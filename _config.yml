@@ -73,7 +73,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 acm_id: # your dl.acm.org/profile/id
 blogger_url: # your blogger URL
-bluesky_url: treangen.bsky.social # your bluesky URL
+bluesky_url: treangen.bsky.social
 dblp_url: # your DBLP profile url
 discord_id: # your discord id (18-digit unique numerical identifier)
 facebook_id: # your facebook id
@@ -87,16 +87,16 @@ kaggle_id: # your kaggle id
 keybase_username: # your keybase user name
 lastfm_id: # your lastfm id
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
-linkedin_username: tjtreangen# your LinkedIn user name
+linkedin_username: tjtreangen
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 medium_username: # your Medium username
-orcid_id: 0000-0002-3760-564X # your ORCID ID
-osf_id: 5etvy # your OSF ID
+orcid_id: 0000-0002-3760-564X
+osf_id: 5etvy
 pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
 research_gate_profile: # your profile on ResearchGate
-scholar_userid: N5irv88AAAAJ # your Google Scholar ID
+scholar_userid: N5irv88AAAAJ
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
 spotify_id: # your spotify id
@@ -107,8 +107,8 @@ wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
-work_url: www.rice.edu # work page URL
-x_username: traingene # your X handle
+work_url: # work page URL
+x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 

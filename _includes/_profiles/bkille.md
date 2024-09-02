@@ -4,7 +4,7 @@ title: Bryce Kille
 description: 4th Year Ph.D. student
 img: assets/img/bryce.jpg
 importance: 1
-category: work
+category: phd
 related_publications: true
 ---
 

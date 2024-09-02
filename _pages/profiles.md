@@ -5,12 +5,12 @@ title: people
 description: Treangen lab members
 nav: true
 nav_order: 1
-display_categories: [work, fun]
+display_categories: [phd, alumni, postdoc, developer, undergrad]
 horizontal: true
 ---
 
 <!-- pages/profiles.md -->
-<div class="pofiles">
+<div class="profiles">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized profiles -->
   {% for category in page.display_categories %}

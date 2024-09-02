@@ -2,7 +2,7 @@
 layout: page
 title: R. Matt Barnett
 description: Senior Research Programmer
-img: assets/img/bkille.jpg
+img: assets/img/mbarnett.jpg
 importance: 1
 category: developers
 related_publications: true

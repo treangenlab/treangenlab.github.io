@@ -1,97 +1,126 @@
-- title: General Information
+- title: CV (updated September 2024)
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Todd J. Treangen
     - name: Languages
-      value: English, German
+      value: English, Galician (fluent), Spanish (fluent), Portugues (um pouco), French (un peu)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. in Computer Science
+      institution: Polytechnic University of Catalonia, Barcelona, Spain
+      year: 2008
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Focus on bioinformatics and computational biology.
+        - Research involved the development of algorithms for genome analysis.
+        - title: Dissertation
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+            - Title: "Novel Computational Methods for Large Scale Genome Comparison"
+            - Advisor: Dr. Xavier Messeguer
+    - title: MS in Computer Science
+      institution: Polytechnic University of Catalonia, Barcelona, Spain
+      year: 2004
       description:
-        - Description 1.
-        - Description 2.
+        - Specialized in algorithm development for large-scale genomic data.
+        - Completed a thesis on "Efficient Methods for Genome Alignment."
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Associate Professor
+      institution: Rice University, Houston, Texas, USA
+      year: July 2023 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Primary appointment in Department of Computer Science, affiliate faculty in Department of Bioengineering
+        - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
+        - Developed tools for microbial detection and outbreak tracking.
+        - title: Research
           contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+            - Focus on AI-driven approaches for genomic data analysis.
+            - Developed algorithms for rapid pathogen detection.
+    - title: Assistant Professor
+      institution: Rice University, Houston, Texas, USA
+      year: July 2018 - July 2023
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
+        - Developed tools for microbial detection and outbreak tracking.
+        - title: Research
+          contents:
+            - Focus on AI-driven approaches for genomic data analysis.
+            - Developed algorithms for rapid pathogen detection.
+    - title: Research Assistant Professor
+      institution: University of Maryland, College Park, Maryland, USA
+      year: July 2016 - July 2018
       description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+        - Conducted research on genome assembly and metagenomics.
+        - Collaborated on the development of scalable bioinformatics tools.
+    - title: PI and Bioinformatics Scientist
+      institution: National Biodefense Analysis and Countermeasures Center (NBACC)
+      year: September 2012 - June 2016
+      description:
+        - Focused on pathogen detection and large scale genome comparison of microbes
+    - title: Postdoctoral Scientist
+      institution: Johns Hopkins University (Salzberg lab)
+      year: 2011 - 2012
+      description:
+        - Focused on genome assembly
+    - title: Postdoctoral Scientist
+      institution: University of Maryland College Park (Pop and Salzberg labs)
+      year: 2010 - 2011
+      description:
+        - Focused on genome and metagenome assembly
+    - title: Postdoctoral Scientist
+      institution: Institut Pasteur, Paris, France (Rocha lab)
+      year: 2008 - 2010
+      description:
+        - Focused on evolutionary microbial genomics (GEM)
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://github.com/marbl/metamos">MetAMOS</a>
+      year: 2010-2015
+      description: An open-source metagenomic assembly and analysis pipeline.
+    - title: <a href="https://github.com/marbl/parsnp">ParSNP</a>
+      year: 2010-2015
+      description: An open-source microbial core genome alignment tool.
+    - title: <a href="https://github.com/marbl/mash">Mash</a>
+      year: 2013-2018
+      description: Fast genome and metagenome distance estimation using MinHash.
+    - title: <a href="https://github.com/treangenlab">Treangen lab software</a>
+      year: 2018-2024
+      description: Variety of open-source tools for microbial genomics and metagenomics
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2008
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Europeus Doctor 
+    - year: 2023
       items:
-        - Max Planck Medal
+        - NSF CAREER Award
+    - year: 2024
+      items:
+        - Rice University Teaching Award
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Microbial genomics
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Development of algorithms for microbial genome assembly, alignment analysis.
+        - Comparative genomics of bacterial pathogens.
+
+    - title: Metagenomics
       items:
-        - Description 1.
-        - Description 2.
+        - Computational methods for studying microbial communities.
+        - Metagenomics and the study of microbial diversity.
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Website design and maintenance, metagenomic workshops, Fishing for percebes
+

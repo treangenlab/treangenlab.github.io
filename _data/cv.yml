@@ -29,20 +29,20 @@
 - title: Experience
   type: time_table
   contents:
-    - title: Associate Professor
+    - title: Associate Professor, Computer Science
       institution: Rice University, Houston, Texas, USA
-      year: July 2023 - present
+      year: 2023 - present
       description:
-        - Primary appointment in Department of Computer Science, affiliate faculty in Department of Bioengineering
+        - Affiliate faculty in Department of Bioengineering
         - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
         - Developed tools for microbial detection and outbreak tracking.
         - title: Research
           contents:
             - Focus on AI-driven approaches for genomic data analysis.
             - Developed algorithms for rapid pathogen detection.
-    - title: Assistant Professor
+    - title: Assistant Professor, Computer Science
       institution: Rice University, Houston, Texas, USA
-      year: July 2018 - July 2023
+      year: 2018 - 2023
       description:
         - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
         - Developed tools for microbial detection and outbreak tracking.
@@ -50,23 +50,23 @@
           contents:
             - Focus on AI-driven approaches for genomic data analysis.
             - Developed algorithms for rapid pathogen detection.
-    - title: Research Assistant Professor
+    - title: Research Assistant Professor, UMIACS 
       institution: University of Maryland, College Park, Maryland, USA
-      year: July 2016 - July 2018
+      year: 2016 - 2018
       description:
         - Conducted research on genome assembly and metagenomics.
         - Collaborated on the development of scalable bioinformatics tools.
     - title: PI and Bioinformatics Scientist
       institution: National Biodefense Analysis and Countermeasures Center (NBACC)
-      year: September 2012 - June 2016
+      year: 2012 - 2016
       description:
         - Focused on pathogen detection and large scale genome comparison of microbes
-    - title: Postdoctoral Scientist
+    - title: Postdoctoral Scientist, School of Public Health
       institution: Johns Hopkins University (Salzberg lab)
       year: 2011 - 2012
       description:
         - Focused on genome assembly
-    - title: Postdoctoral Scientist
+    - title: Postdoctoral Scientist, CBCB
       institution: University of Maryland College Park (Pop and Salzberg labs)
       year: 2010 - 2011
       description:
@@ -104,7 +104,7 @@
         - NSF CAREER Award
     - year: 2024
       items:
-        - Rice University Teaching Award
+        - Rice School of Engineering (SoE) University Research and Teaching Award
 
 - title: Academic Interests
   type: nested_list

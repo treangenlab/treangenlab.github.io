@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Todd J. Treangen, Ph.D</p>
-    <p>Associate Professor Computer Science</p>
+    <p>Associate Professor of Computer Science</p>
     <p>Rice University, Houston, TX</p>
 
 news: true # includes a list of news items

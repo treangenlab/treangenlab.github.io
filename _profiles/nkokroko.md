@@ -3,7 +3,7 @@ layout: page
 title: Natalie Kokroko
 description: 2nd Year Computer Science Ph.D. student, interested in microbiome analysis and metagenomics.
 img: assets/img/nkokroko.jpg
-importance: 3
+importance: 4
 category: PhD students
 related_publications: true
 ---

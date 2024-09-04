@@ -3,7 +3,7 @@ layout: page
 title: Dr. Austin Marshall
 description: NLM BMI postdoctoral fellow
 img: assets/img/amarshall.jpg
-importance: 1
+importance: 3
 category: Senior Personnel
 related_publications: true
 ---

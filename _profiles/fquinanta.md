@@ -3,7 +3,7 @@ layout: page
 title: Felix Quintana
 description: 3rd Year Ph.D. student
 img: assets/img/fquintana.jpg
-importance: 5
+importance: 6
 category: PhD students
 related_publications: true
 ---

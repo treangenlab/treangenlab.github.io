@@ -3,7 +3,7 @@ layout: page
 title: Dongwei Li
 description: 1st Year Ph.D. student
 img: assets/img/dongwei.jpg
-importance: 1
+importance: 5
 category: PhD students
 related_publications: true
 ---

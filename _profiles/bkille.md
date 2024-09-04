@@ -13,8 +13,10 @@ Computer Science + Chemistry from the University of Illinois at Urbana-Champaign
 undergraduate, he worked at Dow Agrosciences in both the computational biology and cheminformatics 
 groups. His projects included developing software for phylogeny analysis and creating models for 
 compound activity prediction. During his Master’s program, Bryce worked in a biochemistry lab 
-developing software for genome mining as well as a on research project for creating bit-wise 
-algorithms for the C++ STL. One of his main interests is casting biological and chemical problems 
+developing software for genome mining {% cite schwalen2018bioinformatic %}
+as well as a on research project for creating bit-wise 
+algorithms for the C++ STL ([BitLib](https://github.com/bkille/BitLib)). 
+One of his main interests is casting biological and chemical problems 
 into theoretical computer science questions. 
 
 As a PhD student, Bryce has worked on a range of sequence-analysis applications, such as 

@@ -260,8 +260,13 @@
       {% endif %}
 
       {% assign entry_has_google_scholar_badge = false %}
-      {% if entry.google_scholar_id %}
+      {% if entry.scholar_paper_id %}
         {% assign entry_has_google_scholar_badge = true %}
+      {% endif %}
+
+      {% assign author_id = site.scholar_userid %}
+      {% if entry.scholar_user_id %}
+        {% assign author_id = entry.scholar_user_id %}
       {% endif %}
 
       {% assign entry_has_inspirehep_badge = false %}
@@ -307,13 +312,13 @@
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
+              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ author_id }}&citation_for_view={{ author_id }}:{{ entry.scholar_paper_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
               <img
-                src="https://img.shields.io/badge/scholar-{% google_scholar_citations site.scholar_userid entry.google_scholar_id %}-4285F4?logo=googlescholar&labelColor=beige"
-                alt="{% google_scholar_citations site.scholar_userid entry.google_scholar_id %} Google Scholar citations"
+                src="https://img.shields.io/badge/scholar-{% google_scholar_citations author_id entry.scholar_paper_id %}-4285F4?logo=googlescholar&labelColor=beige"
+                alt="{% google_scholar_citations author_id entry.scholar_paper_id %} Google Scholar citations"
               >
             </a>
           {% endif %}

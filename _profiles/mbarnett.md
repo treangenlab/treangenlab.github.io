@@ -4,7 +4,7 @@ title: R. Matt Barnett
 description: Software Engineer, 
 img: assets/img/mbarnett.jpg
 importance: 1
-category: Software Engineers
+category: Senior Personnel
 related_publications: true
 ---
 

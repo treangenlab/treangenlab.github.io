@@ -4,7 +4,7 @@ title: Dr. Michael Nute
 description: Research Scientist, Department of Computer Science, Rice University
 img: assets/img/mnute.jpg
 importance: 1
-category: Scientists
+category: Senior Personnel
 related_publications: true
 ---
 

@@ -4,7 +4,7 @@ title: Anika Patel
 description: Undergraduate
 img: assets/img/apatel.jpg
 importance: 1
-category: UG Students
+category: Visiting Students
 related_publications: false
 ---
 

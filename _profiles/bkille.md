@@ -25,4 +25,3 @@ genome alignment {% cite kille2023minmers kille2024parsnp %} and variant calling
 Bryce is currently a [NLM Biomedical Informatics predoctoral fellow](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) 
 (NIH grant T15LM007093).
 
-A few of Bryce's recent publications: {% cite kille2021accelerating kille2022multiple kille2023minmers kille2024parsnp %}.

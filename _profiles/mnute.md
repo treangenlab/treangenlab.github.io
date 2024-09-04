@@ -21,4 +21,4 @@ Mike’s ongoing research interests include:
 
 Previously, Mike was a [NLM Biomedical Informatics postdoctoral fellow](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/), funded by NIH grant T15LM007093. Current funding includes NIH NIAID P01 (P01AI152999), NIH NIAID GCID (U19AI144297) and NSF MIM (EF 2126387).
 
-Mike also has a vibrant domestic life as a supportive spouse and father of three. He is the coach of the 2024-2025 [Minuteman Sparks](https://minutemansparks.com) Mite Major “Red” hockey team.
+Mike also has a vibrant domestic life as a supportive spouse and father of three. He is the coach of the 2024-2025 [Minuteman Sparks](https://minutemanflames.com) Mite Major “Red” hockey team.

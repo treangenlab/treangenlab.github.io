@@ -5,7 +5,6 @@ description: 4th Year Ph.D. student
 img: assets/img/bkille.jpg
 importance: 3
 category: PhD students
-github: bkille
 related_publications: true
 ---
 

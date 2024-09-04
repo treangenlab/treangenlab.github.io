@@ -18,8 +18,8 @@ algorithms for the C++ STL. One of his main interests is casting biological and 
 into theoretical computer science questions. 
 
 As a PhD student, Bryce has worked on a range of sequence-analysis applications, such as 
-genome alignment {% cite kille2023minmers kille2024parsnp} and variant calling 
-{% cite kille2021accelerating}. 
+genome alignment {% cite kille2023minmers kille2024parsnp %} and variant calling 
+{% cite kille2021accelerating %}. 
 Bryce is currently a [NLM Biomedical Informatics predoctoral fellow](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) 
 (NIH grant T15LM007093).
 

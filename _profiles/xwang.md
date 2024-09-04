@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Michael X. Wang
-description: 6th Year Ph.D. student
+description: 6th Year Bioengineering Ph.D. student. Lead developer of Olivar.
 img: assets/img/xwang.jpg
 importance: 7
-category: phd students
+category: PhD students
 related_publications: true
 ---
 

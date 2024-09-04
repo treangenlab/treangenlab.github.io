@@ -4,7 +4,7 @@ title: Eddy Huang
 description: 3rd Year Ph.D. student
 img: assets/img/ehuang.jpg
 importance: 4
-category: phd students
+category: PhD students
 related_publications: true
 ---
 

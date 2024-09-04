@@ -4,7 +4,7 @@ title: Dr. Austin Marshall
 description: NLM BMI postdoctoral fellow
 img: assets/img/amarshall.jpg
 importance: 1
-category: postdocs
+category: Scientists
 related_publications: true
 ---
 

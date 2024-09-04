@@ -16,7 +16,6 @@
         class="responsive-img-srcset"
         srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{i}}w,{% endfor %}"
         sizes="95vw"
-        {% endif %}
         type="image/webp"
       >
     {% endif %}

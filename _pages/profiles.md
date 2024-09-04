@@ -6,7 +6,7 @@ description: Treangen lab members
 nav: true
 nav_order: 1
 display_categories: [developers, phd students, postdocs, research scientists, undergrads]
-horizontal: false
+horizontal: true
 ---
 
 <!-- pages/profiles.md -->

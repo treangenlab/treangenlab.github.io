@@ -6,6 +6,7 @@ img: assets/img/bkille.jpg
 importance: 3
 category: PhD students
 related_publications: true
+scholar_userid: EUtkB0sAAAAJ
 ---
 
 Bryce (4th year PhD student, Computer Science) received his MS in Bioinformatics and BS in 

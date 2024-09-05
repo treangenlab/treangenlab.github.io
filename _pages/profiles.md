@@ -6,7 +6,7 @@ description: Treangen lab members
 nav: true
 nav_order: 1
 display_categories: [PhD students, Senior Personnel, Visiting Students]
-horizontal: true
+horizontal: false
 ---
 
 <!-- pages/profiles.md -->

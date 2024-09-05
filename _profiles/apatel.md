@@ -2,7 +2,7 @@
 layout: page
 title: Anika Patel
 description: Undergraduate
-img: assets/img/apatel.jpg
+img: assets/img/apatel.png
 importance: 1
 category: Visiting Students
 related_publications: false

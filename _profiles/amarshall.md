@@ -2,7 +2,7 @@
 layout: page
 title: Dr. Austin Marshall
 description: NLM BMI postdoctoral fellow interested in applying novel bioinformatic practices to microbiome studies
-img: assets/img/amarshall.jpg
+img: assets/img/amarshall.png
 importance: 3
 category: Senior Personnel
 related_publications: true

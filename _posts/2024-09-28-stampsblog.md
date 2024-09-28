@@ -18,12 +18,10 @@ authors:
 toc:
   - name: Introduction
   - name: Venue
-     subsections:
-       - name: Location
-       - name: History
   - name: Topics and Presenters
   - name: Overall experience
   - name: Should you go?
+
 ---
 
 ## Introduction

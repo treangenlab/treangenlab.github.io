@@ -11,8 +11,7 @@ authors:
   - name: Austin Marshall
     url: "https://microbemarsh.github.io/"
     affiliations:
-      name: Center for Neuroregeneration, Houston Methodist Research Institute
-      Department of Computer Science, Rice Univeristy
+      name: Center for Neuroregeneration, Houston Methodist Research Institute and Department of Computer Science, Rice Univeristy
 
 # bibliography: 2024-09-28-stampsblog.bib
 

@@ -25,7 +25,7 @@ toc:
 ---
 
 ## Introduction
-Hey there, I'm Austin Marshall, a first year postdoc in the [Villapol](https://villapol.hmailabs.org/) and [Treangen](https://treangenlab.github.io/) Labs where I work on trimming the knowledge gap between microbiologists and computer scientists. This blog will be related to my experience of the Strategies and Techniques for Analyzing Microbial Population Structures (STAMPS) workshop that I attended this past July.
+Hey there, I'm Austin Marshall, a first year postdoctoral fellow in the [Villapol](https://villapol.hmailabs.org/) and [Treangen](https://treangenlab.github.io/) Labs where I work on trimming the knowledge gap between microbiologists and computer scientists. This blog will be related to my experience of the Strategies and Techniques for Analyzing Microbial Population Structures (STAMPS) workshop that I attended this past July.
 
 ---
 
@@ -45,7 +45,7 @@ I was unaware of the immensely deep research history that the Woods Hole Oceanog
   <img src="https://treangenlab.github.io/assets/img/thm_nobel.jpg" alt="Thomas Hunt Morgan Nobel Prize">
 </div>
 
-Countless nobel laureates, defining figures in biology, and just amazing researchers had walked through these same halls that I was fortunate enough to have the opportunity to as well. For a wild list of nobel laureates affiliated with the MBL check out [this page.](https://www.mbl.edu/about/history-archives/nobel-laureates)
+Check out this awesome Nobel prize they have on display near the Lillie Library, it was awarded to Thomas Hunt Morgan for his discovery of the role of chromosomes in heredity. Countless nobel laureates, defining figures in biology, and just amazing researchers had walked through these same halls that I was fortunate enough to have the opportunity to as well. For a wild list of nobel laureates affiliated with the MBL check out [this page.](https://www.mbl.edu/about/history-archives/nobel-laureates)
 
 ---
 

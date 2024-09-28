@@ -1,9 +1,9 @@
 ---
 layout: distill
-title: My STAMPS 2024 Experience
+title: Austin's STAMPS 2024 Experience
 description: Experience and recap of the STAMPS 2024 workshop
 tags: workshops
-giscus_comments: true
+giscus_comments: false
 date: 2024-09-28
 featured: true
 

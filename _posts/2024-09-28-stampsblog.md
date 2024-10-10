@@ -11,7 +11,7 @@ authors:
   - name: Austin Marshall
     url: "https://microbemarsh.github.io/"
     affiliations:
-      name: Center for Neuroregeneration, Houston Methodist Research Institute and Department of Computer Science, Rice Univeristy
+      name: Center for Neuroregeneration, Houston Methodist Research Institute and Department of Computer Science, Rice University
 
 # bibliography: 2024-09-28-stampsblog.bib
 
@@ -73,11 +73,11 @@ One of the speakers who was unable to come because of the dang C*VID was [Dr. Mi
 ---
 
 ## Overall experience
-I think this was a great learning experience and it was hosted at a fantastic institution that has a remarkable past. Proabably my biggest gripe about this conference was the lack of air conditioning in the housing. Coming from Houston Texas, where the AC is on so much that there is a 40 degree temperature difference between inside and outside this was a bit of a challenge but it should not defer **anyone** from attending this workshop, it's part of the fun.
+I think this was a great learning experience and it was hosted at a fantastic institution that has a remarkable past. Proabably my biggest gripe about this conference was the lack of air conditioning in the housing. Coming from Houston Texas, where the AC is on so much that there is a 40 degree temperature difference between inside and outside this was a bit of a challenge but it should not defer **anyone** from attending this workshop, it's part of the experience.
 
 ---
 
 ## Should you go?
-**Yes**. If you are a biologist working on any microbiome analysis this would be a very beneficial experience for you and even if you are slightly seasoned in microbial sequence analysis like myself, I was still able to find it quite useful and gave me some more confidence to help get over the ever present [imposter syndrome.](https://en.wikipedia.org/wiki/Impostor_syndrome) If you have any questions on the STAMPS workshop or on more aspects of my experience feel free to ask a question below and check out the [STAMPS 2024 github!](https://github.com/mblstamps/stamps2024)
+**Yes**. If you are a biologist working on any microbiome analysis this would be a very beneficial experience for you and even if you are slightly seasoned in microbial sequence analysis like myself, I was still able to find it quite useful and gave me some more confidence to help get over the ever present [imposter syndrome.](https://en.wikipedia.org/wiki/Impostor_syndrome) If you have any questions on the STAMPS workshop or on more aspects of my time at STAMPS feel free to reach out via my contact info and check out the [STAMPS 2024 github!](https://github.com/mblstamps/stamps2024)
 
 ---

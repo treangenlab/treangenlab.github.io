@@ -1,7 +1,7 @@
 ---
-layout: cv
+layout: teaching
 permalink: /teaching/
-title: Teaching
+title: teaching
 nav: true
 nav_order: 6
 description: Courses taught

@@ -1,79 +1,79 @@
 - title: Courses taught
   type: time_table
   contents:
-    - title: COMP 416/519: Genome scale algorithms (Senior Software Design)
+    - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
       institution: Department of Computer Science, Rice University
       year: 2024
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 182: Algorithmic Thinking
+   - title: COMP 182, Algorithmic Thinking
       institution: Department of Computer Science, Rice University
       year: 2024
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 416/519: Genome scale algorithms (Senior Software Design)
+   - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
       institution: Department of Computer Science, Rice University
       year: 2023
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 182: Algorithmic Thinking
+   - title: COMP 182, Algorithmic Thinking
       institution: Department of Computer Science, Rice University
       year: 2023
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 416/519
+   - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
       institution: Department of Computer Science, Rice University
       year: 2022
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 182
+   - title: COMP 182, Algorithmic Thinking
       institution: Department of Computer Science, Rice University
       year: 2022
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 416/519
+   - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
       institution: Department of Computer Science, Rice University
       year: 2021
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 347/547
+   - title: COMP 347/547, Computational Microbial Forensics
       institution: Department of Computer Science, Rice University
       year: 2021
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 416/519
+   - title: COMP 416/519, Genome scale algorithms 
       institution: Department of Computer Science, Rice University
       year: 2020
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 347/547
+   - title: COMP 347/547, Computational Microbial Forensics
       institution: Department of Computer Science, Rice University
       year: 2020
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-  - title: COMP 416/519
+  - title: COMP 416/519, Genome scale algorithms
       institution: Department of Computer Science, Rice University
       year: 2019
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: COMP 347/547
+   - title: COMP 347/547, Computational Microbial Forensics
       institution: Department of Computer Science, Rice University
       year: 2019
       description:
         - Focus on bioinformatics and computational biology.
         - Research involved the development of algorithms for genome analysis.
-   - title: CMSC 423: Introduction to Bioinformatics Algorithms and Databases
+   - title: CMSC 423, Introduction to Bioinformatics Algorithms and Databases
       institution: Department of Computer Science, Rice University
       year: 2015
       description:

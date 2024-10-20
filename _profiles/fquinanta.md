@@ -3,8 +3,8 @@ layout: page
 title: Felix Quintana
 description: 3rd Year Ph.D. student interested in protein function prediction and model assessment.
 img: assets/img/felix4.png
-importance: 6
-category: PhD students
+importance: 4
+category: Students
 related_publications: true
 ---
 

@@ -4,7 +4,7 @@
 - title: Courses taught
   type: time_table
   contents:
-    - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
+   - title: COMP 416/519, Genome scale algorithms (Senior Software Design)
       institution: Department of Computer Science, Rice University
       year: 2024
       description:

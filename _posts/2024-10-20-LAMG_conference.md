@@ -9,7 +9,7 @@ featured: true
 
 authors:
   - name: Natalie Kokroko
-    affiliations: Rice 
+    affiliations: 
       name: Department of Computer Science, Rice University
 
 
@@ -18,7 +18,7 @@ toc:
   - name: First Impressions
   - name: Highlights of the Talks
   - name: Poster Presentation Feedback
-  - name: Conclusion
+  - name: Overall Experience
 
 ---
 
@@ -53,9 +53,11 @@ Another great talk "Into the Unknown: Genome-resolved Metagenomics of Soil using
 I received positive feedback on my poster, with a lot of interest in Lemur and Magnet’s efficiency and precision. Participants appreciated how lightweight the tools were, and many were impressed by Magnet’s capability as a quality check and abundance estimation tool. There was also interest in expanding the tools to detect viral species.
 The networking opportunities were invaluable, especially as a “bio-heavy” conference where I could learn directly from biologists, the primary users of the tools our lab develops. Hearing from researchers who had already used Lemur was a gratifying highlight, especially when they shared how straightforward and effective it was for their analyses.
 
-## Overall Experience
-Overall, my first trip to Lake Arrowhead was a memorable experience, surrounded by beautiful mountains and lakes. Beyond the picturesque setting, this conference was a rich environment for networking and sparking new ideas. It highlights for me the collaborative nature of the microbial genomics field and the importance of continuous interactions between computational and biological perspectives. I’m excited to bring back these insights to our lab and continue contributing to the dynamic world of microbial genomics! This is a conference that anyone with an interest in microbiome studies should attend, the diverse work being done across the world in this field is mindblowing and very innovative. The remote location of Lake Arrowhead also gave me time to focus on science with little distraction. 
 ---
+
+## Overall Experience
+Overall, my first trip to Lake Arrowhead was a memorable experience, surrounded by beautiful mountains and lakes. Beyond the picturesque setting, this conference was a rich environment for networking and sparking new ideas. It highlights for me the collaborative nature of the microbial genomics field and the importance of continuous interactions between computational and biological perspectives. I’m excited to bring back these insights to our lab and continue contributing to the dynamic world of microbial genomics! This is a conference that anyone with an interest in microbiome studies should attend, the diverse work being done across the world in this field is mindblowing and very innovative. The remote location of Lake Arrowhead also gave me time to focus on science with no distraction. 
+
 
 
 ---

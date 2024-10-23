@@ -1,6 +1,6 @@
 ---
 layout: about
-title: lab
+title: about
 permalink: /
 subtitle: <a href='https://csweb.rice.edu'>Department of Computer Science, Rice University </a>. 
 

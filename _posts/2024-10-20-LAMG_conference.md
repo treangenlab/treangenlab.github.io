@@ -28,14 +28,14 @@ I am excited to share my experiences at the [Lake Arrowhead Microbial Genomes (L
 ---
 
 <div class="text-align: center;">
-  <img src="/assets/img/posterLAMG.jpeg" alt="Lemur/Magnet poster presentation" width="500" height="600">
+  <img src="/assets/img/posterLAMG.jpeg" alt="Lemur/Magnet poster presentation" height="600">
 </div>
 
 ### First Impressions
 The setting was stunning! We stayed in lakeside cabins with a serene, scenic view, and the perfect California weather made it easy to unwind, enjoy nature, and dive into productive networking and science.
 
 <div class="text-align: center;">
-  <img src="/assets/img/LakeArrowhead.jpeg" alt="Lake Arrowhead Conference Centre" width="500" height="600">
+  <img src="/assets/img/LakeArrowhead.jpeg" alt="Lake Arrowhead Conference Centre" height="600">
 </div>
 
 As a computational biology and bioinformatics student, it was exciting to be among a predominantly wet-lab audience, sharing insights and learning what biologists value in computational tools. I liked how there was a good mix of students and PIs and Biotech companies as well. This gave me the industry and academia interplay which I really like to see. The diverse talks were inspiring, and two stood out to me in particular.

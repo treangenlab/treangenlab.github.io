@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: Austin's STAMPS 2024 Experience
-description: Experience and recap of the STAMPS 2024 workshop
+title: Reflections from MBL STAMPS 2024
+description: Austin's experience and recap of the STAMPS 2024 workshop
 tags: workshops
 giscus_comments: false
 date: 2024-09-28
-featured: true
+featured: false
 
 authors:
   - name: Austin Marshall

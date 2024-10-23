@@ -1,11 +1,11 @@
 ---
 layout: distill
-title: "Microbial Genomes through a Computational Lens: Reflections from Lake Arrowhead"
+title: "Reflections from Lake Arrowhead Microbial Genomics 2024"
 description: Natalie's first experience and takeaways from the Lake Arrowhead Microbial Genomes Conference, 2024. 
 tags: workshops
 giscus_comments: false
 date: 2024-10-17
-featured: true
+featured: false
 
 authors:
   - name: Natalie Kokroko
@@ -28,14 +28,14 @@ I am excited to share my experiences at the [Lake Arrowhead Microbial Genomes (L
 ---
 
 <div class="text-align: center;">
-  <img src="https://github.com/treangenlab/treangenlab.github.io/blob/master/assets/img/posterLAMG.jpeg" alt="Lemur/Magnet poster presentation">
+  <img src="/assets/img/posterLAMG.jpeg" alt="Lemur/Magnet poster presentation">
 </div>
 
 ### First Impressions
 The setting was stunning! We stayed in lakeside cabins with a serene, scenic view, and the perfect California weather made it easy to unwind, enjoy nature, and dive into productive networking and science.
 
 <div class="text-align: center;">
-  <img src="https://github.com/treangenlab/treangenlab.github.io/blob/master/assets/img/LakeArrowhead.jpeg" alt="Lake Arrowhead Conference Centre">
+  <img src="/assets/img/LakeArrowhead.jpeg" alt="Lake Arrowhead Conference Centre">
 </div>
 
 As a computational biology and bioinformatics student, it was exciting to be among a predominantly wet-lab audience, sharing insights and learning what biologists value in computational tools. I liked how there was a good mix of students and PIs and Biotech companies as well. This gave me the industry and academia interplay which I really like to see. The diverse talks were inspiring, and two stood out to me in particular.

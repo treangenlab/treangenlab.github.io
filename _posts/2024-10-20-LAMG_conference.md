@@ -6,6 +6,7 @@ tags: workshops
 giscus_comments: false
 date: 2024-10-17
 featured: false
+thumbnail: assets/img/posterLAMG.jpeg
 
 authors:
   - name: Natalie Kokroko
@@ -27,9 +28,8 @@ I am excited to share my experiences at the [Lake Arrowhead Microbial Genomes (L
 
 ---
 
-<div class="text-align: center;">
-  <img src="/assets/img/posterLAMG.jpeg" alt="Lemur/Magnet poster presentation" height="400">
-</div>
+{% include figure.liquid loading="eager" path="assets/img/posterLAMG.jpeg" class="img-fluid rounded z-depth-1" %}
+
 
 ### First Impressions
 The setting was stunning! We stayed in lakeside cabins with a serene, scenic view, and the perfect California weather made it easy to unwind, enjoy nature, and dive into productive networking and science.

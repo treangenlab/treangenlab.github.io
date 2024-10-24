@@ -6,6 +6,7 @@ tags: workshops
 giscus_comments: false
 date: 2024-09-28
 featured: false
+thumbnail: assets/img/crabs_mbl.jpg
 
 authors:
   - name: Austin Marshall
@@ -34,16 +35,12 @@ Hey there, I'm Austin Marshall, a first year postdoctoral fellow in the [Villapo
 ### Location
 The STAMPS workshop is held at the University of Chicago, Marine Biological Laboratory. The Marine Biological Laboratory (**MBL**) is located in [Wood's Hole, Massachusetts](https://www.google.com/maps/place/Woods+Hole,+Falmouth,+MA/@41.5300117,-70.6892765,14z/data=!3m1!4b1!4m6!3m5!1s0x89e4d87731d3bb2b:0x6057f1e3e2336b81!8m2!3d41.5264977!4d-70.6730857!16zL20vMHR5N2I?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D) and is the closest mainland town to [Martha's Vineyard.](https://www.google.com/maps/place/Martha's+Vineyard/@41.3923525,-70.817379,11z/data=!3m1!4b1!4m14!1m7!3m6!1s0x89e525890034153b:0xf5d72dfce4b4bc43!2sMartha's+Vineyard!8m2!3d41.3804981!4d-70.645473!16zL20vMGd0cmc!3m5!1s0x89e525890034153b:0xf5d72dfce4b4bc43!8m2!3d41.3804981!4d-70.645473!16zL20vMGd0cmc?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D)
 
-<div class="text-align: center;">
-  <img src="https://treangenlab.github.io/assets/img/crabs_mbl.jpg" alt="horseshoe crabs at MBL">
-</div>
+{% include figure.liquid loading="eager" path="assets/img/crabs_mbl.jpg" class="img-fluid rounded z-depth-1" %}
 
 ### History
 I was unaware of the immensely deep research history that the Woods Hole Oceanographic Institute and Marine Biology Laboratory have until I was tired of having my thinking cap on one evening and started looking around the amazing displays where I stumbled upon this.
 
-<div class="text-align: center;">
-  <img src="https://treangenlab.github.io/assets/img/thm_nobel.jpg" alt="Thomas Hunt Morgan Nobel Prize">
-</div>
+{% include figure.liquid loading="eager" path="assets/img/thm_nobel.jpg" class="img-fluid rounded z-depth-1" %}
 
 Check out this awesome Nobel prize they have on display near the Lillie Library, it was awarded to Thomas Hunt Morgan for his discovery of the role chromosomes play in heredity. Countless nobel laureates, defining figures in biology, and just amazing researchers had walked through these same halls that I was fortunate enough to have the opportunity to as well. For a wild list of nobel laureates affiliated with the MBL check out [this page.](https://www.mbl.edu/about/history-archives/nobel-laureates)
 
@@ -56,9 +53,8 @@ The speaker lineup for the STAMPS workshop is pretty insane. The lectures began 
 
 After Dr. Brown gave the basis of metagenomic asequencing and analysis it was time for my group to step up to the plate. My co-PI [Dr. Todd J. Treangen](https://scholar.google.com/citations?user=N5irv88AAAAJ&hl=en) and STAMPS alumni / research scientist in the Treangen Lab [Dr. Michael G. Nute](https://scholar.google.com/citations?hl=en&user=E1v2MBUAAAAJ) gave a very in-depth look into metagenomic assembly including a hands on demonstration of reference-based vs. de-novo assembly methods and also gave some insight into multiprocessing and how we as a class only ran our assembly on one core...
 
-<div class="text-align: center;">
-  <img src="https://treangenlab.github.io/assets/img/agm_assembler.jpg" alt="cinnamon bun powered genome assembler">
-</div>
+{% include figure.liquid loading="eager" path="assets/img/agm_assembler.jpg" class="img-fluid rounded z-depth-1" %}
+
 Behind the scenes of the metagenomic assembly tutorial, shown above a cinnamon bun powered window size estimator.
 
 

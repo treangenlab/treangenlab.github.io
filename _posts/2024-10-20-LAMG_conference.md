@@ -26,17 +26,12 @@ toc:
 ## Introduction
 I am excited to share my experiences at the [Lake Arrowhead Microbial Genomes (LAMG), 2024 Conference](https://www.lamg.info/conference-site), held from September 15th to 19th at the beautiful Lake Arrowhead. Presenting my poster on two computational tools, Lemur and Magnet, developed by Treangen lab alumni; [Dr. Nicolae Sapoval](https://scholar.google.com/citations?user=HEwzrPEAAAAJ&hl=en) and [Dr. Yunxi Liu](https://scholar.google.com/citations?user=v39CxLgAAAAJ&hl=zh-CN) respectively, was a privilege. Lemur is a tool for rapid and accurate taxonomic profiling on long-read metagenomic datasets and Magnet is a computational tool that uses reference based method to refine taxonomic assignment and provide accurate abundance estimations. Find more details about these projects [here](https://github.com/treangenlab/lemur)
 
----
-
 {% include figure.liquid loading="eager" path="assets/img/posterLAMG.jpeg" class="img-fluid rounded z-depth-1" %}
-
 
 ### First Impressions
 The setting was stunning! We stayed in lakeside cabins with a serene, scenic view, and the perfect California weather made it easy to unwind, enjoy nature, and dive into productive networking and science.
 
-<div class="text-align: center;">
-  <img src="/assets/img/LakeArrowhead.jpeg" alt="Lake Arrowhead Conference Centre" height="800">
-</div>
+{% include figure.liquid loading="eager" path="assets/img/LakeArrowhead.jpeg" class="img-fluid rounded z-depth-1" %}
 
 As a computational biology and bioinformatics student, it was exciting to be among a predominantly wet-lab audience, sharing insights and learning what biologists value in computational tools. I liked how there was a good mix of students and PIs and Biotech companies as well. This gave me the industry and academia interplay which I really like to see. The diverse talks were inspiring, and two stood out to me in particular.
 

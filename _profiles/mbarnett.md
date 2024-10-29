@@ -2,8 +2,8 @@
 layout: page
 title: R. Matt Barnett
 description: Software Engineer 
-img: assets/img/mbarnett.jpg
-importance: 1
+img: assets/img/barnett.png
+importance: 3
 category: Senior Personnel
 related_publications: false
 ---

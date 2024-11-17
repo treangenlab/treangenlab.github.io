@@ -6,7 +6,7 @@ subtitle: <a href='https://csweb.rice.edu'>Department of Computer Science, Rice 
 
 profile:
   align: right
-  image: labphoto_new.JPG
+  image: labphoto_new.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Treangen Lab, September 2024</p>

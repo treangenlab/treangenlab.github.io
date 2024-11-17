@@ -3,7 +3,8 @@ layout: distill
 title: "Reflections from Lake Arrowhead Microbial Genomics 2024"
 description: Natalie's first experience and takeaways from the Lake Arrowhead Microbial Genomes Conference, 2024. 
 tags: workshops
-giscus_comments: false
+categories: labnews
+giscus_comments: true
 date: 2024-10-17
 featured: false
 thumbnail: assets/img/posterLAMG.jpeg

@@ -3,7 +3,8 @@ layout: distill
 title: Reflections from MBL STAMPS 2024
 description: Austin's experience and recap of the STAMPS 2024 workshop
 tags: workshops
-giscus_comments: false
+categories: labnews
+giscus_comments: true
 date: 2024-09-28
 featured: false
 thumbnail: assets/img/crabs_mbl.jpg

@@ -4,7 +4,7 @@
     - name: Full Name
       value: Todd J. Treangen
     - name: Languages
-      value: English, Galician (fluent), Spanish (fluent), Portugues, French
+      value: English, Galician, Spanish
 
 - title: Education
   type: time_table
@@ -17,7 +17,7 @@
         - Research involved the development of algorithms for genome analysis.
         - title: Dissertation
           contents:
-            - Title: "Novel Computational Methods for Large Scale Genome Comparison"
+            - Title: Novel Computational Methods for Large Scale Genome Comparison
             - Advisor: Dr. Xavier Messeguer
     - title: MS in Computer Science
       institution: Polytechnic University of Catalonia, Barcelona, Spain
@@ -119,8 +119,4 @@
         - Computational methods for studying microbial communities.
         - Metagenomics and the study of microbial diversity.
 
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Website design and maintenance, metagenomic workshops, Fishing for percebes
 

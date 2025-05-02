@@ -4,7 +4,7 @@ title: Bryce Kille
 description: 4th Year Ph.D. student, big fan all things sequence analysis, high-performance computing, and discrete algorithms.
 img: assets/img/bryce4.png
 importance: 6
-category: Alumni
+category: Students
 related_publications: true
 ---
 

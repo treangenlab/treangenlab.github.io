@@ -2,7 +2,6 @@
 layout: page
 title: Rossie Luo
 description: 1st Year Ph.D. student (SSPB) interested in protein structure prediction and multiple genome alignment
-img: assets/img/rluo4.png
 importance: 1
 category: Students
 related_publications: true

@@ -2,7 +2,7 @@
 layout: page
 title: Anika Patel
 description: Undergraduate
-img: assets/img/anika4.png
+img: assets/img/anika4.jpg
 importance: 1
 category: Students
 related_publications: false

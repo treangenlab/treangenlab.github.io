@@ -2,7 +2,7 @@
 layout: page
 title: Ryan Doughty
 description: 1st Year Compter Science Ph.D. student, interested in metagenomics and virome analysis.
-img: assets/img/ryan4.png
+img: assets/img/ryan4.jpg
 importance: 2
 category: Students
 related_publications: true

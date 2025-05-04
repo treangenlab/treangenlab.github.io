@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Dr. Todd J. Treangen
-description: Associate Professor, Department of Computer Science, Rice University
+description: Associate Professor, Department of Computer Science (primary), Bioengineering, Ken Kennedy Institute, Rice University
 img: assets/img/treangen4.png
 importance: 1
 category: PI

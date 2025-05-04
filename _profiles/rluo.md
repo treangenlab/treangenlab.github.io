@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Rossie Luo
-description: 1st Year Ph.D. student, SSPB.
+description: 1st Year Ph.D. student, SSPB, multiple genome alignment and genotype-to-phenotype analysis
 img: assets/img/rluo4.jpg
 importance: 1
-category: Students
+category: Graduate Students
 related_publications: true
 ---
 
@@ -15,7 +15,7 @@ virulence factors. She is also working on expanding the
 features and applications of Parsnp, a fast and robust 
 whole genome alignment tool. 
 Her main interests are exploring the genotype-phenotype 
-relationship while developing tools to enable and 
+relationships while developing tools to enable and 
 accelerate biological discoveries. In particular, she wants to 
 learn more about the impact of genetic differences on 
 protein structure/function and ultimately the fitness of an 

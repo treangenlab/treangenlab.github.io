@@ -4,7 +4,7 @@ title: Dongwei Li
 description: 1st Year Ph.D. student, interested in machine learning and computational biology.
 img: assets/img/dongwei4.jpg
 importance: 3
-category: Students
+category: Graduate Students
 related_publications: true
 ---
 

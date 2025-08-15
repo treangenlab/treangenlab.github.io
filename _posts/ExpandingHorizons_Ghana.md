@@ -2,7 +2,7 @@
 layout: distill
 title: "Science at Home: A Summer of Bioinformatics in Ghana"
 description: Natalie's summer research collaboration in Ghana through the Expanding Horizon's Fellowship. 
-tags: Summer
+tags: workshops
 giscus_comments: false
 date: 2025-08-15
 featured: true

@@ -9,7 +9,7 @@ featured: true
 
 authors:
   - name: Natalie Kokroko
-    affiliations: Rice 
+    affiliations:
       name: Department of Computer Science, Rice University
 
 
@@ -22,7 +22,6 @@ toc:
   - name: Accomplishments This Summer
   - name: Looking Ahead
   - name: What This Experience Meant to Me
-
 
 ---
 

@@ -3,9 +3,10 @@ layout: distill
 title: "Science at Home: A Summer of Bioinformatics in Ghana"
 description: Natalie's summer research collaboration in Ghana through the Expanding Horizon's Fellowship. 
 tags: workshops
-giscus_comments: false
+giscus_comments: true
 date: 2025-08-15
 featured: true
+thumbnail: assets/img/Natalie_Ghana2025.jpeg
 
 authors:
   - name: Natalie Kokroko
@@ -30,21 +31,16 @@ Hi, my name is [Natalie Kokroko](https://treangenlab.com/profiles/nkokroko/), a 
 
 I was excited for the opportunity to contribute to the growing bioinformatics scene in Ghana by spending part of my summer at the West African Centre for Cell Biology of Infectious Pathogens [WACCBIP](https://www.waccbip.org/) where I once was an intern in the [Genomics and Bioinformatics](https://www.waccbip.org/research/research-groups/genomics-and-bioinformatics-group) unit.
 
----
+{% include figure.liquid loading="eager" path="assets/img/Natalie_Ghana2025.jpeg" class="img-fluid rounded z-depth-1" %}
 
-<div class="text-align: center;">
-  <img src="https://github.com/treangenlab/treangenlab.github.io/blob/master/assets/img/Natalie_Ghana2025.jpeg" alt="Natalie @ WACCBIP(University of Ghana)">
-</div>
 
 ## Acknowledgement
 Before I take you through my experience, I would like to acknowledge the [Expanding Horizons Fellowship](https://graduate.rice.edu/expanding-horizons-fellowship-program) sponsor, Dr. Walter Loewenstern for making this dream a reality. I would also like to thank my PhD advisor, [Dr. Todd Treangen](https://profiles.rice.edu/faculty/todd-treangen) for supporting my interest in building research connections back home, and to [Prof.Samuel Duodu](https://www.ug.edu.gh/bcmb/people/samuel-duodu-phd) at the University of Ghana for welcoming me into his research group and exploring opportunities for collaboration. 
-
 
 ---
 
 ## From Houston to Accra
 From Houston to Accra, the journey was long but deeply fulfilling. It began with a 3.5-hour flight to Washington, D.C., followed by an 11-hour overnight flight across the Atlantic to Accra, Ghana.  After months of planning and anticipation, I was finally home. Waiting for me at the airport were two familiar faces, my sister and our dog, Sibeau, ready with warm hugs and wagging tails.
-
 
 ---
 
@@ -56,7 +52,6 @@ One of the first people I connected with was [Prof. Samuel Duodu](https://www.ug
 During my first week, I had the opportunity to meet a number of the new interns from my alma mater which is University of Ghana where the research centre(WACCBIP) is located. 
 It was a pleasure telling them about my graduate school experience and the kind of research in Bioinformatics I am currently doing. I was thrilled to see my undergraduate research advisor, [Prof. Samuel Kwofie](https://www.ug.edu.gh/biomedical-engineering/people/prof-samuel-kojo-kwofie), the Head of the Biomedical Engineering Department. These conversations were a key part of my visit’s capacity-building mission: inspiring early-career scientists and strengthening Ghana’s next generation of bioinformatics researchers.
 
----
 
 ## The Scientific Focus
 During my stay,Prof. Duodu took me through some of the projects his research group is working on and the need for bioinformatics pipelines that would be able to make the projects go a long way. I was introduced to an exciting ongoing research project focused on non-malarial febrile illnesses. Cases where patients present with fever symptoms, but test negative for Plasmodium, the parasite responsible for malaria. These illnesses are often caused by a wide range of bacterial and viral pathogens, and identifying their exact etiology is crucial for effective diagnosis and treatment. The team’s approach is not just to detect pathogens, but also to understand the host’s immune response to these infections.
@@ -81,7 +76,6 @@ This is only the beginning of the collaboration, and I am glad I had this opport
 
 3. Shared computational resources (pipelines, scripts, and documentation) to support local analysis workflows.
 
----
 
 ## Looking Ahead
 Although the sequencing data is not yet available, the foundation has been laid for a productive and impactful partnership. In the coming months, I will work with the WACCBIP team to process the first datasets, perform pathogen identification. We anticipate that this work will lead to joint publications and, more importantly, provide actionable insights for public health in Ghana.

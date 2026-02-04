@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Dr. Michael X. Wang
-description: 6th Year Bioengineering Ph.D. student. Lead developer of Olivar.
+description: PostDoc, Rice University. Lead developer of Olivar.
 img: assets/img/mwang4.jpg
 importance: 7
-category: Senior Personnel
+category: Alumni
 related_publications: true
 ---
 

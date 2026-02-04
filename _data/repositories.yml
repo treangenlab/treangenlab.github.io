@@ -16,6 +16,9 @@ github_repos:
   - marbl/harvest
   - marbl/gingr
   - marbl/mash
+  - treangenlab/strainify
+  - treangenlab/seqwin
+  - treangenlab/bronko
   - treangenlab/emu
   - treangenlab/crykey
   - treangenlab/komb

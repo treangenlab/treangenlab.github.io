@@ -1,0 +1,145 @@
+- title: CV (updated November 2026)
+  type: map
+  contents:
+    - name: Full Name
+      value: Todd J. Treangen
+    - name: Languages
+      value: English, Galician, Spanish
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D. in Computer Science
+      institution: Polytechnic University of Catalonia, Barcelona, Spain
+      year: 2008
+      description:
+        - Focus on bioinformatics and computational biology.
+        - Research involved the development of algorithms for genome analysis.
+        - title: Dissertation
+          contents:
+            - Title: Novel Computational Methods for Large Scale Genome Comparison
+            - Advisor: Dr. Xavier Messeguer
+    - title: MS in Computer Science
+      institution: Polytechnic University of Catalonia, Barcelona, Spain
+      year: 2004
+      description:
+        - Specialized in algorithm development for large-scale genomic data.
+        - Completed a thesis on "Efficient Methods for Genome Alignment."
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Associate Professor, Computer Science
+      institution: Rice University, Houston, Texas, USA
+      year: 2023 - present
+      description:
+        - Affiliate faculty in Department of Bioengineering
+        - Leads the AI for Biosecurity and Microbial Monitoring cluster at the Ken Kennedy Institute.
+        - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
+        - Developed tools for microbial detection and outbreak tracking.
+        - title: Research
+          contents:
+            - Focus on AI-driven approaches for genomic data analysis.
+            - Developed algorithms for rapid pathogen detection.
+    - title: Assistant Professor, Computer Science
+      institution: Rice University, Houston, Texas, USA
+      year: 2018 - 2023
+      description:
+        - Leads the Treangen Lab, focusing on bioinformatics, genomics, and metagenomics.
+        - Developed tools for microbial detection and outbreak tracking.
+        - title: Research
+          contents:
+            - Focus on AI-driven approaches for genomic data analysis.
+            - Developed algorithms for rapid pathogen detection.
+    - title: Research Assistant Professor, UMIACS 
+      institution: University of Maryland, College Park, Maryland, USA
+      year: 2016 - 2018
+      description:
+        - Conducted research on genome assembly and metagenomics.
+        - Collaborated on the development of scalable bioinformatics tools.
+    - title: PI and Bioinformatics Scientist
+      institution: National Biodefense Analysis and Countermeasures Center (NBACC)
+      year: 2012 - 2016
+      description:
+        - Focused on pathogen detection and large scale genome comparison of microbes
+    - title: Postdoctoral Scientist, School of Public Health
+      institution: Johns Hopkins University (Salzberg lab)
+      year: 2011 - 2012
+      description:
+        - Focused on genome assembly
+    - title: Postdoctoral Scientist, CBCB
+      institution: University of Maryland College Park (Pop and Salzberg labs)
+      year: 2010 - 2011
+      description:
+        - Focused on genome and metagenome assembly
+    - title: Postdoctoral Scientist
+      institution: Institut Pasteur, Paris, France (Rocha lab)
+      year: 2008 - 2010
+      description:
+        - Focused on evolutionary microbial genomics (GEM)
+
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/marbl/metamos">MetAMOS</a>
+      year: 2010-2015
+      description: An open-source metagenomic assembly and analysis pipeline.
+    - title: <a href="https://github.com/marbl/parsnp">ParSNP</a>
+      year: 2010-present
+      description: An open-source microbial core genome alignment tool.
+    - title: <a href="https://github.com/marbl/mash">Mash</a>
+      year: 2013-2018
+      description: Fast genome and metagenome distance estimation using MinHash.
+    - title: <a href="https://github.com/treangenlab">Treangen lab software</a>
+      year: 2018-present
+      description: Variety of open-source tools for microbial genomics and metagenomics, including Emu, SeqScreen, Olivar, bronko, Seqwin and Strainify
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2008
+      items:
+        - Europeus Doctor 
+    - year: 2023
+      items:
+        - NSF CAREER Award
+    - year: 2024
+      items:
+        - Teaching + Research Excellence Award, George R. Brown School of Engineering, Rice University
+    - year: 2025
+      items:
+        - Outstanding Doctoral Thesis Advisor Award, George R. Brown School of Engineering and Computing, Rice University
+    - year: 2026
+      items:
+        - Fellow, American Institute for Medical and Biological Engineering (AIMBE)
+        - Outstanding Faculty Achievement award, Rice University Awards Ceremony
+        - Highest Accuracy distinction, DARPA Bio-Attribution Challenge (Treangen Lab team)
+        - Stage One finalist, DHS S&T "Ready, Set... ID the Biothreat" prize challenge (with Lauren Stadler and Yousif Shamoo)
+
+- title: Leadership and Service
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - Chair, Program Committee, inaugural ASM Bioinformatics, Genomics and Big Data Conference (ASM BIG), Washington, D.C.
+        - Panelist, "AI and the next attribution challenge", Bipartisan Commission on Biodefense at the Atlantic Council
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Microbial genomics
+      items:
+        - Development of algorithms for microbial genome assembly, alignment analysis.
+        - Comparative genomics of bacterial pathogens.
+
+    - title: Metagenomics
+      items:
+        - Computational methods for studying microbial communities.
+        - Metagenomics and the study of microbial diversity.
+
+    - title: Biosecurity
+      items:
+        - Synthetic DNA screening and detection of engineered sequences.
+        - Pathogen detection and bio-attribution in large-scale environmental sequencing data.
+
+

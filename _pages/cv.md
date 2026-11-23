@@ -16,7 +16,7 @@ Todd also leads the [AI for Biosecurity and Microbial Monitoring](https://kenken
 
   </div>
   <div class="col-sm-4">
-    {% include figure.liquid loading="eager" path="assets/img/treangen4.png" title="Todd J. Treangen" class="img-fluid rounded z-depth-1" sizes="300px" %}
+    {% include figure.liquid loading="eager" path="assets/img/treangen4_headshot.jpg" title="Todd J. Treangen" class="img-fluid rounded z-depth-1" sizes="300px" %}
   </div>
 </div>
 

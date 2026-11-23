@@ -4,7 +4,9 @@ title: Bakdrive
 description: A novel approach to inferring microbial interactions across multiple microbiome samples
 img:
 importance: 4
-category: software
+github: https://gitlab.com/treangenlab/bakdrive
+related_publications: true
+category: Microbiome analysis
 ---
 
 
@@ -13,7 +15,5 @@ category: software
 ## Background
 Interactions among microbes within microbial communities have been shown to play crucial roles in human health. In spite of recent progress, low-level knowledge of bacteria driving microbial interactions within microbiomes remains unknown, limiting our ability to fully understand and control microbial communities. In this study, we present a novel approach for identifying driver species within microbiomes. Bakdrive infers ecological networks of given metagenomic sequencing samples and identifies minimum sets of driver species using control theory. Bakdrive has three key innovations in this space: (i) it leverages inherent information from metagenomic sequencing samples to identify driver species, (ii) it explicitly takes host-specific variation into consideration, and (iii) it does not require a known ecological network. In extensive simulated data, we demonstrate identifying driver species identified from healthy donor samples and introducing them to the disease samples, we can restore the gut microbiome in recurrent Clostridioides difficile infection patients to a healthy state. We also applied Bakdrive to two real datasets, rCDI and Crohn’s disease patients, uncovering driver species consistent with previous work. In summary, Bakdrive provides a novel approach for teasing apart microbial interactions. Bakdrive is open-source and available at https://gitlab.com/treangenlab/bakdrive
 
-
-
-
-
+## Publication
+{% cite wang2023bakdrive %}

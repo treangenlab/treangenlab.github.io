@@ -4,7 +4,7 @@ title: bronko
 description: Ultrafast, alignment-free detection of viral genome variation
 img:
 importance: 1
-category: software
+category: Viral genomics and primer design
 github: https://github.com/treangenlab/bronko
 related_publications: true
 ---

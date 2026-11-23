@@ -3,8 +3,8 @@ layout: page
 title: Min-Frame Transformation (mft-tools)
 description: A sequence transformation that masks point mutations for more sensitive viral genome alignment
 img:
-importance: 3
-category: software
+importance: 2
+category: Viral genomics and primer design
 github: https://github.com/treangenlab/mft-tools
 related_publications: true
 ---

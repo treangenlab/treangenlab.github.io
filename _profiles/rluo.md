@@ -2,7 +2,7 @@
 layout: page
 title: Rossie Luo
 description: 2nd Year Ph.D. student, SSPB, multiple genome alignment and genotype-to-phenotype analysis
-img: assets/img/rluo4.jpg
+img: assets/img/rluo4_headshot.jpg
 importance: 1
 category: Graduate Students
 related_publications: true

@@ -3,8 +3,8 @@ layout: page
 title: Strainify
 description: Strain-level microbiome profiling for low-coverage short-read metagenomic datasets
 img:
-importance: 2
-category: software
+importance: 1
+category: Microbiome analysis
 github: https://github.com/treangenlab/Strainify
 related_publications: true
 ---

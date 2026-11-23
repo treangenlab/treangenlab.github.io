@@ -3,8 +3,10 @@ layout: page
 title: Emu 
 description: Species-Level Microbial Community Profiling for Full-Length Nanopore 16S Reads
 img:
-importance: 4
-category: software
+importance: 1
+github: https://github.com/treangenlab/emu
+related_publications: true
+category: Microbiome analysis
 ---
 
 ## Background
@@ -17,6 +19,5 @@ category: software
 - Dr. Tor Savidge (Texas Childrens)
 - Dr. Qinglong Wu (Texas Childrens)
 
-
-
-
+## Publication
+{% cite curry2022emu %}

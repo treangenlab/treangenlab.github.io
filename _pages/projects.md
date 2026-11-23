@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Treangen lab projects
+description: Open-source software from the Treangen lab, grouped by research area
 nav: true
 nav_order: 2
-display_categories: [software]
+display_categories: ["Pathogen detection and biosecurity", "Viral genomics and primer design", "Microbiome analysis", "Genome alignment and assembly"]
 horizontal: false
 ---
 

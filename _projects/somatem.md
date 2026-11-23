@@ -4,7 +4,7 @@ title: somatem
 description: A modular, open-source Nextflow toolkit for long-read microbiome analysis
 img:
 importance: 3
-category: software
+category: Microbiome analysis
 github: https://github.com/treangenlab/somatem
 related_publications: true
 ---

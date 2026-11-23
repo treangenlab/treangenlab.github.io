@@ -2,7 +2,7 @@
 layout: page
 title: Dr. Michael Nute
 description: Data Scientist at United Airlines. Former Research Scientist in the Treangen Lab
-img: assets/img/mnute4.png
+img: assets/img/mnute4_headshot.jpg
 importance: 2
 category: Alumni
 related_publications: true

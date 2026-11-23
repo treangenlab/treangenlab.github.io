@@ -2,9 +2,11 @@
 layout: page
 title: "Hardware-software co-design for pattern matching"
 description: "NSF · Co-PI · Energy-efficient pattern matching for real-time data, including nanopore signal"
-img:
-importance: 3
-category: National Science Foundation
+img: assets/img/projects/shf.png
+img_anim: assets/anim/projects/shf.gif
+importance: 2
+category: Petabyte-scale microbial genomics and metagenomics
+topics: ["string algorithms", "high-performance computing"]
 related_publications: false
 ---
 

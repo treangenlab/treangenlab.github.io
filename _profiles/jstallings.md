@@ -5,6 +5,7 @@ description: Undergraduate researcher (Rice class of 2026)
 img:
 importance: 8
 category: Alumni
+published: false
 related_publications: true
 ---
 

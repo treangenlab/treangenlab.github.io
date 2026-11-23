@@ -5,6 +5,7 @@ description: Associate Professor, Department of Computer Science (primary), Bioe
 img: assets/img/treangen4_headshot.jpg
 importance: 1
 category: PI
+topics: ["biosecurity", "pathogen detection", "metagenomics", "microbiome analysis", "genome alignment"]
 related_publications: true
 ---
 

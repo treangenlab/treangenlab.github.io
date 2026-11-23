@@ -1304,3 +1304,130 @@ ninja-keys::part(ninja-input-wrapper) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
 }
+
+// Research topic tags (people and project cards, profile and project pages)
+.topic-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0.25rem;
+}
+.topic-tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--global-text-color);
+  white-space: nowrap;
+}
+
+// Code page: language breakdown chart
+.repo-langs {
+  --rl-cpp: #2a78d6;
+  --rl-rust: #eb6834;
+  --rl-python: #1baf7a;
+  --rl-other: #9a9a94;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+
+  .repo-langs-pie {
+    width: 150px;
+    height: 150px;
+    flex: 0 0 auto;
+    path {
+      stroke: var(--global-bg-color);
+      stroke-width: 1.5;
+      cursor: default;
+    }
+  }
+  .repo-langs-body {
+    flex: 1 1 260px;
+    min-width: 0;
+  }
+  .repo-langs-summary {
+    margin: 0 0 0.5rem;
+  }
+  .repo-langs-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.75rem;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--global-text-color);
+      font-variant-numeric: tabular-nums;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex: 0 0 auto;
+    }
+    .pct {
+      font-weight: 600;
+    }
+  }
+  .repo-langs-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+  .repo-langs-tip {
+    position: absolute;
+    pointer-events: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
+    white-space: nowrap;
+    transform: translate(-50%, -130%);
+  }
+}
+html[data-theme="dark"] .repo-langs {
+  --rl-cpp: #3987e5;
+  --rl-rust: #d95926;
+  --rl-python: #199e70;
+  --rl-other: #8a8a85;
+}
+
+// Keep multi-word navigation labels ("publications & preprints", "Lab PI") on one line
+@media (min-width: 1200px) {
+  .navbar .navbar-nav .nav-link {
+    white-space: nowrap;
+  }
+}
+
+// Projects page: illustration beside the intro text
+.projects-hero {
+  float: right;
+  width: 230px;
+  max-width: 40%;
+  margin: 0 0 1rem 1.5rem;
+}
+
+// Section headings on the Projects and People pages: left-aligned and prominent
+.projects h2.category,
+.profiles h2.category {
+  color: var(--global-text-color);
+  text-align: left;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 0.25rem 0 0.5rem 0.8rem;
+  margin-top: 2.75rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-bottom: 2px solid var(--global-theme-color);
+}

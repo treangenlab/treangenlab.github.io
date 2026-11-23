@@ -1,7 +1,12 @@
 <div class="col">
   <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
     <div class="card h-100 hoverable">
-      {% if project.img %}
+      {% if project.img_anim %}
+        <picture>
+          <source srcset="{{ project.img | relative_url }}" media="(prefers-reduced-motion: reduce)">
+          <img class="card-img-top" src="{{ project.img_anim | relative_url }}" width="600" height="400" style="width: 100%; height: auto;" alt="project illustration" loading="eager">
+        </picture>
+      {% elsif project.img %}
         {%
           include figure.liquid
           loading="eager"
@@ -14,6 +19,13 @@
       <div class="card-body">
         <h2 class="card-title">{{ project.title }}</h2>
         <p class="card-text">{{ project.description }}</p>
+        {% if project.topics %}
+          <div class="topic-tags">
+            {% for topic in project.topics %}
+              <span class="topic-tag">{{ topic }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
         <div class="row ml-1 mr-1 p-0">
           {% if project.github %}
             <div class="github-icon">

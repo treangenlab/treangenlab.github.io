@@ -2,9 +2,11 @@
 layout: page
 title: "CAREER: yet-unseen pathogens"
 description: "NSF · PI · A computational platform for finding pathogens that are not yet in any database"
-img:
+img: assets/img/projects/career.png
+img_anim: assets/anim/projects/career.gif
 importance: 1
-category: National Science Foundation
+category: Biosecurity and pathogen detection
+topics: ["biosecurity", "pathogen detection", "synthetic DNA screening", "genome alignment"]
 related_publications: false
 ---
 

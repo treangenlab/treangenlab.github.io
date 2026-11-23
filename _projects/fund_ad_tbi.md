@@ -2,9 +2,11 @@
 layout: page
 title: "Microbiome therapy after brain injury"
 description: "NIH NIA · Co-Investigator · Gut microbiome therapies for Alzheimer’s neuropathology following brain injury"
-img:
-importance: 3
-category: National Institutes of Health
+img: assets/img/projects/ad_tbi.png
+importance: 2
+published: false
+category: Microbiome characterization
+topics: ["microbiome analysis", "long-read sequencing"]
 related_publications: false
 ---
 

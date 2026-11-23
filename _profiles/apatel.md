@@ -5,7 +5,8 @@ description: Graduate Student (Rice CS)
 img: assets/img/anika4.jpg
 importance: 1
 category: Alumni
+topics: ["microbiome analysis", "machine learning"]
 related_publications: false
 ---
 
-Anika (Rice undergraduate senior, Computer Science) is very interested in computational biology, and has taken related bioinformatics and machine learning electives. During her time in the Treangen lab, she has been working on characterizing gut microbiome samples using an autoencoder. She hopes to continue working on computational biology research after graduation and is joining the Rice CS department as a PhD student Fall 2025. Outside of academics, Anika enjoys photography!
+Anika worked in the Treangen lab as a Rice Computer Science undergraduate, with coursework in bioinformatics and machine learning. During her time in the lab, she worked on characterizing gut microbiome samples using an autoencoder. Anika joined the Rice CS department as a PhD student in Fall 2025 and is now in a different lab. Outside of academics, she enjoys photography!

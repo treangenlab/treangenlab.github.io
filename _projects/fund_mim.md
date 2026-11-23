@@ -2,9 +2,11 @@
 layout: page
 title: "MIM: rules of microbial cooperation"
 description: "NSF · PI · Stochastic graph grammars for hot spring microbial mats"
-img:
-importance: 2
-category: National Science Foundation
+img: assets/img/projects/mim.png
+img_anim: assets/anim/projects/mim.gif
+importance: 4
+category: Microbiome characterization
+topics: ["microbiome analysis", "metagenomics"]
 related_publications: false
 ---
 

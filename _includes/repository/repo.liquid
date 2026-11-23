@@ -11,7 +11,7 @@
   {% assign max_lines = 2 %}
 {% endif %}
 
-<div class="repo p-2 text-center">
+<div class="repo p-2 text-center" data-repo="{{ include.repository }}">
   <a href="https://github.com/{{ include.repository }}">
     <img
       class="repo-img-light w-100"

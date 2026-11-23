@@ -2,9 +2,11 @@
 layout: page
 title: "In-field pathogen detection"
 description: "DTRA · Co-Investigator · Characterizing pathogens at the point of need"
-img:
-importance: 2
-category: CDC and Department of Defense
+img: assets/img/projects/dtra.png
+img_anim: assets/anim/projects/dtra.gif
+importance: 4
+category: Biosecurity and pathogen detection
+topics: ["pathogen detection", "biosecurity", "long-read sequencing"]
 related_publications: false
 ---
 

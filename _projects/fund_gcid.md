@@ -2,9 +2,11 @@
 layout: page
 title: "TMC Genomic Center for Infectious Diseases"
 description: "NIH NIAID · Co-Investigator · Genomics of hosts and microbes in infection"
-img:
-importance: 1
-category: National Institutes of Health
+img: assets/img/projects/gcid.png
+img_anim: assets/anim/projects/gcid.gif
+importance: 2
+category: Biosecurity and pathogen detection
+topics: ["pathogen detection", "strain-level analysis", "viral genomics"]
 related_publications: false
 ---
 

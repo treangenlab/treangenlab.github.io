@@ -2,16 +2,22 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Active funded research in the Treangen lab
+description: Research themes and active projects in the Treangen lab
 nav: true
 nav_order: 2
-display_categories: ["National Institutes of Health", "National Science Foundation", "CDC and Department of Defense"]
+display_categories: ["Microbiome characterization", "Biosecurity and pathogen detection", "Petabyte-scale microbial genomics and metagenomics", "Great Horned Owl “Sammy” sequencing and assembly project"]
 horizontal: false
 ---
 
-The lab's research is organized around the funded projects below. Each page describes the project, the lab's role, and the tools that have come out of it. Source code for every tool is on the [Code](/repositories/) page.
+<div class="projects-hero">
+  {% include figure.liquid loading="eager" path="assets/img/microbe_mountain.png" class="img-fluid" alt="Illustration of a climber ascending a mountain built from layers of bacteria, viruses and other microbes" %}
+</div>
+
+The lab's research is organized into the themes below. Each page describes a project, the lab's role, its funding, and the tools that have come out of it. Source code for every tool is on the [Code](/repositories/) page.
 
 Trainees in the lab are also supported by fellowships, including the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) (NIH T15LM007093, PI: Lydia Kavraki), which supports [Ryan Doughty](/profiles/rdoughty/).
+
+<div style="clear: both;"></div>
 
 <!-- pages/projects.md -->
 <div class="projects">

@@ -10,27 +10,28 @@ github_users:
 
 repo_description_lines_max: 3
 
+# Listed by GitHub stars (snapshot, November 2026). The Code page re-sorts by live star counts when the GitHub API is reachable.
 github_repos:
-  - marbl/metamos
-  - marbl/parsnp
-  - marbl/harvest
-  - marbl/gingr
   - marbl/mash
-  - treangenlab/strainify
-  - treangenlab/seqwin
-  - treangenlab/bronko
+  - marbl/parsnp
   - treangenlab/emu
+  - marbl/metamos
+  - treangenlab/methphaser
+  - marbl/harvest
+  - treangenlab/bronko
+  - treangenlab/olivar
+  - treangenlab/seqwin
+  - treangenlab/lemur
+  - marbl/gingr
+  - treangenlab/strainify
+  - treangenlab/magnet
+  - treangenlab/rhea
   - treangenlab/crykey
   - treangenlab/komb
-  - treangenlab/lemur
-  - treangenlab/magnet
-  - treangenlab/methphaser
-  - treangenlab/olivar
-  - treangenlab/rhea
   - treangenlab/Kente
-  - treangenlab/mft-tools
-  - treangenlab/somatem
   - treangenlab/onsight
-  - treangenlab/Olivia
+  - treangenlab/somatem
+  - treangenlab/mft-tools
   - treangenlab/PlasmidScreen
   - treangenlab/Mimic
+  - treangenlab/Olivia

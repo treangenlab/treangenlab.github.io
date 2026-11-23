@@ -2,9 +2,11 @@
 layout: page
 title: "DYNAMITE"
 description: "NIH NIAID · Co-PI · Why some patients develop multidrug-resistant infections"
-img:
-importance: 2
-category: National Institutes of Health
+img: assets/img/projects/dynamite.png
+img_anim: assets/anim/projects/dynamite.gif
+importance: 1
+category: Microbiome characterization
+topics: ["microbiome analysis", "strain-level analysis", "metagenomics", "long-read sequencing"]
 related_publications: false
 ---
 

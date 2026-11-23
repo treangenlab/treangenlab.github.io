@@ -5,7 +5,7 @@ title: people
 description: Treangen lab members
 nav: true
 nav_order: 1
-display_categories: [PI, Senior Personnel, Graduate Students, Undergraduate Students, Alumni]
+display_categories: [PI, Graduate Students, Alumni]
 horizontal: false
 ---
 

@@ -21,5 +21,7 @@ learn more about the impact of genetic differences on
 protein structure/function and ultimately the fitness of an 
 organism in a specific environment.
 
+Rossie is the lead developer of [Strainify](https://github.com/treangenlab/Strainify), a strain-level abundance analysis tool for short-read metagenomics {% cite luo2025strainify %}.
+
 Outside of research, she enjoys nature, running and spending time with her dog.
 

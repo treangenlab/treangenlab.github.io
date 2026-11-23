@@ -5,7 +5,7 @@ permalink: /projects/
 description: Treangen lab projects
 nav: true
 nav_order: 2
-display_categories: [software, datasets, analysis]
+display_categories: [software]
 horizontal: false
 ---
 

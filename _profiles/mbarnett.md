@@ -1,13 +1,13 @@
 ---
 layout: page
 title: R. Matt Barnett
-description: Software Engineer 
+description: Senior Software Engineer at Signature Science. Former Software Engineer in the Treangen Lab
 img: assets/img/barnett4.jpg
 importance: 3
-category: Senior Personnel
+category: Alumni
 related_publications: false
 ---
 
-Matt (Software Engineer) received his Undergraduate Degree in Computer Science From Rice University. He provides professional software engineering support to multiple research projects in the Treangen lab, previously contributing to [Harvest Variants](www.harvestvariants.info) and variant calling research endeavors specific to Illumina and Oxford Nanopore Sequencing.
+Matt (now a Senior Software Engineer at Signature Science) received his undergraduate degree in Computer Science from Rice University. As a Software Engineer in the Treangen lab, he provided professional software engineering support to multiple research projects, including Harvest Variants and variant calling research endeavors specific to Illumina and Oxford Nanopore Sequencing.
 
 

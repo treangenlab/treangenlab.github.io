@@ -4,7 +4,7 @@ title: Kente
 description: A graph-based pangenomic approach for horizontal gene transfer detection in microbiomes
 img:
 importance: 2
-category: Microbiome analysis
+category: tool
 github: https://github.com/treangenlab/Kente
 related_publications: true
 ---

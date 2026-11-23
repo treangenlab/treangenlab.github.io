@@ -4,7 +4,7 @@ title: MethPhaser
 description: Methylation-based long-read haplotype phasing of human genomes
 img:
 importance: 3
-category: Genome alignment and assembly
+category: tool
 github: https://github.com/treangenlab/methphaser
 related_publications: true
 ---

@@ -4,7 +4,7 @@ title: onsight
 description: Pathogen detection directly from nanopore raw signal, on CPU, during the run
 img:
 importance: 2
-category: Pathogen detection and biosecurity
+category: tool
 github: https://github.com/treangenlab/onsight
 related_publications: true
 ---

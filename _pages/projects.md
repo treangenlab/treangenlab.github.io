@@ -2,12 +2,16 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Open-source software from the Treangen lab, grouped by research area
+description: Active funded research in the Treangen lab
 nav: true
 nav_order: 2
-display_categories: ["Pathogen detection and biosecurity", "Viral genomics and primer design", "Microbiome analysis", "Genome alignment and assembly"]
+display_categories: ["National Institutes of Health", "National Science Foundation", "CDC and Department of Defense"]
 horizontal: false
 ---
+
+The lab's research is organized around the funded projects below. Each page describes the project, the lab's role, and the tools that have come out of it. Source code for every tool is on the [Code](/repositories/) page.
+
+Trainees in the lab are also supported by fellowships, including the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) (NIH T15LM007093, PI: Lydia Kavraki), which supports [Ryan Doughty](/profiles/rdoughty/).
 
 <!-- pages/projects.md -->
 <div class="projects">

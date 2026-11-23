@@ -4,7 +4,7 @@ title: PlasmidScreen
 description: Fast detection of engineered DNA in sequencing reads
 img:
 importance: 2
-category: Pathogen detection and biosecurity
+category: tool
 github: https://github.com/treangenlab/PlasmidScreen
 related_publications: true
 ---

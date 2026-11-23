@@ -4,7 +4,7 @@ title: Olivia
 description: Learned sequence representations for automated primer design
 img:
 importance: 3
-category: Viral genomics and primer design
+category: tool
 github: https://github.com/treangenlab/Olivia
 related_publications: true
 ---

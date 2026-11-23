@@ -4,7 +4,7 @@ title: Rhea
 description: Reference-free structural variant detection in microbiomes
 img:
 importance: 3
-category: Microbiome analysis
+category: tool
 github: https://github.com/treangenlab/rhea
 related_publications: true
 ---

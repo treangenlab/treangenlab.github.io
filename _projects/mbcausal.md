@@ -4,7 +4,8 @@ title: mbcausal
 description: Causal inference from longitudinal gut microbiome profiles
 img:
 importance: 4
-category: Microbiome analysis
+published: false
+category: tool
 github: https://github.com/treangenlab/mbcausal
 related_publications: true
 ---

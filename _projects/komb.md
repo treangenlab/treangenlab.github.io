@@ -4,7 +4,7 @@ title: KOMB
 description: K-core based de novo characterization of copy number variation in microbiomes
 img:
 importance: 4
-category: Microbiome analysis
+category: tool
 github: https://github.com/treangenlab/komb
 related_publications: true
 ---

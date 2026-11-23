@@ -6,7 +6,7 @@ img:
 importance: 1
 github: https://github.com/treangenlab/emu
 related_publications: true
-category: Microbiome analysis
+category: tool
 ---
 
 ## Background

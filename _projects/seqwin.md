@@ -4,7 +4,7 @@ title: Seqwin
 description: Ultrafast identification of signature sequences in microbial genomes
 img:
 importance: 1
-category: Pathogen detection and biosecurity
+category: tool
 github: https://github.com/treangenlab/Seqwin
 related_publications: true
 ---

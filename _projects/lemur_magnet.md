@@ -4,7 +4,7 @@ title: Lemur and MAGnet
 description: Lightweight taxonomic profiling of long-read metagenomic datasets
 img:
 importance: 2
-category: Microbiome analysis
+category: tool
 github: https://github.com/treangenlab/lemur
 related_publications: true
 ---

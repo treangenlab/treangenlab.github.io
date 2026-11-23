@@ -4,7 +4,8 @@ title: kore
 description: Bacterial genome completeness and contamination estimates from species core genomes
 img:
 importance: 2
-category: Genome alignment and assembly
+published: false
+category: tool
 github: https://github.com/treangenlab/kore
 related_publications: true
 ---

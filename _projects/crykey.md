@@ -4,7 +4,7 @@ title: Crykey
 description: Cryptic lineage detection for SARS-CoV-2 wastewater surveillance
 img:
 importance: 3
-category: Pathogen detection and biosecurity
+category: tool
 github: https://github.com/treangenlab/crykey
 related_publications: true
 ---

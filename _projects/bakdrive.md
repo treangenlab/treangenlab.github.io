@@ -6,7 +6,7 @@ img:
 importance: 4
 github: https://gitlab.com/treangenlab/bakdrive
 related_publications: true
-category: Microbiome analysis
+category: tool
 ---
 
 

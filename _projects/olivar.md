@@ -4,7 +4,7 @@ title: Olivar
 description: Automated variant-aware primer design for multiplex tiled amplicon sequencing
 img:
 importance: 2
-category: Viral genomics and primer design
+category: tool
 github: https://github.com/treangenlab/olivar
 related_publications: true
 ---

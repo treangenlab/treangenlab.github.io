@@ -4,7 +4,7 @@ title: SeqScreen
 description: Functional screening of pathogenic sequences via ensemble learning
 img:
 importance: 1
-category: Pathogen detection and biosecurity
+category: tool
 github: https://gitlab.com/treangenlab/seqscreen
 related_publications: true
 ---

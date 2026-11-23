@@ -9,13 +9,9 @@ display_categories: ["Microbiome characterization", "Biosecurity and pathogen de
 horizontal: false
 ---
 
-<div class="projects-hero">
-  {% include figure.liquid loading="eager" path="assets/img/microbe_mountain.png" class="img-fluid" alt="Illustration of a climber ascending a mountain built from layers of bacteria, viruses and other microbes" %}
-</div>
+Main research themes of the Treangen lab are listed below. Each page describes a project, the lab's role, funding source, and the publications and methods that have come out of it. Source code for every tool is on the [Code](/repositories/) page.
 
-The lab's research is organized into the themes below. Each page describes a project, the lab's role, its funding, and the tools that have come out of it. Source code for every tool is on the [Code](/repositories/) page.
-
-Trainees in the lab are also supported by fellowships, including the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) (NIH T15LM007093, PI: Lydia Kavraki), which supports [Ryan Doughty](/profiles/rdoughty/).
+Trainees in our lab are also supported by fellowships, including the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) (NIH T15LM007093, PI: Lydia Kavraki), which supports [Ryan Doughty](/profiles/rdoughty/).
 
 <div style="clear: both;"></div>
 

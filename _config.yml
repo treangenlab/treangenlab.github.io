@@ -354,6 +354,8 @@ filtered_bibtex_keywords:
     lab_authors,
     project,
     theme,
+    app_score,
+    algo_score,
     additional_info,
     altmetric,
     annotation,

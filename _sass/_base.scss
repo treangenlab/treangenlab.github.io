@@ -1847,3 +1847,140 @@ html[data-theme="dark"] .alumni-sectors {
   border-left: 5px solid var(--global-theme-color);
   border-bottom: 2px solid var(--global-theme-color);
 }
+
+// Papers page: scatter plot of papers by application and algorithm focus
+.paper-map {
+  --pm-bio: #2a78d6;
+  --pm-peta: #eb6834;
+  --pm-micro: #1baf7a;
+  --pm-other: #8e8e88;
+  margin: 0 0 2rem;
+
+  .paper-map-title {
+    font-size: 1.4rem;
+    margin: 0.5rem 0 0.25rem;
+  }
+  .paper-map-intro {
+    color: var(--global-text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .paper-map-plot {
+    position: relative;
+    max-width: 760px;
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .pm-frame {
+    fill: none;
+    stroke: var(--global-divider-color);
+    stroke-width: 1;
+  }
+  .pm-grid {
+    stroke: var(--global-divider-color);
+    stroke-width: 1;
+    stroke-dasharray: 3 4;
+  }
+  .pm-axis {
+    fill: var(--global-text-color);
+    font-size: 13px;
+  }
+  .pm-corner {
+    fill: var(--global-text-color);
+    font-size: 12px;
+    stroke: var(--global-bg-color);
+    stroke-width: 4px;
+    paint-order: stroke;
+    pointer-events: none;
+  }
+  .pm-hit {
+    fill: transparent;
+  }
+  .pm-mark {
+    stroke: var(--global-bg-color);
+    stroke-width: 2;
+    transition: r 0.15s ease;
+  }
+  .pm-dot {
+    cursor: pointer;
+    &.t-bio .pm-mark {
+      fill: var(--pm-bio);
+    }
+    &.t-peta .pm-mark {
+      fill: var(--pm-peta);
+    }
+    &.t-micro .pm-mark {
+      fill: var(--pm-micro);
+    }
+    &.t-other .pm-mark {
+      fill: var(--pm-other);
+    }
+    &:hover .pm-mark,
+    &:focus .pm-mark,
+    &.is-selected .pm-mark {
+      r: 8;
+      stroke: var(--global-text-color);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .paper-map-tip {
+    position: absolute;
+    transform: translate(-50%, -115%);
+    max-width: 220px;
+    padding: 0.3rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .paper-map-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0;
+    font-size: 0.85rem;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .swatch {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      &.t-bio {
+        background: var(--pm-bio);
+      }
+      &.t-peta {
+        background: var(--pm-peta);
+      }
+      &.t-micro {
+        background: var(--pm-micro);
+      }
+      &.t-other {
+        background: var(--pm-other);
+      }
+    }
+  }
+  .paper-map-detail {
+    min-height: 2.6em;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+html[data-theme="dark"] .paper-map {
+  --pm-bio: #3987e5;
+  --pm-peta: #d95926;
+  --pm-micro: #199e70;
+  --pm-other: #8a8a85;
+}

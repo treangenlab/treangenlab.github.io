@@ -6,6 +6,10 @@ tags: workshops
 categories: labnews
 giscus_comments: true
 date: 2024-10-17
+map_location: "Lake Arrowhead, California, USA" # where the post is pinned on the blog world map
+map_lat: 34.248
+map_lng: -117.189
+map_author: nkokroko # profile whose photo is shown on the map
 featured: false
 thumbnail: assets/img/posterLAMG.jpeg
 

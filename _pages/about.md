@@ -34,7 +34,7 @@ Welcome to the Treangen lab website, a bioinformatics and computational biology 
   <p style="margin: 0;">The Treangen Lab has three open positions: a <strong>PhD student</strong>, a <strong>Postdoctoral Scientist</strong> and a <strong>Research Engineer</strong>. <a href="{{ '/news/hiring_2026/' | relative_url }}">Read about the open positions</a>, or contact Todd Treangen at <a href="mailto:treangen@rice.edu">treangen@rice.edu</a>.</p>
 </div>
 
-Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to: (i) identifying and characterizing known and novel microbial pathogens, (ii) population scale microbial genome variation and evolution, and (iii) studying microbial communities across time and space in the environment and human-host-associated microbiomes.
+Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to: (i) biosecurity and synthetic DNA screening {% include theme_icon.liquid name="biosecurity" %}, (ii) pathogen genomics and wastewater surveillance {% include theme_icon.liquid name="pathogen" %}, (iii) microbiome profiling and metagenomics {% include theme_icon.liquid name="microbiome" %}, and (iv) scalable algorithms and AI for microbial genomics {% include theme_icon.liquid name="algorithms" %}.
 
 Current funding includes NSF (CAREER, SHF, MIM), NIH (NIAID GCID), and DTRA, among others. Prior support from: c3.ai DTI, DHS, IARPA, and NIH. 
 

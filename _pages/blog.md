@@ -102,6 +102,33 @@ pagination:
 
 {% endif %}
 
+<div class="people-view-toggle" id="blog-toggle" role="group" aria-label="Choose how blog posts are shown" hidden>
+  <button type="button" data-view="map" class="is-active">Map view</button>
+  <button type="button" data-view="list">List view</button>
+</div>
+
+<div class="blog-map" id="blog-map" hidden>
+  <div class="blog-map-stage">
+    {% include world_map.svg %}
+    {% for post in site.posts %}
+      {% if post.map_lat and post.map_lng %}
+        {% assign pin_left = post.map_lng | plus: 180.0 | divided_by: 3.6 %}
+        {% assign pin_top = 85.0 | minus: post.map_lat | divided_by: 1.45 %}
+        {% assign pin_person = site.profiles | where: "slug", post.map_author | first %}
+        {% assign pin_img = pin_person.img | remove: '.jpg' | remove: '.jpeg' | remove: '.png' | append: '-480.webp' %}
+        {% assign pin_focus = pin_person.img_focus | default: "50,35,1" | split: "," %}
+        <a class="blog-pin" href="{{ post.url | relative_url }}" style="left: {{ pin_left | round: 2 }}%; top: {{ pin_top | round: 2 }}%;" aria-label="{{ post.title | escape }}, {{ post.map_location | escape }}">
+          {% if pin_person.img %}<img src="{{ pin_img | relative_url }}" alt="" style="object-position: {{ pin_focus[0] }}% {{ pin_focus[1] }}%;" loading="lazy">{% endif %}
+          <span class="blog-pin-label">{{ post.title }}<small>{{ post.map_location }} · {{ post.date | date: '%B %Y' }}</small></span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <p class="blog-map-note">Each photo marks where a post is set. Hover over one to see the post, click to read it.</p>
+</div>
+
+<div id="blog-list">
+
   <ul class="post-list">
 
     {% if page.pagination.enabled %}
@@ -193,5 +220,32 @@ pagination:
 {% if page.pagination.enabled %}
 {% include pagination.liquid %}
 {% endif %}
+
+</div>
+
+<script>
+  // Blog page: switch between the world map and the list of posts.
+  (function () {
+    var toggle = document.getElementById("blog-toggle"), map = document.getElementById("blog-map"), list = document.getElementById("blog-list");
+    if (!toggle || !map || !list || !map.querySelector(".blog-pin")) return;
+    var onFirstPage = !/\/page\//.test(location.pathname);
+    function show(view) {
+      map.hidden = view !== "map";
+      list.hidden = view === "map";
+      Array.prototype.forEach.call(toggle.querySelectorAll("button"), function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-view") === view);
+      });
+      try { localStorage.setItem("treangenlab-blog-view", view); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem("treangenlab-blog-view"); } catch (e) {}
+    toggle.hidden = false;
+    show(onFirstPage && saved !== "list" ? "map" : "list");
+    toggle.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button");
+      if (b) show(b.getAttribute("data-view"));
+    });
+  })();
+</script>
 
 </div>

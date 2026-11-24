@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Congratulations to Dr. Yunxi Liu, who successfully defended a PhD thesis, "Finding Needles in the Haystack: Computational tools for Contaminant Detection and Error Correction in Genomic and Metagenomic Datasets"!
+Congratulations to Dr. Yunxi Liu, who successfully defended a PhD thesis, ["Finding Needles in the Haystack: Computational tools for Contaminant Detection and Error Correction in Genomic and Metagenomic Datasets"](https://hdl.handle.net/1911/116199)!

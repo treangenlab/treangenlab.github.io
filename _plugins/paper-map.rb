@@ -1,5 +1,9 @@
 # Builds site.data["paper_map"] from _bibliography/papers.bib for the scatter plot on the papers page.
-# Each paper needs app_score and algo_score fields (0 to 10) in its BibTeX entry; papers without them are left out.
+# Each paper needs comp_axis and bio_axis fields (-10 to 10) in its BibTeX entry; papers without them are left out.
+# comp_axis: statistics and machine learning terms (positive) versus sequence algorithm and data structure terms (negative).
+# bio_axis: microbiome terms (positive) versus pathogen and microbial genomics terms (negative).
+# paper_type (preprint, paper or review) sets the shape of the mark; it defaults to paper.
+# Both positions come from how densely each kind of term appears in the title, abstract and, where openly available, full text.
 require "bibtex"
 
 module Jekyll
@@ -14,7 +18,7 @@ module Jekyll
       clean = ->(value) { value.to_s.gsub(/[{}]/, "").gsub(/\\&/, "&").strip }
       papers = []
       BibTeX.open(path, filter: :latex).each do |entry|
-        next unless entry.respond_to?(:key) && entry.field?(:app_score) && entry.field?(:algo_score)
+        next unless entry.respond_to?(:key) && entry.field?(:comp_axis) && entry.field?(:bio_axis)
 
         url = nil
         if entry.field?(:html) && entry[:html].to_s.include?("://")
@@ -28,8 +32,9 @@ module Jekyll
           "year" => entry[:year].to_s,
           "venue" => clean.call(entry.field?(:journal) ? entry[:journal] : entry[:booktitle]),
           "theme" => entry.field?(:theme) ? clean.call(entry[:theme]) : "",
-          "app" => entry[:app_score].to_s.to_f,
-          "algo" => entry[:algo_score].to_s.to_f,
+          "x" => entry[:comp_axis].to_s.to_f,
+          "y" => entry[:bio_axis].to_s.to_f,
+          "kind" => entry.field?(:paper_type) ? clean.call(entry[:paper_type]) : "paper",
           "url" => url
         }
       end

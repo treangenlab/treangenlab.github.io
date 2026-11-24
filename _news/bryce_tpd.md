@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Bryce Kille successfully passed his Thesis Proposal Defense, now a Ph.D. candidate!
+Bryce Kille successfully passed his Thesis Proposal Defense, now a Ph.D. candidate! Committee: Adam Phillippy (NIH NHGRI), Caleb Bashor (Rice BIOE), Fritz Sedlazeck (BCM HGSC), Vladimir Braverman (Rice CS) and Todd Treangen (Rice CS).

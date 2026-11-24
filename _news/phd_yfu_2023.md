@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Congratulations to Dr. Yilei Fu, who successfully defended a PhD thesis, "Accurate and Efficient Computational Approaches for Long-read Alignment and Genome Phasing of Human Genomes"!
+Congratulations to Dr. Yilei Fu, who successfully defended a PhD thesis, ["Accurate and Efficient Computational Approaches for Long-read Alignment and Genome Phasing of Human Genomes"](https://hdl.handle.net/1911/115440)!

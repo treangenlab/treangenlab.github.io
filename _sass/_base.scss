@@ -1815,6 +1815,27 @@ html[data-theme="dark"] .alumni-sectors {
       pointer-events: auto;
     }
   }
+  // A band of light sweeps across each lab photo every few seconds.
+  .lab-slide-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    figure {
+      margin: 0;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 45%;
+      background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: translateX(-120%) skewX(-12deg);
+      animation: lab-glimmer 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+  }
   .lab-slide-caption {
     margin-top: 5px;
     font-family: monospace;
@@ -1945,9 +1966,9 @@ html[data-theme="dark"] .alumni-sectors {
     stroke-width: 1;
   }
   .pm-threshold {
-    stroke: var(--global-text-color-light);
-    stroke-width: 1;
-    stroke-dasharray: 5 4;
+    stroke: var(--global-text-color);
+    stroke-opacity: 0.55;
+    stroke-width: 1.75;
   }
   .pm-tick {
     fill: var(--global-text-color-light);
@@ -1955,7 +1976,8 @@ html[data-theme="dark"] .alumni-sectors {
   }
   .pm-axis {
     fill: var(--global-text-color);
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 600;
   }
   .pm-corner {
     fill: var(--global-text-color);
@@ -1969,38 +1991,48 @@ html[data-theme="dark"] .alumni-sectors {
     fill: transparent;
   }
   .pm-mark {
+    fill: var(--pm-c);
     stroke: var(--global-bg-color);
-    stroke-width: 2;
-    transition: r 0.15s ease;
+    stroke-width: 1.5;
+  }
+  .pm-ring {
+    fill: var(--global-bg-color);
+    stroke: var(--pm-c);
+    stroke-width: 1.5;
+  }
+  .pm-half {
+    fill: var(--pm-c);
+  }
+  .pm-shape {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: transform 0.15s ease;
   }
   .pm-dot {
     cursor: pointer;
-    &.is-faint .pm-mark {
-      fill-opacity: 0.4;
+    &.t-bio {
+      --pm-c: var(--pm-bio);
     }
-    &.is-faint:hover .pm-mark,
-    &.is-faint.is-selected .pm-mark {
-      fill-opacity: 1;
+    &.t-path {
+      --pm-c: var(--pm-path);
     }
-    &.t-bio .pm-mark {
-      fill: var(--pm-bio);
+    &.t-algo {
+      --pm-c: var(--pm-algo);
     }
-    &.t-path .pm-mark {
-      fill: var(--pm-path);
+    &.t-micro {
+      --pm-c: var(--pm-micro);
     }
-    &.t-algo .pm-mark {
-      fill: var(--pm-algo);
+    &.t-other {
+      --pm-c: var(--pm-other);
     }
-    &.t-micro .pm-mark {
-      fill: var(--pm-micro);
-    }
-    &.t-other .pm-mark {
-      fill: var(--pm-other);
+    &:hover .pm-shape,
+    &:focus .pm-shape,
+    &.is-selected .pm-shape {
+      transform: scale(1.5);
     }
     &:hover .pm-mark,
     &:focus .pm-mark,
     &.is-selected .pm-mark {
-      r: 8;
       stroke: var(--global-text-color);
     }
     &:focus {
@@ -2032,6 +2064,18 @@ html[data-theme="dark"] .alumni-sectors {
       display: flex;
       align-items: center;
       gap: 0.4rem;
+    }
+    .shape-first {
+      margin-left: 0.75rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--global-divider-color);
+    }
+    .shape {
+      --pm-c: var(--global-text-color-light);
+      overflow: visible;
+      .pm-mark {
+        stroke: none;
+      }
     }
     .swatch {
       width: 11px;
@@ -2066,4 +2110,149 @@ html[data-theme="dark"] .paper-map {
   --pm-micro: #199e70;
   --pm-algo: #9085e9;
   --pm-other: #8a8a85;
+}
+
+@keyframes lab-glimmer {
+  0%,
+  55% {
+    transform: translateX(-120%) skewX(-12deg);
+  }
+  90%,
+  100% {
+    transform: translateX(340%) skewX(-12deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-slideshow .lab-slide-photo::after {
+    animation: none;
+  }
+}
+
+// Home page: contact icons in their own brand colors (email and GitHub keep the text color)
+.social .contact-icons a {
+  &[title="ORCID"] i::before {
+    color: #a6ce39;
+  }
+  &[title="Google Scholar"] i::before {
+    color: #4285f4;
+  }
+  &[title="Open Science Framework"] i::before {
+    color: #34a0d9;
+  }
+  &[title="LinkedIn"] i::before {
+    color: #0a66c2;
+  }
+  &[title="GitLab"] i::before {
+    color: #fc6d26;
+  }
+  &[title="Bluesky"] i::before {
+    color: #1185fe;
+  }
+  &:hover i::before {
+    filter: brightness(0.85);
+  }
+}
+
+// Home page: small animated icon after each research theme
+.theme-icon {
+  white-space: nowrap;
+  img {
+    width: 1.9em;
+    height: 1.9em;
+    vertical-align: middle;
+  }
+}
+
+// Blog page: world map of posts
+.blog-map {
+  margin: 0.5rem 0 1.5rem;
+  &[hidden] {
+    display: none;
+  }
+  .blog-map-stage {
+    position: relative;
+  }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(42, 120, 214, 0.07);
+  }
+  .blog-map-land {
+    fill: var(--global-theme-color);
+    fill-opacity: 0.28;
+    stroke: var(--global-theme-color);
+    stroke-opacity: 0.55;
+    stroke-width: 0.6;
+  }
+  .blog-pin {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    margin: -26px 0 0 -26px;
+    border-radius: 50%;
+    border: 3px solid var(--global-theme-color);
+    background: var(--global-bg-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    transition: transform 0.15s ease;
+    z-index: 1;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+    &:hover,
+    &:focus {
+      transform: scale(1.25);
+      z-index: 3;
+      outline: none;
+    }
+  }
+  .blog-pin-label {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: 6px;
+    width: max-content;
+    max-width: 230px;
+    padding: 0.3rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    text-align: center;
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    small {
+      display: block;
+      opacity: 0.8;
+    }
+  }
+  .blog-pin:hover .blog-pin-label,
+  .blog-pin:focus .blog-pin-label {
+    opacity: 1;
+  }
+  .blog-map-note {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    margin: 0.4rem 0 0;
+  }
+  @media (max-width: 576px) {
+    .blog-pin {
+      width: 34px;
+      height: 34px;
+      margin: -17px 0 0 -17px;
+      border-width: 2px;
+    }
+  }
+}
+#blog-list[hidden] {
+  display: none;
 }

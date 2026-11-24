@@ -5,6 +5,10 @@ description: Natalie's summer research collaboration in Ghana through the Expand
 tags: workshops
 giscus_comments: true
 date: 2025-08-15
+map_location: "Accra, Ghana" # where the post is pinned on the blog world map
+map_lat: 5.651
+map_lng: -0.187
+map_author: nkokroko # profile whose photo is shown on the map
 featured: true
 thumbnail: assets/img/Natalie_Ghana2025.jpeg
 

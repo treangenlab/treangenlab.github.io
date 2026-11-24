@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Congratulations to Dr. Advait Balaji, who successfully defended his PhD thesis, "Journey into the unknown: graph and machine learning based approaches for improved characterization of novel pathogens"!
+Congratulations to Dr. Advait Balaji, who successfully defended his PhD thesis, ["Journey into the unknown: graph and machine learning based approaches for improved characterization of novel pathogens"](https://hdl.handle.net/1911/114907)!

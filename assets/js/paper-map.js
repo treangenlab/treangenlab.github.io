@@ -1,5 +1,5 @@
-// Papers page: volcano-style plot of papers, theory-leaning on the left and applied on the right.
-// Scores come from the app_score and algo_score fields (0 to 10) of each BibTeX entry.
+// Papers page: plot of papers by kind of computation (left to right) and kind of biology (bottom to top).
+// Positions come from the comp_axis and bio_axis fields (-10 to 10) of each BibTeX entry.
 (function () {
   var box = document.getElementById("paper-map");
   var dataEl = document.getElementById("paper-map-data");
@@ -16,10 +16,10 @@
   }
 
   var THEMES = [
-    { name: "Biosecurity and Synthetic DNA Screening", cls: "t-bio" },
-    { name: "Pathogen Genomics and Wastewater Surveillance", cls: "t-path" },
-    { name: "Microbiome Profiling and Metagenomics", cls: "t-micro" },
-    { name: "Scalable Algorithms and AI for Microbial Genomics", cls: "t-algo" },
+    { name: "Biosecurity and Synthetic DNA Screening", label: "Biosecurity", cls: "t-bio" },
+    { name: "Pathogen Genomics and Wastewater Surveillance", label: "Pathogens & wastewater", cls: "t-path" },
+    { name: "Microbiome Profiling and Metagenomics", label: "Microbiome", cls: "t-micro" },
+    { name: "Scalable Algorithms and AI for Microbial Genomics", label: "Algorithms & AI", cls: "t-algo" },
     { name: "", label: "Other", cls: "t-other" },
   ];
   function themeOf(p) {
@@ -27,29 +27,23 @@
     return THEMES[THEMES.length - 1];
   }
 
-  // Volcano-plot layout. Each paper has an application score and an algorithm score (0 to 10).
-  //   x = application score minus algorithm score: theory-leaning papers fall left, applied papers right.
-  //   y = the larger of the two scores: how pronounced the paper's main focus is.
-  // The larger score can never be smaller than the difference, so the points fan out in a V, as in a volcano plot.
-  // Papers beyond both dashed thresholds (clearly leaning one way, with a strong main focus) are drawn solid;
-  // the rest are drawn fainter, like the non-significant points of a volcano plot.
+  // Two-sided axes. Each paper has two positions from -10 to 10, stored in its BibTeX entry:
+  //   x (comp_axis): statistics and machine learning terms minus sequence algorithm and data structure terms.
+  //   y (bio_axis): microbiome terms minus pathogen and microbial genomics terms.
+  // A paper near a dashed line has little of either side, or a similar amount of both.
   var svg = box.querySelector("svg");
   var tip = box.querySelector(".paper-map-tip");
   var detail = box.querySelector(".paper-map-detail");
   var NS = "http://www.w3.org/2000/svg";
   var W = 720,
-    H = 500,
-    L = 56,
+    H = 540,
+    L = 40,
     R = 16,
-    T = 30,
-    B = 70;
+    T = 16,
+    B = 44;
   var PW = W - L - R,
     PH = H - T - B;
-  var XMAX = 10.5,
-    YMIN = 4,
-    YMAX = 10.4;
-  var BAND = 2; // papers within this difference count as balanced
-  var STRONG = 7.5; // main-focus score above which a paper counts as strongly focused
+  var MAX = 10.8;
   function el(name, attrs, text) {
     var n = document.createElementNS(NS, name);
     for (var k in attrs) n.setAttribute(k, attrs[k]);
@@ -57,35 +51,34 @@
     return n;
   }
   function sx(v) {
-    return L + ((Math.max(-XMAX, Math.min(XMAX, v)) + XMAX) / (2 * XMAX)) * PW;
+    return L + ((Math.max(-MAX, Math.min(MAX, v)) + MAX) / (2 * MAX)) * PW;
   }
   function sy(v) {
-    return T + PH - ((Math.max(YMIN, Math.min(YMAX, v)) - YMIN) / (YMAX - YMIN)) * PH;
+    return T + PH - ((Math.max(-MAX, Math.min(MAX, v)) + MAX) / (2 * MAX)) * PH;
   }
 
   svg.appendChild(el("rect", { x: L, y: T, width: PW, height: PH, class: "pm-frame" }));
-  [-10, -5, 0, 5, 10].forEach(function (v) {
-    svg.appendChild(el("line", { x1: sx(v), y1: T + PH, x2: sx(v), y2: T + PH + 5, class: "pm-grid" }));
-    svg.appendChild(el("text", { x: sx(v), y: T + PH + 18, "text-anchor": "middle", class: "pm-tick" }, v > 0 ? "+" + v : String(v)));
-  });
-  [4, 6, 8, 10].forEach(function (v) {
-    svg.appendChild(el("line", { x1: L - 5, y1: sy(v), x2: L, y2: sy(v), class: "pm-grid" }));
-    svg.appendChild(el("text", { x: L - 8, y: sy(v) + 4, "text-anchor": "end", class: "pm-tick" }, String(v)));
-  });
-  // Dashed threshold lines, as on a volcano plot
-  [-BAND, BAND].forEach(function (v) {
-    svg.appendChild(el("line", { x1: sx(v), y1: T, x2: sx(v), y2: T + PH, class: "pm-threshold" }));
-  });
-  svg.appendChild(el("line", { x1: L, y1: sy(STRONG), x2: L + PW, y2: sy(STRONG), class: "pm-threshold" }));
-  [
-    [L, "start", "Theory / algorithms leaning"],
-    [sx(0), "middle", "Balanced"],
-    [L + PW, "end", "Applied / biology leaning"],
-  ].forEach(function (c) {
-    svg.appendChild(el("text", { x: c[0], y: T - 10, "text-anchor": c[1], class: "pm-corner" }, c[2]));
-  });
-  svg.appendChild(el("text", { x: L + PW / 2, y: H - 14, "text-anchor": "middle", class: "pm-axis" }, "← more theory / algorithms      (application score − algorithm score)      more applied / biology →"));
-  svg.appendChild(el("text", { x: 14, y: T + PH / 2, "text-anchor": "middle", transform: "rotate(-90 14 " + (T + PH / 2) + ")", class: "pm-axis" }, "Strength of main focus (higher of the two scores)"));
+  svg.appendChild(el("line", { x1: sx(0), y1: T, x2: sx(0), y2: T + PH, class: "pm-threshold" }));
+  svg.appendChild(el("line", { x1: L, y1: sy(0), x2: L + PW, y2: sy(0), class: "pm-threshold" }));
+  // Axis labels sit outside the frame, one at each end of each axis.
+  svg.appendChild(el("text", { x: L, y: H - 16, "text-anchor": "start", class: "pm-axis" }, "← sequence algorithms & data structures"));
+  svg.appendChild(el("text", { x: L + PW, y: H - 16, "text-anchor": "end", class: "pm-axis" }, "statistics & machine learning →"));
+  svg.appendChild(el("text", { x: 16, y: T + PH, "text-anchor": "start", transform: "rotate(-90 16 " + (T + PH) + ")", class: "pm-axis" }, "← pathogen & microbial genomics"));
+  svg.appendChild(el("text", { x: 16, y: T, "text-anchor": "end", transform: "rotate(-90 16 " + T + ")", class: "pm-axis" }, "microbiome →"));
+
+  // Mark shape shows the kind of paper: half-filled circle = preprint, full circle = published paper, square = published review.
+  function mark(kind, cx, cy) {
+    var g = el("g", { class: "pm-shape" });
+    if (kind === "review") {
+      g.appendChild(el("rect", { x: cx - 5, y: cy - 5, width: 10, height: 10, class: "pm-mark" }));
+    } else if (kind === "preprint") {
+      g.appendChild(el("circle", { cx: cx, cy: cy, r: 5.5, class: "pm-ring" }));
+      g.appendChild(el("path", { d: "M" + cx + " " + (cy - 5.5) + "A5.5 5.5 0 0 0 " + cx + " " + (cy + 5.5) + "Z", class: "pm-half" }));
+    } else {
+      g.appendChild(el("circle", { cx: cx, cy: cy, r: 5.5, class: "pm-mark" }));
+    }
+    return g;
+  }
 
   // Small deterministic offset so papers with the same scores do not sit exactly on top of each other.
   function jitter(key, salt) {
@@ -126,13 +119,10 @@
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener");
       }
-      var diff = p.app - p.algo,
-        main = Math.max(p.app, p.algo);
-      var cx = sx(diff + jitter(p.key, 1)),
-        cy = sy(main + jitter(p.key, 7) * 0.5);
-      if (Math.abs(diff) < BAND || main < STRONG) link.setAttribute("class", link.getAttribute("class") + " is-faint");
+      var cx = sx(p.x + jitter(p.key, 1) * 0.6),
+        cy = sy(p.y + jitter(p.key, 7) * 0.6);
       link.appendChild(el("circle", { cx: cx, cy: cy, r: 14, class: "pm-hit" }));
-      link.appendChild(el("circle", { cx: cx, cy: cy, r: 5.5, class: "pm-mark" }));
+      link.appendChild(mark(p.kind, cx, cy));
       link.addEventListener("mouseenter", function (ev) {
         show(p, link, ev);
       });
@@ -154,14 +144,27 @@
 
   var legend = box.querySelector(".paper-map-legend");
   THEMES.forEach(function (t) {
-    var n = papers.filter(function (p) {
+    var used = papers.some(function (p) {
       return themeOf(p) === t;
-    }).length;
-    if (!n) return;
+    });
+    if (!used) return;
     var li = document.createElement("li");
     li.innerHTML = '<span class="swatch ' + t.cls + '"></span>';
-    li.appendChild(document.createTextNode((t.label || t.name) + " (" + n + ")"));
+    li.appendChild(document.createTextNode(t.label || t.name));
     legend.appendChild(li);
   });
-  detail.textContent = "Hover over a dot to see the paper.";
+  [
+    ["preprint", "Preprint"],
+    ["paper", "Paper"],
+    ["review", "Review"],
+  ].forEach(function (k, i) {
+    var li = document.createElement("li");
+    if (i === 0) li.className = "shape-first";
+    var icon = el("svg", { viewBox: "0 0 16 16", width: 14, height: 14, class: "shape", "aria-hidden": "true" });
+    icon.appendChild(mark(k[0], 8, 8));
+    li.appendChild(icon);
+    li.appendChild(document.createTextNode(k[1]));
+    legend.appendChild(li);
+  });
+  detail.textContent = "Hover over a mark to see the paper.";
 })();

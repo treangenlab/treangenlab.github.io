@@ -6,6 +6,10 @@ tags: workshops
 categories: labnews
 giscus_comments: true
 date: 2024-09-28
+map_location: "Woods Hole, Massachusetts, USA" # where the post is pinned on the blog world map
+map_lat: 41.526
+map_lng: -70.673
+map_author: amarshall # profile whose photo is shown on the map
 featured: false
 thumbnail: assets/img/crabs_mbl.jpg
 

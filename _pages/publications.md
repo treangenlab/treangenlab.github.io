@@ -10,10 +10,10 @@ nav_order: 3
 <!-- _pages/publications.md -->
 
 <div id="paper-map" class="paper-map">
-  <h2 class="paper-map-title">Where each paper sits</h2>
-  <p class="paper-map-intro">Each dot is a paper, placed by how much it is about applications and biology (left to right) and how much it is about theory and algorithms (bottom to top). Hover over a dot for the paper, and click to open it.</p>
+  <h2 class="paper-map-title">Theory vs Applied research overview (each dot represents a paper, click on it for more details).</h2>
+  <p class="paper-map-intro">Papers further right are more application and biology oriented; papers higher up are more theory and algorithms oriented. Hover over a dot to see the paper.</p>
   <div class="paper-map-plot">
-    <svg viewBox="0 0 720 470" role="img" aria-label="Scatter plot of lab papers by application focus and algorithm focus"></svg>
+    <svg viewBox="0 0 720 500" role="img" aria-label="Scatter plot of lab papers by application focus and algorithm focus"></svg>
     <div class="paper-map-tip" hidden></div>
   </div>
   <ul class="paper-map-legend"></ul>

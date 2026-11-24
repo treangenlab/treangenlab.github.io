@@ -31,11 +31,11 @@
   var detail = box.querySelector(".paper-map-detail");
   var NS = "http://www.w3.org/2000/svg";
   var W = 720,
-    H = 470,
+    H = 500,
     L = 56,
     R = 16,
-    T = 16,
-    B = 52;
+    T = 30,
+    B = 70;
   var PW = W - L - R,
     PH = H - T - B;
   function el(name, attrs, text) {
@@ -59,7 +59,7 @@
   svg.appendChild(el("rect", { x: L, y: T, width: PW, height: PH, class: "pm-frame" }));
   svg.appendChild(el("line", { x1: sx(5), y1: T, x2: sx(5), y2: T + PH, class: "pm-grid" }));
   svg.appendChild(el("line", { x1: L, y1: sy(5), x2: L + PW, y2: sy(5), class: "pm-grid" }));
-  svg.appendChild(el("text", { x: L + PW / 2, y: H - 12, "text-anchor": "middle", class: "pm-axis" }, "Less application / biology oriented  →  more"));
+  svg.appendChild(el("text", { x: L + PW / 2, y: H - 14, "text-anchor": "middle", class: "pm-axis" }, "Less application / biology oriented  →  more"));
   svg.appendChild(el("text", { x: 16, y: T + PH / 2, "text-anchor": "middle", transform: "rotate(-90 16 " + (T + PH / 2) + ")", class: "pm-axis" }, "Less theory / algorithms oriented  →  more"));
 
   // Small deterministic offset so papers with the same scores do not sit exactly on top of each other.
@@ -101,8 +101,15 @@
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener");
       }
-      var cx = sx(p.app + jitter(p.key, 1)),
-        cy = sy(p.algo + jitter(p.key, 7));
+      // The small offset never moves a paper across a mid-line into another quadrant.
+      function nudge(v, j) {
+        var w = v + j;
+        if (v >= 5 && w < 5.15) w = 5.15;
+        if (v < 5 && w > 4.85) w = 4.85;
+        return w;
+      }
+      var cx = sx(nudge(p.app, jitter(p.key, 1))),
+        cy = sy(nudge(p.algo, jitter(p.key, 7)));
       link.appendChild(el("circle", { cx: cx, cy: cy, r: 14, class: "pm-hit" }));
       link.appendChild(el("circle", { cx: cx, cy: cy, r: 5.5, class: "pm-mark" }));
       link.addEventListener("mouseenter", function (ev) {
@@ -124,10 +131,11 @@
       svg.appendChild(link);
     });
 
+  // Quadrant labels sit outside the frame so they never cover a dot.
   [
-    [L + 8, T + 16, "start", "Mostly algorithms"],
-    [L + PW - 8, T + 16, "end", "Algorithms + applications"],
-    [L + PW - 8, T + PH - 8, "end", "Mostly applications"],
+    [L, T - 10, "start", "Mostly theory / algorithms"],
+    [L + PW, T - 10, "end", "Algorithms + applications"],
+    [L + PW, T + PH + 18, "end", "Mostly applications"],
   ].forEach(function (c) {
     svg.appendChild(el("text", { x: c[0], y: c[1], "text-anchor": c[2], class: "pm-corner" }, c[3]));
   });

@@ -7,7 +7,7 @@ img_anim: assets/anim/projects/gcid.gif
 importance: 2
 category: Biosecurity and pathogen detection
 topics: ["pathogen detection", "strain-level analysis", "viral genomics"]
-members: [rluo, rdoughty]
+members: [rluo, rdoughty, nkokroko]
 project_key: fund_gcid
 related_publications: false
 ---

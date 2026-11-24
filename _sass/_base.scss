@@ -1836,3 +1836,14 @@ html[data-theme="dark"] .alumni-sectors {
     text-decoration: none;
   }
 }
+
+// News page: year headings
+.news-by-year h2.news-year {
+  color: var(--global-text-color);
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 0.25rem 0 0.5rem 0.8rem;
+  margin: 2rem 0 0.75rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-bottom: 2px solid var(--global-theme-color);
+}

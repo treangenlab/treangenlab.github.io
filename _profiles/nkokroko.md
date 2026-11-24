@@ -12,7 +12,7 @@ related_publications: true
 ---
 
 Natalie (4th year PhD student, Computer Science) obtained her Bachelor’s Degree in Biomedical engineering at the University of Ghana in November, 2021. Natalie hopes to make use of computational tools and algorithms to interpret and analyze clinical and environmental microbiome data. Generally, she is interested in Computational Biology, Bioinformatics, Genomics and Metagenomic data analysis. 
-Natalie's research is funded by the Computer Science Department support and the NIH NIA(R56AG080920).
+Natalie's research is supported by the lab's [NSF MIM award](/projects/fund_mim/) (EF 2126387) and the NIH NIAID [Genomic Center for Infectious Diseases](/projects/fund_gcid/) (U19AI144297).
 
 In her free time, Natalie loves to play tennis and watch movies with a big bowl of ice-cream. Dogs are her favorite.
 

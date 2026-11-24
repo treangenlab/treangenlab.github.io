@@ -8,7 +8,6 @@ importance: 2
 category: Microbiome characterization
 topics: ["microbiome analysis", "long-read sequencing"]
 project_key: gut_brain_axis
-members: [nkokroko]
 related_publications: false
 ---
 

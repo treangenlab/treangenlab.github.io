@@ -7,7 +7,7 @@ img_anim: assets/anim/projects/career.gif
 importance: 1
 category: Biosecurity and pathogen detection
 topics: ["biosecurity", "pathogen detection", "synthetic DNA screening", "genome alignment"]
-members: [fquinanta, rdoughty]
+project_key: fund_career
 related_publications: false
 ---
 

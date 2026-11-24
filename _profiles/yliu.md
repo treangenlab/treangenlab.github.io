@@ -10,6 +10,7 @@ departed: 2024.2
 sector: academia
 category: Lab alumni
 topics: ["metagenomics", "wastewater surveillance", "viral genomics"]
+pub_key: yliu
 related_publications: false
 ---
 

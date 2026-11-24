@@ -10,6 +10,7 @@ departed: 2025
 sector: academia
 category: Lab alumni
 topics: ["microbiome analysis", "metagenomics"]
+pub_key: vperillo
 related_publications: true
 ---
 

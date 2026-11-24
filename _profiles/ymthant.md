@@ -6,6 +6,7 @@ img: assets/img/yinmin4.jpg
 img_focus: "49,38,1.49"
 hex_swap: bkille
 importance: 7
+joined: 2026.6
 category: Current members
 topics: ["wastewater metagenomics", "string algorithms", "petabyte-scale computational methods"]
 related_publications: false

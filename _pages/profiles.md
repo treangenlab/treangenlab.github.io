@@ -80,7 +80,7 @@ horizontal: false
     <span class="key key-lab-alumni"></span>Lab alumni
   </p>
   <div id="people-detail" class="people-detail" aria-live="polite">
-    <p class="people-detail-hint">Select a photo for details.</p>
+    <p class="people-detail-hint">Hover over a photo for details; click to open the profile.</p>
   </div>
 </div>
 
@@ -95,6 +95,9 @@ horizontal: false
   {% assign sorted_projects = categorized_projects | sort: "importance" %}
   {% if category == "Lab alumni" %}
     {% assign sorted_projects = categorized_projects | sort: "departed" | reverse %}
+  {% endif %}
+  {% if category == "Current members" %}
+    {% assign sorted_projects = categorized_projects | sort: "joined" | reverse %}
   {% endif %}
   <!-- Generate cards for each project -->
   {% if page.horizontal %}

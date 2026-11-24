@@ -5,6 +5,7 @@ description: 3rd Year Ph.D. student, interested in machine learning and computat
 img: assets/img/dongwei4.jpg
 img_focus: "37,37,2.04"
 importance: 3
+joined: 2024.61
 category: Current members
 topics: ["machine learning", "primer design"]
 related_publications: true

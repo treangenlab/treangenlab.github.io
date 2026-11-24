@@ -7,6 +7,7 @@ img_anim: assets/anim/projects/mim.gif
 importance: 4
 category: Microbiome characterization
 topics: ["microbiome analysis", "metagenomics"]
+project_key: fund_mim
 members: [ehuang]
 related_publications: false
 ---

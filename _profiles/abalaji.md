@@ -10,6 +10,7 @@ departed: 2022
 sector: industry
 category: Lab alumni
 topics: ["pathogen detection", "metagenomics", "machine learning"]
+pub_key: abalaji
 related_publications: false
 ---
 

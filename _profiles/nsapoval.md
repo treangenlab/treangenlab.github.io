@@ -10,6 +10,7 @@ departed: 2024.5
 sector: academia
 category: Lab alumni
 topics: ["metagenomics", "machine learning", "viral genomics"]
+pub_key: nsapoval
 related_publications: false
 ---
 

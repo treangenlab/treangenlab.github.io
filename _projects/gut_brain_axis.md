@@ -7,8 +7,9 @@ img_anim: assets/anim/projects/ad_tbi.gif
 importance: 2
 category: Microbiome characterization
 topics: ["microbiome analysis", "long-read sequencing"]
+project_key: gut_brain_axis
 members: [nkokroko]
-related_publications: true
+related_publications: false
 ---
 
 ## About the project

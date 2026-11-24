@@ -10,6 +10,7 @@ departed: 2023.5
 sector: academia
 category: Lab alumni
 topics: ["long-read sequencing", "genome alignment"]
+pub_key: yfu
 related_publications: false
 ---
 

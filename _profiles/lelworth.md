@@ -9,6 +9,7 @@ importance: 27
 departed: 2022.5
 category: Lab alumni
 topics: ["pathogen detection", "metagenomics"]
+pub_key: lelworth
 related_publications: false
 ---
 

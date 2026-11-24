@@ -1,0 +1,57 @@
+# Rice news items that mention lab members. "people" lists profile file names (without .md).
+# Shown under "In Rice news" on each person's profile page.
+- title: "Rice computer scientists race ahead in pathogen-detection DARPA challenge"
+  source: Rice News
+  year: 2026
+  url: https://news.rice.edu/news/2026/rice-computer-scientists-race-ahead-pathogen-detection-darpa-challenge
+  people: [treangen, rdoughty, fquinanta, mnute]
+- title: "New cohort of Future Faculty Fellows prepares for academic careers"
+  source: Rice Engineering
+  year: 2025
+  url: https://engineering.rice.edu/news/new-cohort-future-faculty-fellows-prepares-academic-careers
+  people: [nsapoval]
+- title: "Todd Treangen promoted to associate professor with tenure"
+  source: Rice Computer Science
+  year: 2023
+  url: https://csweb.rice.edu/news/todd-treangen-promoted-associate-professor-tenure
+  people: [treangen, dalbin, abalaji, mbarnett, kcurry, lelworth, bfongang, yfu, ehuang, bkille, yliu, dnasko, mnute, nsapoval, xwang, qwang]
+- title: "Rice's Todd Treangen wins NSF CAREER Award"
+  source: Rice News
+  year: 2023
+  url: https://news.rice.edu/news/2023/rices-todd-treangen-wins-nsf-career-award
+  people: [treangen]
+- title: "Squeegee helps identify contaminants in microbiome samples"
+  source: Rice Computer Science
+  year: 2022
+  url: https://csweb.rice.edu/news/squeegee-helps-identify-contaminants-microbiome-samples
+  people: [treangen, yliu]
+- title: "Emu stands tall at detecting bacteria species"
+  source: Rice News
+  year: 2022
+  url: https://news.rice.edu/news/2022/emu-stands-tall-detecting-bacteria-species
+  people: [treangen, kcurry, qwang, mnute]
+- title: "SeqScreen can reveal 'concerning' DNA"
+  source: Rice News
+  year: 2022
+  url: https://news.rice.edu/news/2022/seqscreen-can-reveal-concerning-dna
+  people: [treangen, abalaji, bkille, lelworth, dalbin, dnasko]
+- title: "Horned Owl Genome Sequenced by Students at Rice University"
+  source: Rice Computer Science
+  year: 2022
+  url: https://csweb.rice.edu/news/horned-owl-genome-sequenced-students-rice-university
+  people: [treangen]
+- title: "Bioinformatics tool accurately tracks synthetic DNA"
+  source: Rice News
+  year: 2021
+  url: https://news.rice.edu/news/2021/bioinformatics-tool-accurately-tracks-synthetic-dna
+  people: [treangen, qwang, bkille]
+- title: "Treangen and multi-institutional team awarded $11M to study multi-drug resistant infections"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/treangen-and-multi-institutional-team-awarded-11m-study-multi-drug-resistant-infections
+  people: [treangen, abalaji]
+- title: "Rice computer science lab collaborates on design of novel SARS-CoV-2 test"
+  source: Rice News
+  year: 2020
+  url: https://news.rice.edu/news/2020/rice-computer-science-lab-collaborates-design-novel-sars-cov-2-test
+  people: [treangen, nsapoval, lelworth, bkille, yliu, yfu]

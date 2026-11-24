@@ -5,6 +5,7 @@ description: 5th Year Ph.D. student, interested in Microbiome Analysis, Metageno
 img: assets/img/eddy4.jpg
 img_focus: "52,43,2.80"
 importance: 5
+joined: 2022.6
 category: Current members
 topics: ["microbiome analysis", "machine learning", "high-performance computing"]
 related_publications: true

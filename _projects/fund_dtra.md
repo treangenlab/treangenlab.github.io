@@ -7,7 +7,8 @@ img_anim: assets/anim/projects/dtra.gif
 importance: 4
 category: Biosecurity and pathogen detection
 topics: ["pathogen detection", "biosecurity", "long-read sequencing"]
-members: [fquinanta]
+members: [rdoughty, fquinanta]
+project_key: fund_dtra
 related_publications: false
 ---
 

@@ -5,6 +5,7 @@ description: 2nd Year Ph.D. student, SSPB, multiple genome alignment and genotyp
 img: assets/img/rluo4_headshot.jpg
 img_focus: "47,32,2.80"
 importance: 1
+joined: 2025.0
 category: Current members
 topics: ["strain-level analysis", "genome alignment", "metagenomics"]
 related_publications: true

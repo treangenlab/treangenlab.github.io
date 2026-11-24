@@ -7,22 +7,24 @@
   if (!box) return;
 
   var repos = (box.getAttribute("data-repos") || "").split(",").filter(Boolean);
-  var CACHE_KEY = "treangenlab-repo-stats-v1";
+  var CACHE_KEY = "treangenlab-repo-stats-v2";
   var MAX_AGE = 7 * 24 * 3600 * 1000;
+  // Only these four language groups are shown; code in any other language is left out of the percentages.
   var GROUPS = [
     { key: "cpp", label: "C/C++", color: "var(--rl-cpp)" },
     { key: "rust", label: "Rust", color: "var(--rl-rust)" },
     { key: "python", label: "Python", color: "var(--rl-python)" },
-    { key: "other", label: "Other", color: "var(--rl-other)" },
+    { key: "java", label: "Java", color: "var(--rl-java)" },
   ];
   // Snapshot from November 2026 (bytes of code, approximate), used when the API is unavailable.
-  var SNAPSHOT = { date: "November 2026", bytes: { cpp: 2350991, rust: 222806, python: 3991959, other: 4044461 } };
+  var SNAPSHOT = { date: "November 2026", bytes: { cpp: 2350991, rust: 222806, python: 3991959, java: 59872 } };
 
   function groupOf(language) {
     if (language === "C" || language === "C++") return "cpp";
     if (language === "Rust") return "rust";
     if (language === "Python") return "python";
-    return "other";
+    if (language === "Java") return "java";
+    return null;
   }
 
   function readCache() {
@@ -70,7 +72,11 @@
     legend.innerHTML = "";
     var angle = 0;
     var parts = [];
-    GROUPS.forEach(function (g) {
+    // Most-used language first, in the pie, the legend and the sentence.
+    var ordered = GROUPS.slice().sort(function (a, b) {
+      return (bytes[b.key] || 0) - (bytes[a.key] || 0);
+    });
+    ordered.forEach(function (g) {
       var pct = (100 * (bytes[g.key] || 0)) / total;
       parts.push(fmt(pct) + " " + g.label);
       var li = document.createElement("li");
@@ -104,7 +110,7 @@
       angle = next;
     });
     box.querySelector(".repo-langs-summary").textContent =
-      "Across the " + repos.length + " repositories below, the code is " + parts.slice(0, 3).join(", ") + " and " + parts[3].replace(" Other", " other languages") + ", measured by bytes of code.";
+      "Across the " + repos.length + " repositories below, counting only C/C++, Rust, Python and Java: " + parts.slice(0, 3).join(", ") + " and " + parts[3] + ", by bytes of code.";
     box.querySelector(".repo-langs-note").textContent = note;
   }
 
@@ -169,10 +175,11 @@
           return getJSON("https://api.github.com/repos/" + full + "/languages");
         })
       ).then(function (langs) {
-        var data = { repos: repos.join(","), time: Date.now(), stars: stars, bytes: { cpp: 0, rust: 0, python: 0, other: 0 } };
+        var data = { repos: repos.join(","), time: Date.now(), stars: stars, bytes: { cpp: 0, rust: 0, python: 0, java: 0 } };
         langs.forEach(function (byLanguage) {
           Object.keys(byLanguage).forEach(function (language) {
-            data.bytes[groupOf(language)] += byLanguage[language];
+            var group = groupOf(language);
+            if (group) data.bytes[group] += byLanguage[language];
           });
         });
         writeCache(data);

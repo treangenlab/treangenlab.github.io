@@ -9,6 +9,7 @@ departed: 2026.1
 sector: academia
 category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
+pub_key: amarshall
 related_publications: true
 ---
 

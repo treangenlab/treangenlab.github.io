@@ -9,6 +9,7 @@ departed: 2025.5
 sector: industry
 category: Lab alumni
 topics: ["genome alignment", "string algorithms", "high-performance computing"]
+pub_key: bkille
 related_publications: true
 ---
 

@@ -351,6 +351,9 @@ filtered_bibtex_keywords:
   [
     abbr,
     abstract,
+    lab_authors,
+    project,
+    theme,
     additional_info,
     altmetric,
     annotation,

@@ -10,6 +10,7 @@ departed: 2024
 sector: academia
 category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
+pub_key: kcurry
 related_publications: false
 ---
 

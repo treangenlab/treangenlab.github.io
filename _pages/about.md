@@ -10,6 +10,10 @@ profile:
   images: # the home page cycles through these photos
     - image: labphoto_2026.jpg
       caption: Treangen Lab at the U.S. Capitol, October 2026
+    - image: labphoto_steps.jpg
+      caption: Treangen Lab at Rice
+    - image: labphoto_lunch.jpg
+      caption: Treangen Lab lunch
     - image: labphoto_2024.jpg
       caption: Treangen Lab at Rice, October 2024
     - image: lab_oes.jpg

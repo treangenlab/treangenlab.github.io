@@ -10,6 +10,7 @@ departed: 2023
 sector: industry
 category: Lab alumni
 topics: ["microbiome analysis", "metagenomics"]
+pub_key: qwang
 related_publications: false
 ---
 

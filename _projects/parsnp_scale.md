@@ -7,8 +7,9 @@ img_anim: assets/anim/projects/parsnp_scale.gif
 importance: 1
 category: Petabyte-scale microbial genomics and metagenomics
 topics: ["genome alignment", "strain-level analysis", "high-performance computing"]
-members: [rluo, rdoughty, ymthant]
-related_publications: true
+members: [rluo, rdoughty]
+project_key: parsnp_scale
+related_publications: false
 ---
 
 ## About the project

@@ -15,7 +15,13 @@ layout: default
   </header>
 
   <article>
+    {% if page.collection == 'profiles' and page.img %}
+      <div class="profile-photo">
+        {% include figure.liquid loading="eager" path=page.img class="img-fluid rounded z-depth-1" alt=page.title %}
+      </div>
+    {% endif %}
     {{ content }}
+    <div style="clear: both;"></div>
   </article>
 
   {% if page.members %}
@@ -34,7 +40,38 @@ layout: default
     </div>
   {% endif %}
 
-  {% if page.related_publications %}
+  {% if page.collection == 'profiles' %}
+    {% assign news_count = 0 %}
+    {% for item in site.data.rice_news %}
+      {% if item.people contains page.slug %}
+        {% assign news_count = news_count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if news_count > 0 %}
+      <h2>In Rice news</h2>
+      <ul class="rice-news">
+        {% for item in site.data.rice_news %}
+          {% if item.people contains page.slug %}
+            <li><a href="{{ item.url }}">{{ item.title }}</a> ({{ item.source }}, {{ item.year }})</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+
+  {% if page.project_key %}
+    <h2>Papers from this project</h2>
+    <div class="publications">
+      {% bibliography --query @*[project ~= {{page.project_key}}] %}
+    </div>
+  {% endif %}
+
+  {% if page.pub_key %}
+    <h2>Papers with the Treangen Lab</h2>
+    <div class="publications">
+      {% bibliography --query @*[lab_authors ~= {{page.pub_key}}] %}
+    </div>
+  {% elsif page.related_publications %}
     <h2>References</h2>
     <div class="publications">
       {% bibliography --cited_in_order %}

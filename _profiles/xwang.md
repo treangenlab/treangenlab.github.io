@@ -9,6 +9,7 @@ departed: 2025.9
 sector: academia
 category: Lab alumni
 topics: ["primer design", "wastewater surveillance", "pathogen detection"]
+pub_key: xwang
 related_publications: true
 ---
 

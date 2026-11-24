@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: Code
+title: code
 description: Treangen lab Github repositories
 nav: true
 nav_order: 4
@@ -40,7 +40,7 @@ Source code for the lab's tools, listed by GitHub stars.
   </div>
   <div class="repo-langs-tip" hidden></div>
 </div>
-<noscript>Across these repositories, code is roughly 38% Python, 22% C/C++, 2% Rust and 38% other languages (November 2026).</noscript>
+<noscript>Across these repositories, counting only C/C++, Rust, Python and Java: roughly 60% Python, 35% C/C++, 3% Rust and 1% Java (November 2026).</noscript>
 
 <div id="repo-list" class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
   {% for repo in site.data.repositories.github_repos %}

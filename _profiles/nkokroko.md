@@ -5,6 +5,7 @@ description: 4th Year Computer Science Ph.D. student, interested in microbiome a
 img: assets/img/natalie4.jpg
 img_focus: "49,32,2.90"
 importance: 4
+joined: 2023.6
 category: Current members
 topics: ["microbiome analysis", "metagenomics"]
 related_publications: true

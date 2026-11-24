@@ -7,7 +7,8 @@ img_anim: assets/anim/projects/dynamite.gif
 importance: 1
 category: Microbiome characterization
 topics: ["microbiome analysis", "strain-level analysis", "metagenomics", "long-read sequencing"]
-members: [rluo, nkokroko, rdoughty, ehuang]
+members: [rluo, rdoughty, nkokroko, ehuang]
+project_key: fund_dynamite
 related_publications: false
 ---
 

@@ -9,6 +9,7 @@ departed: 2026.3
 sector: industry
 category: Lab alumni
 topics: ["genome alignment", "microbiome analysis", "biosecurity"]
+pub_key: mnute
 related_publications: true
 ---
 

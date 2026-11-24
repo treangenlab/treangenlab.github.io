@@ -1,5 +1,5 @@
 // People page: lays out headshots as a honeycomb of hexagons (PI in the center,
-// then current members, then lab alumni) and shows a detail card for the selected person.
+// then current members, then lab alumni) and shows a detail card for the person under the pointer.
 // Without JavaScript the regular list of cards is shown instead.
 (function () {
   var wrap = document.getElementById("people-bubbles");
@@ -89,6 +89,9 @@
     var tall = size * 1.1547;
     var stageHeight = Math.round(2 * maxY * step + tall * 1.3);
     stage.style.height = stageHeight + "px";
+    // Border widths scale with the hexagons so they stay in proportion on phones.
+    stage.style.setProperty("--hex-border", Math.max(1.5, size * 0.043).toFixed(1) + "px");
+    stage.style.setProperty("--hex-border-thin", Math.max(1, size * 0.022).toFixed(1) + "px");
     bubbles.forEach(function (b, i) {
       var p = points[i];
       b.style.width = size + "px";
@@ -147,9 +150,21 @@
       " &rarr;</a></p>";
   }
 
+  // Hovering (or keyboard focus) shows a person's details; clicking opens their profile.
+  // On touch screens there is no hover, so the first tap shows the details and the second opens the profile.
   bubbles.forEach(function (b) {
-    b.addEventListener("click", function () {
+    b.addEventListener("mouseenter", function () {
       select(b);
+    });
+    b.addEventListener("focus", function () {
+      select(b);
+    });
+    b.addEventListener("click", function () {
+      if (b.classList.contains("is-selected")) {
+        window.location.href = b.getAttribute("data-url");
+      } else {
+        select(b);
+      }
     });
   });
 

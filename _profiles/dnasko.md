@@ -10,6 +10,7 @@ departed: 2020
 sector: industry
 category: Lab alumni
 topics: ["pathogen detection", "metagenomics"]
+pub_key: dnasko
 related_publications: false
 ---
 

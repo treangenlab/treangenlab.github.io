@@ -9,6 +9,7 @@ departed: 2026.4
 sector: academia
 category: Lab alumni
 topics: ["long-read sequencing", "microbiome analysis", "wastewater surveillance"]
+pub_key: pkalvapalle
 related_publications: true
 ---
 

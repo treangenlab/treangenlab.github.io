@@ -2,6 +2,7 @@
 layout: page
 permalink: /cv/
 title: Lab PI
+nav_title: PI
 nav: true
 nav_order: 5
 description: Dr. Todd J. Treangen

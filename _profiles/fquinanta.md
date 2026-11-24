@@ -3,8 +3,9 @@ layout: page
 title: Felix Quintana
 description: 5th Year Ph.D. student interested in protein clustering, function prediction, and model assessment.
 img: assets/img/felix4.jpg
+img_focus: "34,33,2.72"
 importance: 4
-category: Graduate Students
+category: Current members
 topics: ["protein function", "machine learning", "synthetic DNA screening"]
 related_publications: true
 ---

@@ -3,8 +3,11 @@ layout: page
 title: Dr. Prashant Kalvapalle
 description: Postdoctoral Scientist at Colorado State University (Khakhar Lab). Former Treangen Lab postdoc and lead developer of somatem.
 img: assets/img/prashant4.jpg
+img_focus: "47,51,1.09"
 importance: 9
-category: Alumni
+departed: 2026.4
+sector: academia
+category: Lab alumni
 topics: ["long-read sequencing", "microbiome analysis", "wastewater surveillance"]
 related_publications: true
 ---

@@ -3,8 +3,11 @@ layout: page
 title: Dr. Bryce Kille
 description: Bioinformatics Scientist @ Illumina, big fan of all things sequence analysis, high-performance computing, and discrete algorithms.
 img: assets/img/bryce4.jpg
+img_focus: "49,36,2.05"
 importance: 1
-category: Alumni
+departed: 2025.5
+sector: industry
+category: Lab alumni
 topics: ["genome alignment", "string algorithms", "high-performance computing"]
 related_publications: true
 ---

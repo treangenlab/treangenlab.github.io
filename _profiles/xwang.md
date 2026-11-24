@@ -3,8 +3,11 @@ layout: page
 title: Dr. Michael X. Wang
 description: Postdoctoral Scientist in the Stadler Lab, Rice University. Lead developer of Olivar and Seqwin.
 img: assets/img/mwang4.jpg
+img_focus: "37,36,2.33"
 importance: 7
-category: Alumni
+departed: 2025.9
+sector: academia
+category: Lab alumni
 topics: ["primer design", "wastewater surveillance", "pathogen detection"]
 related_publications: true
 ---

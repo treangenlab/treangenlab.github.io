@@ -3,8 +3,9 @@ layout: page
 title: Eddy Huang
 description: 5th Year Ph.D. student, interested in Microbiome Analysis, Metagenomics Database, High Performance Computing, and Deep Learning
 img: assets/img/eddy4.jpg
+img_focus: "52,43,2.80"
 importance: 5
-category: Graduate Students
+category: Current members
 topics: ["microbiome analysis", "machine learning", "high-performance computing"]
 related_publications: true
 ---

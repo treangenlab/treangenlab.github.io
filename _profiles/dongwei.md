@@ -3,8 +3,9 @@ layout: page
 title: Dongwei Li
 description: 3rd Year Ph.D. student, interested in machine learning and computational biology.
 img: assets/img/dongwei4.jpg
+img_focus: "37,37,2.04"
 importance: 3
-category: Graduate Students
+category: Current members
 topics: ["machine learning", "primer design"]
 related_publications: true
 ---

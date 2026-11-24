@@ -3,8 +3,11 @@ layout: page
 title: Dr. Austin Marshall
 description: Research Assistant Professor at the University of Florida (Molecular Genetics & Microbiology). Former NLM BMI postdoctoral fellow.
 img: assets/img/amarshall.png
+img_focus: "48,40,1.62"
 importance: 1
-category: Alumni
+departed: 2026.1
+sector: academia
+category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
 related_publications: true
 ---

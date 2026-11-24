@@ -1404,7 +1404,7 @@ html[data-theme="dark"] .repo-langs {
   --rl-other: #8a8a85;
 }
 
-// Keep multi-word navigation labels ("publications & preprints", "Lab PI") on one line
+// Keep multi-word navigation labels ("Lab PI") on one line
 @media (min-width: 1200px) {
   .navbar .navbar-nav .nav-link {
     white-space: nowrap;
@@ -1430,4 +1430,391 @@ html[data-theme="dark"] .repo-langs {
   margin-top: 2.75rem;
   border-left: 5px solid var(--global-theme-color);
   border-bottom: 2px solid var(--global-theme-color);
+}
+
+// People page: honeycomb of headshots
+.people-bubbles {
+  --people-pi: #0076df;
+  --people-current: #1f9d55;
+  --people-departed: #7b4fc9;
+  margin: 0.5rem 0 1.5rem;
+
+  .people-bubbles-stage {
+    position: relative;
+    width: 100%;
+  }
+  .people-bubble {
+    --ring: var(--people-departed);
+    position: absolute;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    --base: 1;
+    transform: translate(-50%, -50%) scale(var(--base));
+    transition:
+      transform 0.25s ease,
+      filter 0.25s ease;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+    z-index: 1;
+    &:hover,
+    &:focus-visible,
+    &.is-selected {
+      transform: translate(-50%, -50%) scale(calc(var(--base) * 1.16));
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+      z-index: 3;
+      outline: none;
+      .people-bubble-name {
+        opacity: 1;
+      }
+    }
+    &.is-selected {
+      z-index: 2;
+    }
+  }
+  .people-bubble[data-category="pi"] {
+    --base: 1.05;
+    --ring: var(--people-pi);
+    --ring-light: #8cc8ff;
+  }
+  .people-bubble[data-category="current-members"] {
+    --base: 1.05;
+    --ring: var(--people-current);
+    --ring-light: #9be8bd;
+  }
+  // Current members: a highlight travels around the border, like a spinner.
+  // A larger gradient square rotates behind the photo; only the border strip of it shows.
+  .people-bubble[data-category="current-members"] .people-bubble-photo::before {
+    content: "";
+    position: absolute;
+    left: -40%;
+    top: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(var(--ring) 0deg, var(--ring) 200deg, #d9ffea 300deg, var(--ring) 360deg);
+    animation: people-spin 2.6s linear infinite;
+  }
+  .people-bubble[data-category="pi"] .people-bubble-inner,
+  .people-bubble[data-category="current-members"] .people-bubble-inner {
+    inset: 6px;
+  }
+  // Lab alumni: thinner border, slightly faded until hovered or selected
+  .people-bubble[data-category="lab-alumni"] {
+    --base: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15)) grayscale(0.2) opacity(0.9);
+    .people-bubble-inner {
+      inset: 3px;
+    }
+    &:hover,
+    &:focus-visible,
+    &.is-selected {
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    }
+  }
+  // Open position ("You here?"): deliberately quiet
+  .people-bubble-open {
+    filter: none;
+    opacity: 0.75;
+    .people-bubble-photo {
+      background: repeating-conic-gradient(var(--global-text-color-light) 0deg 6deg, transparent 6deg 14deg);
+      animation: none;
+    }
+    .people-bubble-inner {
+      inset: 2px;
+      background: var(--global-bg-color);
+    }
+    .people-bubble-initials {
+      color: var(--global-text-color-light);
+      background: transparent;
+      text-align: center;
+      line-height: 1.2;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    &:hover,
+    &:focus-visible,
+    &.is-selected {
+      opacity: 1;
+      filter: none;
+    }
+  }
+  .people-bubble-initials {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--people-departed);
+    background: rgba(123, 79, 201, 0.12);
+  }
+  .people-bubble-photo {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--ring);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    animation: people-float 6s ease-in-out infinite;
+  }
+  .people-bubble-inner {
+    position: absolute;
+    inset: 4px;
+    overflow: hidden;
+    background: var(--global-card-bg-color);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    img {
+      position: absolute;
+      max-width: none;
+    }
+  }
+  .people-bubble:nth-child(3n + 1) .people-bubble-photo {
+    animation-delay: -2s;
+  }
+  .people-bubble:nth-child(3n + 2) .people-bubble-photo {
+    animation-delay: -4s;
+  }
+  .people-bubble-name {
+    position: absolute;
+    left: 50%;
+    top: 92%;
+    transform: translate(-50%, 0);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    background: var(--global-text-color);
+    color: var(--global-bg-color);
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+  .people-bubbles-legend {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--global-text-color);
+    margin: 0.75rem 0;
+    .key {
+      display: inline-block;
+      width: 0.85rem;
+      height: 0.95rem;
+      margin: 0 0.35rem 0 1rem;
+      vertical-align: -0.12rem;
+      background: var(--people-departed);
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    }
+    .key-pi {
+      background: var(--people-pi);
+    }
+    .key-current-members {
+      background: var(--people-current);
+    }
+    .key-lab-alumni {
+      opacity: 0.75;
+    }
+  }
+  .people-detail {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 8px;
+    h3 {
+      margin: 0 0 0.25rem;
+    }
+    p {
+      margin: 0 0 0.5rem;
+    }
+    .people-detail-hint {
+      margin: 0;
+      color: var(--global-text-color-light);
+      text-align: center;
+    }
+  }
+}
+.people-view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  &[hidden] {
+    display: none;
+  }
+  button {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--global-theme-color);
+    background: transparent;
+    color: var(--global-theme-color);
+    font-size: 0.85rem;
+    cursor: pointer;
+    &:first-child {
+      border-radius: 999px 0 0 999px;
+    }
+    &:last-child {
+      border-radius: 0 999px 999px 0;
+      border-left: 0;
+    }
+    &.is-active {
+      background: var(--global-theme-color);
+      color: var(--global-bg-color);
+    }
+  }
+}
+
+// People page: where alumni are now
+.people-sectors-title {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+}
+.alumni-sectors {
+  --sector-academia: #2a78d6;
+  --sector-industry: #eb6834;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  .alumni-sectors-pie {
+    width: 150px;
+    height: 150px;
+    flex: 0 0 auto;
+    path {
+      stroke: var(--global-bg-color);
+      stroke-width: 1.5;
+    }
+  }
+  .alumni-sectors-body {
+    flex: 1 1 260px;
+    min-width: 0;
+  }
+  .alumni-sectors-summary {
+    margin: 0 0 0.5rem;
+  }
+  .alumni-sectors-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.75rem;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+    .swatch-academia {
+      background: var(--sector-academia);
+    }
+    .swatch-industry {
+      background: var(--sector-industry);
+    }
+    .count {
+      font-weight: 600;
+    }
+  }
+  .alumni-sectors-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+}
+html[data-theme="dark"] .alumni-sectors {
+  --sector-academia: #3987e5;
+  --sector-industry: #d95926;
+}
+@keyframes people-float {
+  0%,
+  100% {
+    transform: translateY(-1.5px);
+  }
+  50% {
+    transform: translateY(1.5px);
+  }
+}
+@keyframes people-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .people-bubbles .people-bubble-photo,
+  .people-bubbles .people-bubble[data-category="current-members"] .people-bubble-photo::before {
+    animation: none;
+  }
+}
+
+// Project pages: lab members involved
+.project-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.project-member {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 999px;
+  &:hover {
+    background: var(--global-theme-color);
+    color: var(--global-bg-color) !important;
+    text-decoration: none;
+  }
+}
+
+// Home page: lab photo slideshow
+.lab-slideshow {
+  display: grid;
+  .lab-slide {
+    grid-area: 1 / 1;
+    align-self: start;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    &.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .lab-slide-caption {
+    margin-top: 5px;
+    font-family: monospace;
+    font-size: 0.85rem;
+  }
+  .lab-slide-dots {
+    grid-area: 2 / 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.4rem 0 0.2rem;
+  }
+  .lab-slide-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--global-theme-color);
+    background: transparent;
+    cursor: pointer;
+    &.is-active {
+      background: var(--global-theme-color);
+    }
+  }
+}
+
+// People list view: photos of different shapes are cropped to the same 3:2 frame
+.profiles .card .card-img-top,
+.profiles .card picture img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 25%;
 }

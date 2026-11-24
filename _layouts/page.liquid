@@ -18,6 +18,22 @@ layout: default
     {{ content }}
   </article>
 
+  {% if page.members %}
+    <h2>Lab members on this project</h2>
+    <div class="project-members">
+      {% for member in page.members %}
+        {% assign member_path = '/' | append: member | append: '/' %}
+        {% for person in site.profiles %}
+          {% if person.url contains member_path %}
+            {% if person.category == 'PI' or person.category == 'Current members' %}
+              <a class="project-member" href="{{ person.url | relative_url }}">{{ person.title }}</a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
   {% if page.related_publications %}
     <h2>References</h2>
     <div class="publications">

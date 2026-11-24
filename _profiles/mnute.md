@@ -3,8 +3,11 @@ layout: page
 title: Dr. Michael Nute
 description: Data Scientist at United Airlines. Former Research Scientist in the Treangen Lab
 img: assets/img/mnute4_headshot.jpg
+img_focus: "50,37,2.70"
 importance: 2
-category: Alumni
+departed: 2026.3
+sector: industry
+category: Lab alumni
 topics: ["genome alignment", "microbiome analysis", "biosecurity"]
 related_publications: true
 ---

@@ -3,8 +3,9 @@ layout: page
 title: Natalie Kokroko
 description: 4th Year Computer Science Ph.D. student, interested in microbiome analysis and metagenomics.
 img: assets/img/natalie4.jpg
+img_focus: "49,32,2.90"
 importance: 4
-category: Graduate Students
+category: Current members
 topics: ["microbiome analysis", "metagenomics"]
 related_publications: true
 ---

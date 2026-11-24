@@ -1,10 +1,13 @@
 ---
 layout: page
 title: Anika Patel
-description: Graduate Student (Rice CS)
+description: PhD student in Computer Science at Rice. Former undergraduate researcher in the Treangen Lab
 img: assets/img/anika4.jpg
+img_focus: "50,48,1.98"
 importance: 1
-category: Alumni
+departed: 2025.4
+sector: academia
+category: Lab alumni
 topics: ["microbiome analysis", "machine learning"]
 related_publications: false
 ---

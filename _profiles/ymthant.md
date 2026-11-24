@@ -3,8 +3,10 @@ layout: page
 title: Yin Min Thant
 description: 1st Year Computer Science Ph.D. student, interested in wastewater metagenomics, string algorithms, and petabyte-scale computational methods.
 img: assets/img/yinmin4.jpg
+img_focus: "49,38,1.49"
+hex_swap: bkille
 importance: 7
-category: Graduate Students
+category: Current members
 topics: ["wastewater metagenomics", "string algorithms", "petabyte-scale computational methods"]
 related_publications: false
 ---

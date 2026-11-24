@@ -17,7 +17,23 @@ layout: default
   <article>
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+        {% if page.profile.images %}
+          <div class="lab-slideshow" id="lab-slideshow">
+            {% for slide in page.profile.images %}
+              {% assign slide_path = slide.image | prepend: 'assets/img/' %}
+              <div class="lab-slide{% if forloop.first %} is-active{% endif %}">
+                {% include figure.liquid loading="eager" path=slide_path class="img-fluid z-depth-1 rounded" alt=slide.caption %}
+                <div class="lab-slide-caption">{{ slide.caption }}</div>
+              </div>
+            {% endfor %}
+            <div class="lab-slide-dots">
+              {% for slide in page.profile.images %}
+                <button type="button" class="lab-slide-dot{% if forloop.first %} is-active{% endif %}" aria-label="Show photo {{ forloop.index }}"></button>
+              {% endfor %}
+            </div>
+          </div>
+          <script defer src="{{ '/assets/js/lab-slideshow.js' | relative_url }}"></script>
+        {% elsif page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}

@@ -7,6 +7,7 @@ img_anim: assets/anim/projects/wastewater.gif
 importance: 3
 category: Biosecurity and pathogen detection
 topics: ["wastewater surveillance", "primer design", "pathogen detection"]
+members: [dongwei, ymthant]
 related_publications: false
 ---
 

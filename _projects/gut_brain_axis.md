@@ -7,6 +7,7 @@ img_anim: assets/anim/projects/ad_tbi.gif
 importance: 2
 category: Microbiome characterization
 topics: ["microbiome analysis", "long-read sequencing"]
+members: [nkokroko]
 related_publications: true
 ---
 

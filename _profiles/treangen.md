@@ -3,6 +3,7 @@ layout: page
 title: Dr. Todd J. Treangen
 description: Associate Professor, Department of Computer Science (primary), Bioengineering, Ken Kennedy Institute, Rice University
 img: assets/img/treangen4_headshot.jpg
+img_focus: "50,35,2.20"
 importance: 1
 category: PI
 topics: ["biosecurity", "pathogen detection", "metagenomics", "microbiome analysis", "genome alignment"]

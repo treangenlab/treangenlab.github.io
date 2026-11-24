@@ -7,6 +7,7 @@ img_anim: assets/anim/projects/shf.gif
 importance: 2
 category: Petabyte-scale microbial genomics and metagenomics
 topics: ["string algorithms", "high-performance computing"]
+members: [ehuang]
 related_publications: false
 ---
 

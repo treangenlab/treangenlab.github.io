@@ -3,8 +3,9 @@ layout: page
 title: Ryan Doughty
 description: 3rd Year Computer Science Ph.D. student, interested in string algorithms, metagenomics, and virome analysis. NLM Biomedical Informatics predoctoral fellow.
 img: assets/img/ryan4.jpg
+img_focus: "50,37,2.74"
 importance: 2
-category: Graduate Students
+category: Current members
 topics: ["string algorithms", "viral genomics", "metagenomics", "biosecurity"]
 related_publications: true
 ---

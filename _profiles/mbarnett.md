@@ -3,8 +3,11 @@ layout: page
 title: R. Matt Barnett
 description: Senior Software Engineer at Signature Science. Former Software Engineer in the Treangen Lab
 img: assets/img/barnett4.jpg
+img_focus: "55,36,1.74"
 importance: 3
-category: Alumni
+departed: 2026.2
+sector: industry
+category: Lab alumni
 topics: ["genome alignment", "variant calling"]
 related_publications: false
 ---

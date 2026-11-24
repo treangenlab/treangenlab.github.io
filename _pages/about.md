@@ -31,7 +31,7 @@ Welcome to the Treangen lab website, a bioinformatics and computational biology 
 
 <div id="recruiting" style="overflow: hidden; margin: 1.25rem 0; padding: 1rem 1.25rem; border-left: 5px solid var(--global-theme-color); border-radius: 6px; background-color: rgba(128, 128, 128, 0.12);">
   <p style="margin: 0 0 0.35rem 0; font-size: 1.15rem; font-weight: 600; color: var(--global-theme-color);">We're recruiting!</p>
-  <p style="margin: 0;">The Treangen Lab is actively recruiting PhD students, postdoctoral scientists, and AI/software engineers interested in bioinformatics and computational biology. To learn more about joining the lab, contact Todd Treangen at <a href="mailto:treangen@rice.edu">treangen@rice.edu</a>.</p>
+  <p style="margin: 0;">The Treangen Lab has three open positions: a <strong>PhD student</strong>, a <strong>Postdoctoral Scientist</strong> and a <strong>Research Engineer</strong>. <a href="{{ '/news/hiring_2026/' | relative_url }}">Read about the open positions</a>, or contact Todd Treangen at <a href="mailto:treangen@rice.edu">treangen@rice.edu</a>.</p>
 </div>
 
 Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to: (i) identifying and characterizing known and novel microbial pathogens, (ii) population scale microbial genome variation and evolution, and (iii) studying microbial communities across time and space in the environment and human-host-associated microbiomes.

@@ -5,7 +5,7 @@ description: "NSF · PI · A computational platform for finding pathogens that a
 img: assets/img/projects/career.png
 img_anim: assets/anim/projects/career.gif
 importance: 1
-category: Biosecurity and pathogen detection
+category: Biosecurity and Synthetic DNA Screening
 topics: ["biosecurity", "pathogen detection", "synthetic DNA screening", "genome alignment"]
 members: [dongwei]
 project_key: fund_career

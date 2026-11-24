@@ -4,8 +4,8 @@ title: "MIM: rules of microbial cooperation"
 description: "NSF · PI · Stochastic graph grammars for hot spring microbial mats"
 img: assets/img/projects/mim.png
 img_anim: assets/anim/projects/mim.gif
-importance: 4
-category: Microbiome characterization
+importance: 3
+category: Microbiome Profiling and Metagenomics
 topics: ["microbiome analysis", "metagenomics"]
 members: [nkokroko]
 project_key: fund_mim

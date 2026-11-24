@@ -1498,6 +1498,17 @@ html[data-theme="dark"] .repo-langs {
   .people-bubble[data-category="current-members"] .people-bubble-inner {
     inset: var(--hex-border, 6px);
   }
+  // Lab alumni who completed a PhD in the lab: a shimmer sweeps across the border
+  .people-bubble[data-phd] {
+    --ring-light: #d9ccff;
+    .people-bubble-photo {
+      background: linear-gradient(120deg, var(--ring) 0%, var(--ring) 38%, var(--ring-light) 50%, var(--ring) 62%, var(--ring) 100%);
+      background-size: 300% 300%;
+      animation:
+        people-float 6s ease-in-out infinite,
+        people-shimmer 3.2s linear infinite;
+    }
+  }
   // Lab alumni: thinner border, slightly faded until hovered or selected
   .people-bubble[data-category="lab-alumni"] {
     --base: 0.9;
@@ -1612,6 +1623,17 @@ html[data-theme="dark"] .repo-langs {
     }
     .key-lab-alumni {
       opacity: 0.75;
+    }
+    .key-future {
+      position: relative;
+      background: repeating-conic-gradient(var(--global-text-color-light) 0deg 14deg, transparent 14deg 30deg);
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background: var(--global-bg-color);
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
     }
   }
   .people-detail {
@@ -1740,6 +1762,14 @@ html[data-theme="dark"] .alumni-sectors {
     transform: translateY(1.5px);
   }
 }
+@keyframes people-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 @keyframes people-spin {
   to {
     transform: rotate(360deg);
@@ -1828,6 +1858,36 @@ html[data-theme="dark"] .alumni-sectors {
 }
 
 // Papers page: project theme tag under each title
+.publications ol.bibliography li > .row {
+  flex-wrap: nowrap;
+  > .col {
+    min-width: 0;
+  }
+}
+.publications .paper-icon {
+  flex: 0 0 72px;
+  width: 72px;
+  padding-right: 0;
+  img {
+    width: 56px;
+    height: 56px;
+    display: block;
+  }
+}
+.publications .paper-theme .topic-tag {
+  &.theme-biosecurity {
+    border-color: #2a78d6;
+  }
+  &.theme-pathogen {
+    border-color: #eb6834;
+  }
+  &.theme-microbiome {
+    border-color: #1baf7a;
+  }
+  &.theme-algorithms {
+    border-color: #6250d6;
+  }
+}
 .publications .paper-theme {
   margin: 0.15rem 0 0.2rem;
   .topic-tag {
@@ -1851,8 +1911,9 @@ html[data-theme="dark"] .alumni-sectors {
 // Papers page: scatter plot of papers by application and algorithm focus
 .paper-map {
   --pm-bio: #2a78d6;
-  --pm-peta: #eb6834;
+  --pm-path: #eb6834;
   --pm-micro: #1baf7a;
+  --pm-algo: #6250d6;
   --pm-other: #8e8e88;
   margin: 0 0 2rem;
 
@@ -1882,7 +1943,15 @@ html[data-theme="dark"] .alumni-sectors {
   .pm-grid {
     stroke: var(--global-divider-color);
     stroke-width: 1;
-    stroke-dasharray: 3 4;
+  }
+  .pm-threshold {
+    stroke: var(--global-text-color-light);
+    stroke-width: 1;
+    stroke-dasharray: 5 4;
+  }
+  .pm-tick {
+    fill: var(--global-text-color-light);
+    font-size: 11px;
   }
   .pm-axis {
     fill: var(--global-text-color);
@@ -1906,11 +1975,21 @@ html[data-theme="dark"] .alumni-sectors {
   }
   .pm-dot {
     cursor: pointer;
+    &.is-faint .pm-mark {
+      fill-opacity: 0.4;
+    }
+    &.is-faint:hover .pm-mark,
+    &.is-faint.is-selected .pm-mark {
+      fill-opacity: 1;
+    }
     &.t-bio .pm-mark {
       fill: var(--pm-bio);
     }
-    &.t-peta .pm-mark {
-      fill: var(--pm-peta);
+    &.t-path .pm-mark {
+      fill: var(--pm-path);
+    }
+    &.t-algo .pm-mark {
+      fill: var(--pm-algo);
     }
     &.t-micro .pm-mark {
       fill: var(--pm-micro);
@@ -1961,8 +2040,11 @@ html[data-theme="dark"] .alumni-sectors {
       &.t-bio {
         background: var(--pm-bio);
       }
-      &.t-peta {
-        background: var(--pm-peta);
+      &.t-path {
+        background: var(--pm-path);
+      }
+      &.t-algo {
+        background: var(--pm-algo);
       }
       &.t-micro {
         background: var(--pm-micro);
@@ -1980,7 +2062,8 @@ html[data-theme="dark"] .alumni-sectors {
 }
 html[data-theme="dark"] .paper-map {
   --pm-bio: #3987e5;
-  --pm-peta: #d95926;
+  --pm-path: #d95926;
   --pm-micro: #199e70;
+  --pm-algo: #9085e9;
   --pm-other: #8a8a85;
 }

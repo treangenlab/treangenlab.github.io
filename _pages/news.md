@@ -22,7 +22,7 @@ nav_order: 6
   {% endif %}
   <tr>
     <th scope="row" style="width: 20%">
-      {% if item.approx_date %}{{ item.date | date: "%b %Y" }}{% else %}{{ item.date | date: "%b %d, %Y" }}{% endif %}
+      {% if item.year_only %}{{ item.date | date: "%Y" }}{% elsif item.approx_date %}{{ item.date | date: "%b %Y" }}{% else %}{{ item.date | date: "%b %d, %Y" }}{% endif %}
     </th>
     <td>
       {% if item.inline %}

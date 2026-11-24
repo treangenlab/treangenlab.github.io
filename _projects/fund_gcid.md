@@ -4,8 +4,8 @@ title: "TMC Genomic Center for Infectious Diseases"
 description: "NIH NIAID · Co-Investigator · Genomics of hosts and microbes in infection"
 img: assets/img/projects/gcid.png
 img_anim: assets/anim/projects/gcid.gif
-importance: 2
-category: Biosecurity and pathogen detection
+importance: 1
+category: Pathogen Genomics and Wastewater Surveillance
 topics: ["pathogen detection", "strain-level analysis", "viral genomics"]
 members: [rluo, rdoughty, nkokroko]
 project_key: fund_gcid

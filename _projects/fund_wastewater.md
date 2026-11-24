@@ -4,8 +4,8 @@ title: "Houston Wastewater Center of Excellence"
 description: "CDC · Co-Investigator · Wastewater monitoring for pathogens across Houston"
 img: assets/img/projects/wastewater.png
 img_anim: assets/anim/projects/wastewater.gif
-importance: 3
-category: Biosecurity and pathogen detection
+importance: 2
+category: Pathogen Genomics and Wastewater Surveillance
 topics: ["wastewater surveillance", "primer design", "pathogen detection"]
 members: [ymthant]
 project_key: fund_wastewater

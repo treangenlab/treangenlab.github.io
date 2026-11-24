@@ -7,6 +7,7 @@ img_focus: "37,36,2.33"
 importance: 7
 departed: 2025.9
 sector: academia
+phd_alum: true
 category: Lab alumni
 topics: ["primer design", "wastewater surveillance", "pathogen detection"]
 pub_key: xwang

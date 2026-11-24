@@ -6,8 +6,9 @@ img: assets/img/alum_nsapoval.jpg
 img_focus: "55,47,1.09"
 initials: NS
 importance: 22
-departed: 2024.5
+departed: 2024.25
 sector: academia
+phd_alum: true
 category: Lab alumni
 topics: ["metagenomics", "machine learning", "viral genomics"]
 pub_key: nsapoval

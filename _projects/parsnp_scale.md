@@ -5,7 +5,7 @@ description: "Parsnp2 and related tools · Comparing microbial genomes and metag
 img: assets/img/projects/parsnp_scale.png
 img_anim: assets/anim/projects/parsnp_scale.gif
 importance: 1
-category: Petabyte-scale microbial genomics and metagenomics
+category: Scalable Algorithms and AI for Microbial Genomics
 topics: ["genome alignment", "strain-level analysis", "high-performance computing"]
 members: [rluo, rdoughty]
 project_key: parsnp_scale

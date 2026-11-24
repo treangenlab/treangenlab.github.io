@@ -7,6 +7,7 @@ img_focus: "49,36,2.05"
 importance: 1
 departed: 2025.5
 sector: industry
+phd_alum: true
 category: Lab alumni
 topics: ["genome alignment", "string algorithms", "high-performance computing"]
 pub_key: bkille

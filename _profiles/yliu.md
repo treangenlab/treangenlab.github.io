@@ -6,8 +6,9 @@ img: assets/img/alum_yliu.jpg
 img_focus: "49,46,1.36"
 initials: YL
 importance: 23
-departed: 2024.2
+departed: 2024.27
 sector: academia
+phd_alum: true
 category: Lab alumni
 topics: ["metagenomics", "wastewater surveillance", "viral genomics"]
 pub_key: yliu

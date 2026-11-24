@@ -6,8 +6,9 @@ img: assets/img/alum_kcurry.jpg
 img_focus: "48,34,2.20"
 initials: KC
 importance: 21
-departed: 2024
+departed: 2024.26
 sector: academia
+phd_alum: true
 category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
 pub_key: kcurry

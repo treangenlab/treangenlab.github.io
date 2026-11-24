@@ -5,7 +5,7 @@ description: "NIH NIA · Co-Investigator · With the Villapol Lab at Houston Met
 img: assets/img/projects/ad_tbi.png
 img_anim: assets/anim/projects/ad_tbi.gif
 importance: 2
-category: Microbiome characterization
+category: Microbiome Profiling and Metagenomics
 topics: ["microbiome analysis", "long-read sequencing"]
 project_key: gut_brain_axis
 related_publications: false

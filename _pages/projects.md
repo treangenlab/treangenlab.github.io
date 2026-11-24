@@ -5,7 +5,7 @@ permalink: /projects/
 description: Research themes and active projects in the Treangen lab
 nav: true
 nav_order: 2
-display_categories: ["Biosecurity and pathogen detection", "Petabyte-scale microbial genomics and metagenomics", "Microbiome characterization", "Great Horned Owl “Sammy” sequencing and assembly project"]
+display_categories: ["Biosecurity and Synthetic DNA Screening", "Pathogen Genomics and Wastewater Surveillance", "Microbiome Profiling and Metagenomics", "Scalable Algorithms and AI for Microbial Genomics", "Great Horned Owl “Sammy” sequencing and assembly project"]
 horizontal: false
 ---
 

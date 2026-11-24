@@ -15,7 +15,7 @@ horizontal: false
   <button type="button" data-view="grid">Grid view</button>
 </div>
 <div id="people-bubbles" class="people-bubbles" hidden>
-  <div class="people-bubbles-stage">
+  <div class="people-bubbles-stage" data-open-below="nkokroko,ehuang" data-open-left="nsapoval" data-open-right="yliu">
     {% for category in page.display_categories %}
       {% assign members = site.profiles | where: "category", category | sort: "importance" %}
       {% if category == "Lab alumni" %}
@@ -35,6 +35,7 @@ horizontal: false
           data-slug="{{ person.url | split: '/' | last }}"
           {% if person.hex_swap %}data-swap="{{ person.hex_swap }}"{% endif %}
           data-focus="{{ person.img_focus | default: '50,35,1.8' }}"
+          {% if person.phd_alum %}data-phd="true"{% endif %}
           aria-label="{{ person.title | escape }}"
         >
           <span class="people-bubble-photo">
@@ -59,25 +60,61 @@ horizontal: false
       type="button"
       class="people-bubble people-bubble-open"
       data-category="open"
-      data-below="nkokroko,ehuang"
-      data-name="You here?"
-      data-description="Todd is recruiting a PhD student to join the Treangen Lab."
+      data-name="Open position: PhD student"
+      data-description="The Treangen Lab is hiring a PhD student. This could be you."
       data-topics=""
-      data-url="{{ '/#recruiting' | relative_url }}"
-      data-link-text="Read the recruiting note"
-      aria-label="Open position: recruiting a PhD student"
+      data-url="{{ '/news/hiring_2026/' | relative_url }}"
+      data-link-text="About the open positions"
+      aria-label="Open position: PhD student"
     >
       <span class="people-bubble-photo">
         <span class="people-bubble-inner">
-          <span class="people-bubble-initials">You<br>here?</span>
+          <span class="people-bubble-initials">PhD<br>student</span>
         </span>
       </span>
-      <span class="people-bubble-name">Recruiting a PhD student</span>
+      <span class="people-bubble-name">Open position</span>
+    </button>
+    <button
+      type="button"
+      class="people-bubble people-bubble-open"
+      data-category="open"
+      data-name="Open position: Postdoctoral Scientist"
+      data-description="The Treangen Lab is hiring a Postdoctoral Scientist. This could be you."
+      data-topics=""
+      data-url="{{ '/news/hiring_2026/' | relative_url }}"
+      data-link-text="About the open positions"
+      aria-label="Open position: Postdoctoral Scientist"
+    >
+      <span class="people-bubble-photo">
+        <span class="people-bubble-inner">
+          <span class="people-bubble-initials">Postdoctoral<br>Scientist</span>
+        </span>
+      </span>
+      <span class="people-bubble-name">Open position</span>
+    </button>
+    <button
+      type="button"
+      class="people-bubble people-bubble-open"
+      data-category="open"
+      data-name="Open position: Research Engineer"
+      data-description="The Treangen Lab is hiring a Research Engineer. This could be you."
+      data-topics=""
+      data-url="{{ '/news/hiring_2026/' | relative_url }}"
+      data-link-text="About the open positions"
+      aria-label="Open position: Research Engineer"
+    >
+      <span class="people-bubble-photo">
+        <span class="people-bubble-inner">
+          <span class="people-bubble-initials">Research<br>Engineer</span>
+        </span>
+      </span>
+      <span class="people-bubble-name">Open position</span>
     </button>
   </div>
   <p class="people-bubbles-legend">
     <span class="key key-pi"></span>PI <span class="key key-current-members"></span>Current members
-    <span class="key key-lab-alumni"></span>Lab alumni
+    <span class="key key-lab-alumni"></span>Lab alumni (PhD graduates shimmer)
+    <span class="key key-future"></span>Future members
   </p>
   <div id="people-detail" class="people-detail" aria-live="polite">
     <p class="people-detail-hint">Hover over a photo for details; click to open the profile.</p>

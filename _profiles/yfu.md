@@ -6,8 +6,9 @@ img: assets/img/alum_yfu.jpg
 img_focus: "50,35,1.26"
 initials: YF
 importance: 24
-departed: 2023.5
+departed: 2023.9
 sector: academia
+phd_alum: true
 category: Lab alumni
 topics: ["long-read sequencing", "genome alignment"]
 pub_key: yfu

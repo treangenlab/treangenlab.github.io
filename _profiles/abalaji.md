@@ -6,8 +6,9 @@ img: assets/img/alum_abalaji.jpg
 img_focus: "60,31,1.43"
 initials: AB
 importance: 20
-departed: 2022
+departed: 2022.94
 sector: industry
+phd_alum: true
 category: Lab alumni
 topics: ["pathogen detection", "metagenomics", "machine learning"]
 pub_key: abalaji

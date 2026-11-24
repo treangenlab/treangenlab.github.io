@@ -44,13 +44,34 @@
     </div>
   {% endif %}
 
+  {% unless site.enable_publication_thumbnails %}
+    {% case entry.theme %}
+      {% when 'Biosecurity and Synthetic DNA Screening' %}
+        {% assign paper_icon = 'biosecurity' %}
+      {% when 'Pathogen Genomics and Wastewater Surveillance' %}
+        {% assign paper_icon = 'pathogen' %}
+      {% when 'Microbiome Profiling and Metagenomics' %}
+        {% assign paper_icon = 'microbiome' %}
+      {% when 'Scalable Algorithms and AI for Microbial Genomics' %}
+        {% assign paper_icon = 'algorithms' %}
+      {% else %}
+        {% assign paper_icon = 'other' %}
+    {% endcase %}
+    <div class="col-auto paper-icon">
+      <picture>
+        <source srcset="{{ '/assets/anim/papers/' | append: paper_icon | append: '.png' | relative_url }}" media="(prefers-reduced-motion: reduce)">
+        <img src="{{ '/assets/anim/papers/' | append: paper_icon | append: '.gif' | relative_url }}" width="56" height="56" alt="" loading="lazy">
+      </picture>
+    </div>
+  {% endunless %}
+
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     {% if entry.theme %}
       <div class="topic-tags paper-theme">
-        <a class="topic-tag" href="{{ '/projects/' | relative_url }}#{{ entry.theme | uri_escape }}" title="Project theme">{{ entry.theme }}</a>
+        <a class="topic-tag theme-{{ paper_icon }}" href="{{ '/projects/' | relative_url }}#{{ entry.theme | uri_escape }}" title="Research area">{{ entry.theme }}</a>
       </div>
     {% endif %}
     <!-- Author -->

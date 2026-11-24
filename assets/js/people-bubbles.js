@@ -25,13 +25,19 @@
   });
 
   // People take points in page order (PI, current members, alumni by departure date).
-  var open = stage.querySelector(".people-bubble-open");
+  var opens = Array.prototype.slice.call(stage.querySelectorAll(".people-bubble-open"));
   var people = bubbles.filter(function (b) {
-    return b !== open;
+    return opens.indexOf(b) < 0;
   });
   function indexOfSlug(slug) {
     for (var i = 0; i < people.length; i++) if (people[i].getAttribute("data-slug") === slug) return i;
     return -1;
+  }
+  function pointAt(x, y) {
+    for (var i = 0; i < lattice.length; i++) {
+      if (Math.abs(lattice[i].x - x) < 0.01 && Math.abs(lattice[i].y - y) < 0.01) return lattice[i];
+    }
+    return null;
   }
   function assign(available) {
     var pts = available.slice(0, people.length);
@@ -47,30 +53,42 @@
     return pts;
   }
   var points = assign(lattice);
-  if (open) {
-    // The open-position hexagon sits directly below the two people named in data-below.
-    var names = (open.getAttribute("data-below") || "").split(",");
+  if (opens.length) {
+    // Open positions sit side by side in the row directly below the two people named in data-open-below,
+    // centered under them. The people named in data-open-left and data-open-right flank the group.
+    var names = (stage.getAttribute("data-open-below") || "").split(",");
     var a = points[indexOfSlug(names[0])];
     var b2 = points[indexOfSlug(names[1])];
-    var target = null;
+    var targets = [];
     if (a && b2) {
       var tx = (a.x + b2.x) / 2;
       var ty = Math.max(a.y, b2.y) + 0.866;
-      lattice.forEach(function (p) {
-        if (Math.abs(p.x - tx) < 0.01 && Math.abs(p.y - ty) < 0.01) target = p;
-      });
+      var first = tx - (opens.length - 1) / 2;
+      for (var k = 0; k < opens.length; k++) targets.push(pointAt(first + k, ty));
+      if (targets.indexOf(null) >= 0) targets = [];
     }
-    if (target) {
+    if (targets.length) {
       points = assign(
         lattice.filter(function (p) {
-          return p !== target;
+          return targets.indexOf(p) < 0;
         })
       );
+      [
+        [stage.getAttribute("data-open-left"), targets[0].x - 1],
+        [stage.getAttribute("data-open-right"), targets[targets.length - 1].x + 1],
+      ].forEach(function (pair) {
+        var who = indexOfSlug(pair[0] || "");
+        var want = pointAt(pair[1], targets[0].y);
+        if (who < 0 || !want) return;
+        var holder = points.indexOf(want);
+        if (holder >= 0) points[holder] = points[who];
+        points[who] = want;
+      });
     } else {
-      target = lattice[people.length];
+      targets = lattice.slice(people.length, people.length + opens.length);
     }
-    bubbles = people.concat([open]);
-    points.push(target);
+    bubbles = people.concat(opens);
+    points = points.concat(targets);
   }
   var maxX = 0,
     maxY = 0;
@@ -102,7 +120,7 @@
       var f = (b.getAttribute("data-focus") || "50,35,1.8").split(",").map(parseFloat);
       var img = b.querySelector("img");
       if (!img) {
-        b.querySelector(".people-bubble-initials").style.fontSize = size * (b === open ? 0.14 : 0.3) + "px";
+        b.querySelector(".people-bubble-initials").style.fontSize = size * (opens.indexOf(b) >= 0 ? 0.118 : 0.3) + "px";
         return;
       }
       var h = tall * f[2] * 0.92;

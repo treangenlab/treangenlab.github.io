@@ -1,4 +1,4 @@
-// Papers page: scatter plot of papers by application focus (x) and algorithm focus (y).
+// Papers page: volcano-style plot of papers, theory-leaning on the left and applied on the right.
 // Scores come from the app_score and algo_score fields (0 to 10) of each BibTeX entry.
 (function () {
   var box = document.getElementById("paper-map");
@@ -16,9 +16,10 @@
   }
 
   var THEMES = [
-    { name: "Biosecurity and pathogen detection", cls: "t-bio" },
-    { name: "Petabyte-scale microbial genomics and metagenomics", cls: "t-peta" },
-    { name: "Microbiome characterization", cls: "t-micro" },
+    { name: "Biosecurity and Synthetic DNA Screening", cls: "t-bio" },
+    { name: "Pathogen Genomics and Wastewater Surveillance", cls: "t-path" },
+    { name: "Microbiome Profiling and Metagenomics", cls: "t-micro" },
+    { name: "Scalable Algorithms and AI for Microbial Genomics", cls: "t-algo" },
     { name: "", label: "Other", cls: "t-other" },
   ];
   function themeOf(p) {
@@ -26,6 +27,12 @@
     return THEMES[THEMES.length - 1];
   }
 
+  // Volcano-plot layout. Each paper has an application score and an algorithm score (0 to 10).
+  //   x = application score minus algorithm score: theory-leaning papers fall left, applied papers right.
+  //   y = the larger of the two scores: how pronounced the paper's main focus is.
+  // The larger score can never be smaller than the difference, so the points fan out in a V, as in a volcano plot.
+  // Papers beyond both dashed thresholds (clearly leaning one way, with a strong main focus) are drawn solid;
+  // the rest are drawn fainter, like the non-significant points of a volcano plot.
   var svg = box.querySelector("svg");
   var tip = box.querySelector(".paper-map-tip");
   var detail = box.querySelector(".paper-map-detail");
@@ -38,29 +45,47 @@
     B = 70;
   var PW = W - L - R,
     PH = H - T - B;
+  var XMAX = 10.5,
+    YMIN = 4,
+    YMAX = 10.4;
+  var BAND = 2; // papers within this difference count as balanced
+  var STRONG = 7.5; // main-focus score above which a paper counts as strongly focused
   function el(name, attrs, text) {
     var n = document.createElementNS(NS, name);
     for (var k in attrs) n.setAttribute(k, attrs[k]);
     if (text != null) n.textContent = text;
     return n;
   }
-  // Scores run 0 to 10; a little padding keeps the dots off the frame.
-  function unit(v) {
-    return 0.04 + 0.92 * (Math.max(0, Math.min(10, v)) / 10);
-  }
   function sx(v) {
-    return L + unit(v) * PW;
+    return L + ((Math.max(-XMAX, Math.min(XMAX, v)) + XMAX) / (2 * XMAX)) * PW;
   }
   function sy(v) {
-    return T + PH - unit(v) * PH;
+    return T + PH - ((Math.max(YMIN, Math.min(YMAX, v)) - YMIN) / (YMAX - YMIN)) * PH;
   }
 
-  // Frame and mid-lines (corner labels are added last so they stay readable over the dots)
   svg.appendChild(el("rect", { x: L, y: T, width: PW, height: PH, class: "pm-frame" }));
-  svg.appendChild(el("line", { x1: sx(5), y1: T, x2: sx(5), y2: T + PH, class: "pm-grid" }));
-  svg.appendChild(el("line", { x1: L, y1: sy(5), x2: L + PW, y2: sy(5), class: "pm-grid" }));
-  svg.appendChild(el("text", { x: L + PW / 2, y: H - 14, "text-anchor": "middle", class: "pm-axis" }, "Less application / biology oriented  →  more"));
-  svg.appendChild(el("text", { x: 16, y: T + PH / 2, "text-anchor": "middle", transform: "rotate(-90 16 " + (T + PH / 2) + ")", class: "pm-axis" }, "Less theory / algorithms oriented  →  more"));
+  [-10, -5, 0, 5, 10].forEach(function (v) {
+    svg.appendChild(el("line", { x1: sx(v), y1: T + PH, x2: sx(v), y2: T + PH + 5, class: "pm-grid" }));
+    svg.appendChild(el("text", { x: sx(v), y: T + PH + 18, "text-anchor": "middle", class: "pm-tick" }, v > 0 ? "+" + v : String(v)));
+  });
+  [4, 6, 8, 10].forEach(function (v) {
+    svg.appendChild(el("line", { x1: L - 5, y1: sy(v), x2: L, y2: sy(v), class: "pm-grid" }));
+    svg.appendChild(el("text", { x: L - 8, y: sy(v) + 4, "text-anchor": "end", class: "pm-tick" }, String(v)));
+  });
+  // Dashed threshold lines, as on a volcano plot
+  [-BAND, BAND].forEach(function (v) {
+    svg.appendChild(el("line", { x1: sx(v), y1: T, x2: sx(v), y2: T + PH, class: "pm-threshold" }));
+  });
+  svg.appendChild(el("line", { x1: L, y1: sy(STRONG), x2: L + PW, y2: sy(STRONG), class: "pm-threshold" }));
+  [
+    [L, "start", "Theory / algorithms leaning"],
+    [sx(0), "middle", "Balanced"],
+    [L + PW, "end", "Applied / biology leaning"],
+  ].forEach(function (c) {
+    svg.appendChild(el("text", { x: c[0], y: T - 10, "text-anchor": c[1], class: "pm-corner" }, c[2]));
+  });
+  svg.appendChild(el("text", { x: L + PW / 2, y: H - 14, "text-anchor": "middle", class: "pm-axis" }, "← more theory / algorithms      (application score − algorithm score)      more applied / biology →"));
+  svg.appendChild(el("text", { x: 14, y: T + PH / 2, "text-anchor": "middle", transform: "rotate(-90 14 " + (T + PH / 2) + ")", class: "pm-axis" }, "Strength of main focus (higher of the two scores)"));
 
   // Small deterministic offset so papers with the same scores do not sit exactly on top of each other.
   function jitter(key, salt) {
@@ -101,15 +126,11 @@
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener");
       }
-      // The small offset never moves a paper across a mid-line into another quadrant.
-      function nudge(v, j) {
-        var w = v + j;
-        if (v >= 5 && w < 5.15) w = 5.15;
-        if (v < 5 && w > 4.85) w = 4.85;
-        return w;
-      }
-      var cx = sx(nudge(p.app, jitter(p.key, 1))),
-        cy = sy(nudge(p.algo, jitter(p.key, 7)));
+      var diff = p.app - p.algo,
+        main = Math.max(p.app, p.algo);
+      var cx = sx(diff + jitter(p.key, 1)),
+        cy = sy(main + jitter(p.key, 7) * 0.5);
+      if (Math.abs(diff) < BAND || main < STRONG) link.setAttribute("class", link.getAttribute("class") + " is-faint");
       link.appendChild(el("circle", { cx: cx, cy: cy, r: 14, class: "pm-hit" }));
       link.appendChild(el("circle", { cx: cx, cy: cy, r: 5.5, class: "pm-mark" }));
       link.addEventListener("mouseenter", function (ev) {
@@ -130,15 +151,6 @@
       });
       svg.appendChild(link);
     });
-
-  // Quadrant labels sit outside the frame so they never cover a dot.
-  [
-    [L, T - 10, "start", "Mostly theory / algorithms"],
-    [L + PW, T - 10, "end", "Algorithms + applications"],
-    [L + PW, T + PH + 18, "end", "Mostly applications"],
-  ].forEach(function (c) {
-    svg.appendChild(el("text", { x: c[0], y: c[1], "text-anchor": c[2], class: "pm-corner" }, c[3]));
-  });
 
   var legend = box.querySelector(".paper-map-legend");
   THEMES.forEach(function (t) {

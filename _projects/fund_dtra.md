@@ -4,8 +4,8 @@ title: "In-field pathogen detection"
 description: "DTRA · Co-Investigator · Characterizing pathogens at the point of need"
 img: assets/img/projects/dtra.png
 img_anim: assets/anim/projects/dtra.gif
-importance: 4
-category: Biosecurity and pathogen detection
+importance: 2
+category: Biosecurity and Synthetic DNA Screening
 topics: ["pathogen detection", "biosecurity", "long-read sequencing"]
 members: [rdoughty, fquinanta]
 project_key: fund_dtra

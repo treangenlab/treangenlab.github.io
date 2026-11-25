@@ -2318,3 +2318,72 @@ html[data-theme="dark"] {
 .people-bubbles {
   overflow-x: clip;
 }
+
+// Home page turkey: extra hiding places are raised above it.
+.chase-cover {
+  position: relative;
+  z-index: 2;
+}
+#recruiting.chase-cover {
+  // solid backing under the box's translucent tint, so the turkey does not show through
+  background-color: var(--global-bg-color) !important;
+  background-image: linear-gradient(rgba(128, 128, 128, 0.12), rgba(128, 128, 128, 0.12));
+}
+
+// Papers plot: zoom buttons, panning, and crowded marks that spread apart on hover
+.paper-map {
+  .paper-map-zoom {
+    position: absolute;
+    top: 3.6%;
+    right: 3%;
+    display: flex;
+    gap: 4px;
+    button {
+      min-width: 28px;
+      height: 28px;
+      padding: 0 0.4rem;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 4px;
+      background: var(--global-bg-color);
+      color: var(--global-text-color);
+      font-size: 0.85rem;
+      line-height: 1;
+      cursor: pointer;
+      &:hover:not(:disabled) {
+        border-color: var(--global-theme-color);
+        color: var(--global-theme-color);
+      }
+      &:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+    }
+  }
+  .paper-map-plot svg {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  svg.is-zoomed {
+    cursor: grab;
+    touch-action: none;
+  }
+  svg.is-dragging {
+    cursor: grabbing;
+  }
+  .pm-dot {
+    transition:
+      transform 0.18s ease,
+      opacity 0.15s ease;
+  }
+  svg.is-dragging .pm-dot {
+    transition: none;
+  }
+  .pm-plot.is-spread .pm-dot:not(.in-spread) {
+    opacity: 0.18;
+    pointer-events: none;
+  }
+  .pm-leader {
+    stroke: var(--global-text-color-light);
+    stroke-width: 1;
+  }
+}

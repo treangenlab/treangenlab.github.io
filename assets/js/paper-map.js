@@ -58,8 +58,19 @@
   }
 
   svg.appendChild(el("rect", { x: L, y: T, width: PW, height: PH, class: "pm-frame" }));
-  svg.appendChild(el("line", { x1: sx(0), y1: T, x2: sx(0), y2: T + PH, class: "pm-threshold" }));
-  svg.appendChild(el("line", { x1: L, y1: sy(0), x2: L + PW, y2: sy(0), class: "pm-threshold" }));
+  // Everything that zooms and pans lives in one group, clipped to the frame.
+  var defs = el("defs", {});
+  var clip = el("clipPath", { id: "pm-clip" });
+  clip.appendChild(el("rect", { x: L, y: T, width: PW, height: PH }));
+  defs.appendChild(clip);
+  svg.appendChild(defs);
+  var plot = el("g", { class: "pm-plot", "clip-path": "url(#pm-clip)" });
+  var vline = el("line", { class: "pm-threshold" });
+  var hline = el("line", { class: "pm-threshold" });
+  var leaders = el("g", {});
+  plot.appendChild(vline);
+  plot.appendChild(hline);
+  plot.appendChild(leaders);
   // Axis labels sit outside the frame, one at each end of each axis.
   // On a phone the plot is drawn at about half size, so the labels are shortened and enlarged.
   var narrow = window.matchMedia && window.matchMedia("(max-width: 576px)").matches;
@@ -91,26 +102,135 @@
     return (h / 9973 - 0.5) * 0.9;
   }
 
+  // Zoom and pan. k is the zoom factor; tx, ty shift the view (in drawing units). Marks keep their size at any zoom.
+  var k = 1,
+    tx = 0,
+    ty = 0,
+    KMAX = 8;
+  var CX = L + PW / 2,
+    CY = T + PH / 2;
+  var dots = [];
+  var spread = null; // the group of crowded marks currently fanned out, if any
+  function clampPan() {
+    var mx = ((k - 1) * PW) / 2,
+      my = ((k - 1) * PH) / 2;
+    tx = Math.max(-mx, Math.min(mx, tx));
+    ty = Math.max(-my, Math.min(my, ty));
+  }
+  function place(d) {
+    d.link.style.transform = "translate(" + (d.X + d.ox).toFixed(1) + "px," + (d.Y + d.oy).toFixed(1) + "px)";
+  }
+  function layout() {
+    clampPan();
+    dots.forEach(function (d) {
+      d.X = CX + (d.px - CX) * k + tx;
+      d.Y = CY + (d.py - CY) * k + ty;
+      place(d);
+    });
+    var zx = CX + (sx(0) - CX) * k + tx,
+      zy = CY + (sy(0) - CY) * k + ty;
+    vline.setAttribute("x1", zx);
+    vline.setAttribute("x2", zx);
+    vline.setAttribute("y1", T);
+    vline.setAttribute("y2", T + PH);
+    hline.setAttribute("y1", zy);
+    hline.setAttribute("y2", zy);
+    hline.setAttribute("x1", L);
+    hline.setAttribute("x2", L + PW);
+    svg.classList.toggle("is-zoomed", k > 1.001);
+    if (zoomOut) {
+      zoomOut.disabled = resetBtn.disabled = k <= 1.001;
+      zoomIn.disabled = k >= KMAX - 0.001;
+    }
+  }
+  // Zoom by a factor, keeping the drawing point (ax, ay) under the pointer in place.
+  function zoomBy(f, ax, ay) {
+    var nk = Math.max(1, Math.min(KMAX, k * f));
+    if (nk === k) return;
+    if (ax == null) {
+      ax = CX;
+      ay = CY;
+    }
+    tx = ax - CX - ((ax - CX - tx) * nk) / k;
+    ty = ay - CY - ((ay - CY - ty) * nk) / k;
+    k = nk;
+    collapse();
+    tip.hidden = true;
+    layout();
+  }
+  function toDrawing(ev) {
+    var r = svg.getBoundingClientRect();
+    return { x: ((ev.clientX - r.left) * W) / r.width, y: ((ev.clientY - r.top) * H) / r.height };
+  }
+
+  // Crowded marks: hovering one fans the overlapping group out in a ring, with a thin line back to each true position.
+  function collapse() {
+    if (!spread) return;
+    spread.members.forEach(function (d) {
+      d.ox = d.oy = 0;
+      d.link.classList.remove("in-spread");
+      place(d);
+    });
+    while (leaders.firstChild) leaders.removeChild(leaders.firstChild);
+    plot.classList.remove("is-spread");
+    spread = null;
+  }
+  function fanOut(d) {
+    if (spread && spread.members.indexOf(d) >= 0) return;
+    collapse();
+    var near = dots.filter(function (o) {
+      var dx = o.X - d.X,
+        dy = o.Y - d.Y;
+      return dx * dx + dy * dy < 13 * 13 && o.X > L && o.X < L + PW && o.Y > T && o.Y < T + PH;
+    });
+    if (near.length < 2) return;
+    var mx = 0,
+      my = 0;
+    near.forEach(function (o) {
+      mx += o.X / near.length;
+      my += o.Y / near.length;
+    });
+    var radius = Math.max(20, (near.length * 15) / (2 * Math.PI));
+    // keep the ring inside the frame
+    mx = Math.max(L + radius + 8, Math.min(L + PW - radius - 8, mx));
+    my = Math.max(T + radius + 8, Math.min(T + PH - radius - 8, my));
+    near.sort(function (a, b) {
+      return Math.atan2(a.Y - my, a.X - mx) - Math.atan2(b.Y - my, b.X - mx);
+    });
+    var start = Math.atan2(near[0].Y - my, near[0].X - mx);
+    near.forEach(function (o, i) {
+      var a = start + (i * 2 * Math.PI) / near.length;
+      o.ox = mx + radius * Math.cos(a) - o.X;
+      o.oy = my + radius * Math.sin(a) - o.Y;
+      o.link.classList.add("in-spread");
+      leaders.appendChild(el("line", { x1: o.X, y1: o.Y, x2: o.X + o.ox, y2: o.Y + o.oy, class: "pm-leader" }));
+      place(o);
+    });
+    plot.classList.add("is-spread");
+    spread = { members: near, x: mx, y: my, r: radius };
+  }
+
   var selected = null;
-  function show(p, node, ev) {
+  function show(d) {
+    var p = d.p;
     if (selected) selected.classList.remove("is-selected");
-    selected = node;
-    node.classList.add("is-selected");
+    selected = d.link;
+    d.link.classList.add("is-selected");
     detail.textContent = "";
     var a = document.createElement("a");
     a.href = p.href;
     a.textContent = p.title;
     detail.appendChild(a);
     detail.appendChild(document.createTextNode(" (" + [p.venue, p.year].filter(Boolean).join(", ") + ")"));
-    var b = box.querySelector(".paper-map-plot").getBoundingClientRect();
-    var c = node.getBoundingClientRect();
+    var b = svg.getBoundingClientRect();
     tip.textContent = p.title + (p.year ? " (" + p.year + ")" : "");
     tip.hidden = false;
-    var x = c.left - b.left + c.width / 2;
+    var x = ((d.X + d.ox) * b.width) / W;
     tip.style.left = Math.max(110, Math.min(b.width - 110, x)) + "px";
-    tip.style.top = c.top - b.top + "px";
+    tip.style.top = ((d.Y + d.oy - 9) * b.height) / H + "px";
   }
 
+  var dragged = false;
   papers
     .slice()
     .sort(function (a, b) {
@@ -123,28 +243,120 @@
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener");
       }
-      var cx = sx(p.x + jitter(p.key, 1) * 0.6),
-        cy = sy(p.y + jitter(p.key, 7) * 0.6);
-      link.appendChild(el("circle", { cx: cx, cy: cy, r: 14, class: "pm-hit" }));
-      link.appendChild(mark(p.kind, cx, cy));
-      link.addEventListener("mouseenter", function (ev) {
-        show(p, link, ev);
+      // marks are drawn at the origin and moved into place, so zooming only changes their position
+      link.appendChild(el("circle", { cx: 0, cy: 0, r: 14, class: "pm-hit" }));
+      link.appendChild(mark(p.kind, 0, 0));
+      var d = { p: p, link: link, px: sx(p.x + jitter(p.key, 1) * 0.6), py: sy(p.y + jitter(p.key, 7) * 0.6), X: 0, Y: 0, ox: 0, oy: 0 };
+      dots.push(d);
+      link.addEventListener("mouseenter", function () {
+        fanOut(d);
+        show(d);
       });
-      link.addEventListener("focus", function (ev) {
-        show(p, link, ev);
+      link.addEventListener("focus", function () {
+        show(d);
       });
       link.addEventListener("mouseleave", function () {
         tip.hidden = true;
       });
-      // On touch screens the first tap shows the paper's title; the second opens it.
+      link.addEventListener("dragstart", function (ev) {
+        ev.preventDefault();
+      });
+      // On touch screens the first tap shows the paper's title (and fans out a crowded group); the second opens it.
       link.addEventListener("click", function (ev) {
+        if (dragged) {
+          ev.preventDefault();
+          return;
+        }
         if (!link.classList.contains("is-selected")) {
           ev.preventDefault();
-          show(p, link, ev);
+          fanOut(d);
+          show(d);
         }
       });
-      svg.appendChild(link);
+      plot.appendChild(link);
     });
+  svg.appendChild(plot);
+
+  // Zoom buttons, placed over the top right corner of the plot.
+  var zoomBox = document.createElement("div");
+  zoomBox.className = "paper-map-zoom";
+  function button(label, title, fn) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = label;
+    b.title = title;
+    b.setAttribute("aria-label", title);
+    b.addEventListener("click", fn);
+    zoomBox.appendChild(b);
+    return b;
+  }
+  var zoomIn = button("+", "Zoom in", function () {
+    zoomBy(1.6);
+  });
+  var zoomOut = button("−", "Zoom out", function () {
+    zoomBy(1 / 1.6);
+  });
+  var resetBtn = button("Reset", "Reset zoom", function () {
+    zoomBy(1 / KMAX / KMAX);
+  });
+  box.querySelector(".paper-map-plot").appendChild(zoomBox);
+  layout();
+
+  // Pinch on a trackpad (or Ctrl + wheel) zooms at the pointer; a plain wheel still scrolls the page.
+  svg.addEventListener(
+    "wheel",
+    function (ev) {
+      if (!ev.ctrlKey && !ev.metaKey) return;
+      ev.preventDefault();
+      var pt = toDrawing(ev);
+      zoomBy(Math.exp(-ev.deltaY * 0.01), pt.x, pt.y);
+    },
+    { passive: false }
+  );
+  svg.addEventListener("dblclick", function (ev) {
+    if (ev.target.closest && ev.target.closest(".pm-dot")) return;
+    var pt = toDrawing(ev);
+    zoomBy(1.6, pt.x, pt.y);
+  });
+  // Drag to pan when zoomed in.
+  var drag = null;
+  svg.addEventListener("pointerdown", function (ev) {
+    dragged = false;
+    if (k <= 1.001 || (ev.pointerType === "mouse" && ev.button !== 0)) return;
+    drag = { x: ev.clientX, y: ev.clientY, tx: tx, ty: ty };
+  });
+  window.addEventListener("pointermove", function (ev) {
+    if (!drag) return;
+    var r = svg.getBoundingClientRect();
+    var dx = ((ev.clientX - drag.x) * W) / r.width,
+      dy = ((ev.clientY - drag.y) * H) / r.height;
+    if (!dragged && Math.abs(dx) + Math.abs(dy) < 5) return;
+    if (!dragged) {
+      dragged = true;
+      collapse();
+      tip.hidden = true;
+      svg.classList.add("is-dragging");
+    }
+    tx = drag.tx + dx;
+    ty = drag.ty + dy;
+    layout();
+  });
+  window.addEventListener("pointerup", function () {
+    drag = null;
+    svg.classList.remove("is-dragging");
+  });
+  // A fanned-out group closes when the pointer moves away from it, or on a tap elsewhere in the plot.
+  svg.addEventListener("mousemove", function (ev) {
+    if (!spread) return;
+    var pt = toDrawing(ev);
+    var dx = pt.x - spread.x,
+      dy = pt.y - spread.y;
+    if (Math.sqrt(dx * dx + dy * dy) > spread.r + 26) collapse();
+  });
+  svg.addEventListener("mouseleave", collapse);
+  svg.addEventListener("click", function (ev) {
+    if (!(ev.target.closest && ev.target.closest(".pm-dot"))) collapse();
+  });
 
   var legend = box.querySelector(".paper-map-legend");
   THEMES.forEach(function (t) {
@@ -170,5 +382,5 @@
     li.appendChild(document.createTextNode(k[1]));
     legend.appendChild(li);
   });
-  detail.textContent = "Hover over a mark to see the paper.";
+  detail.textContent = "Hover over a mark to see the paper. Crowded marks spread apart when you hover over them; use + and − to zoom, then drag to move around.";
 })();

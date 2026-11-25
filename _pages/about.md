@@ -38,7 +38,7 @@ Since launching in 2018, the Treangen lab has focused on developing scalable and
 
 Current funding includes NSF (CAREER, SHF, MIM), NIH (NIAID GCID), and DTRA, among others. Prior support from: c3.ai DTI, DHS, IARPA, and NIH. 
 
-<div class="d-flex flex-wrap align-items-center" style="gap: 2.5rem; margin: 0.75rem 0 1rem;">
+<div class="funding-logos d-flex flex-wrap align-items-center" style="gap: 2.5rem; margin: 0.75rem 0 1rem;">
     <div style="width: 84px;">
         {% include figure.liquid loading="eager" path="assets/img/CDC_logo.png" title="CDC" class="img-fluid" sizes="120px" %}
     </div>
@@ -49,3 +49,5 @@ Current funding includes NSF (CAREER, SHF, MIM), NIH (NIAID GCID), and DTRA, amo
         {% include figure.liquid loading="eager" path="assets/img/NSF_logo.png" title="NSF" class="img-fluid" sizes="120px" %}
     </div>
 </div>
+
+<script defer src="{{ '/assets/js/turkey-chase.js' | relative_url }}" data-base="{{ '/assets/img/chase/' | relative_url }}"></script>

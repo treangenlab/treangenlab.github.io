@@ -2256,3 +2256,33 @@ html[data-theme="dark"] .paper-map {
 #blog-list[hidden] {
   display: none;
 }
+
+// Home page: turkey and virus chase (assets/js/turkey-chase.js). The sprites sit behind the lab photo and funding logos.
+.chase-sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.lab-slideshow,
+.funding-logos {
+  position: relative;
+  z-index: 2;
+}
+.funding-logos {
+  width: fit-content;
+}
+@media print {
+  .chase-sprite {
+    display: none;
+  }
+}

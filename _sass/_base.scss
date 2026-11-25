@@ -2493,3 +2493,29 @@ html[data-theme="dark"] {
 .post-title {
   overflow-wrap: break-word;
 }
+
+// Menu: "people + projects = papers". The signs are drawn into the existing gaps before the projects and
+// papers links, only while the menu is horizontal; they are not links and screen readers do not see them as items.
+@media (min-width: 576px) {
+  .navbar .navbar-nav .nav-link[href$="/projects/"],
+  .navbar .navbar-nav .nav-link[href$="/publications/"] {
+    position: relative;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(-50%, -54%);
+      color: var(--global-text-color-light);
+      font-weight: 400;
+      pointer-events: none;
+    }
+  }
+  .navbar .navbar-nav .nav-link[href$="/projects/"]::before {
+    content: "+";
+    content: "+" / ""; // empty alternative text, where the browser supports it
+  }
+  .navbar .navbar-nav .nav-link[href$="/publications/"]::before {
+    content: "=";
+    content: "=" / ""; // empty alternative text, where the browser supports it
+  }
+}

@@ -113,7 +113,7 @@ horizontal: false
   </div>
   <p class="people-bubbles-legend">
     <span class="key key-pi"></span>PI <span class="key key-current-members"></span>Current members
-    <span class="key key-lab-alumni"></span>Lab alumni (PhD graduates shimmer)
+    <span class="key key-lab-alumni"></span>Lab alumni
     <span class="key key-future"></span>Future members
   </p>
   <div id="people-detail" class="people-detail" aria-live="polite">

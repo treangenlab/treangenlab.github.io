@@ -124,8 +124,9 @@ pagination:
       {% endif %}
     {% endfor %}
   </div>
-  <p class="blog-map-note">Each photo marks where a post is set. Hover over one to see the post, click to read it.</p>
+  <p class="blog-map-note">Each photo indicates the location of focus for the blog post. Hover over to see the post and click to read it.</p>
 </div>
+<script defer src="{{ '/assets/js/blog-map.js' | relative_url }}"></script>
 
 <div id="blog-list">
 

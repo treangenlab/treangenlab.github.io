@@ -11,7 +11,7 @@ description: Dr. Todd J. Treangen
 <div class="row">
   <div class="col-sm-8" markdown="1">
 
-**Dr. Todd J. Treangen** is an Associate Professor of [Computer Science](https://csweb.rice.edu), [Bioengineering](https://bioengineering.rice.edu), and [BioSciences](https://biosciences.rice.edu) at Rice University, where he founded the Treangen Lab in 2018. His group develops scalable algorithms and open-source software for microbial genomics, metagenomics, pathogen detection, and biosecurity.
+**Dr. Todd J. Treangen** is an Associate Professor of [Computer Science](https://csweb.rice.edu), with joint appointments in [BioSciences](https://biosciences.rice.edu) and [Bioengineering](https://bioengineering.rice.edu), at Rice University, where he founded the Treangen Lab in 2018. His group develops scalable algorithms and open-source software for microbial genomics, metagenomics, pathogen detection, and biosecurity.
 
 Todd also leads the [AI for Biosecurity and Microbial Monitoring](https://kenkennedy.rice.edu/cluster-aimm) research cluster at the [Ken Kennedy Institute](https://kenkennedy.rice.edu), is co-founder and CEO of [Train Genomics](https://www.traingenomics.com), and chaired the inaugural [ASM BIG 2026](https://asm.org/events/asm-big/home) conference.
 
@@ -23,7 +23,7 @@ Todd also leads the [AI for Biosecurity and Microbial Monitoring](https://kenken
 
 #### At Rice
 
-- Associate Professor of [Computer Science](https://csweb.rice.edu) (primary), [Bioengineering](https://bioengineering.rice.edu), and [BioSciences](https://biosciences.rice.edu) (Assistant Professor 2018-2023)
+- Associate Professor of [Computer Science](https://csweb.rice.edu), with joint appointments in [BioSciences](https://biosciences.rice.edu) and [Bioengineering](https://bioengineering.rice.edu) (Assistant Professor 2018-2023)
 - Lead of the [AI for Biosecurity and Microbial Monitoring](https://kenkennedy.rice.edu/cluster-aimm) cluster at the [Ken Kennedy Institute](https://kenkennedy.rice.edu)
 - Faculty in the [Systems, Synthetic, and Physical Biology (SSPB)](https://sspb.rice.edu) Ph.D. program
 - Training faculty for the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/)

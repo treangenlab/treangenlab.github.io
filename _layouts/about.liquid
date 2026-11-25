@@ -22,7 +22,7 @@ layout: default
             {% for slide in page.profile.images %}
               {% assign slide_path = slide.image | prepend: 'assets/img/' %}
               <div class="lab-slide{% if forloop.first %} is-active{% endif %}">
-                <div class="lab-slide-photo">
+                <div class="lab-slide-photo"{% if slide.focus %} style="--focus: {{ slide.focus }};"{% endif %}>
                   {% include figure.liquid loading="eager" path=slide_path class="img-fluid z-depth-1 rounded" alt=slide.caption %}
                 </div>
                 <div class="lab-slide-caption">{{ slide.caption }}</div>

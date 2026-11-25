@@ -74,7 +74,7 @@ One of the speakers who was unable to come because of the dang C*VID was [Dr. Mi
 ---
 
 ## Overall experience
-I think this was a great learning experience and it was hosted at a fantastic institution that has a remarkable past. Proabably my biggest gripe about this conference was the lack of air conditioning in the housing. Coming from Houston Texas, where the AC is on so much that there is a 40 degree temperature difference between inside and outside this was a bit of a challenge but it should not defer **anyone** from attending this workshop, it's part of the experience.
+I think this was a great learning experience and it was hosted at a fantastic institution that has a remarkable past. Probably my biggest gripe about this conference was the lack of air conditioning in the housing. Coming from Houston Texas, where the AC is on so much that there is a 40 degree temperature difference between inside and outside this was a bit of a challenge but it should not defer **anyone** from attending this workshop, it's part of the experience.
 
 ---
 

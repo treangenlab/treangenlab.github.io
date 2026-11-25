@@ -16,8 +16,8 @@ category: tool
 - Alona Tyshaieva (Univ of Dusseldorf)
 - Dr. Alex Dilthey (Univ of Dusseldorf)
 - Dr. Sonia Villapol (Houston Methodist)
-- Dr. Tor Savidge (Texas Childrens)
-- Dr. Qinglong Wu (Texas Childrens)
+- Dr. Tor Savidge (Texas Children's Hospital)
+- Dr. Qinglong Wu (Texas Children's Hospital)
 
 ## Publication
 {% cite curry2022emu %}

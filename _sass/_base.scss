@@ -1979,6 +1979,9 @@ html[data-theme="dark"] .alumni-sectors {
     font-size: 15px;
     font-weight: 600;
   }
+  .is-narrow .pm-axis {
+    font-size: 24px;
+  }
   .pm-corner {
     fill: var(--global-text-color);
     font-size: 12px;
@@ -2257,14 +2260,26 @@ html[data-theme="dark"] .paper-map {
   display: none;
 }
 
-// Home page: turkey and virus chase (assets/js/turkey-chase.js). The sprites sit behind the lab photo and funding logos.
+// Home page: hiding turkey (assets/js/turkey-chase.js). It sits behind the lab photo and funding logos; a click cooks it.
 .chase-sprite {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
-  pointer-events: none;
+  cursor: pointer;
   will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px dashed var(--global-theme-color);
+    outline-offset: 2px;
+  }
+  // once cooked, the platter comes out in front of the photo and logos
+  &.is-cooked {
+    z-index: 3;
+  }
   img {
     position: absolute;
     left: 0;
@@ -2285,4 +2300,21 @@ html[data-theme="dark"] .paper-map {
   .chase-sprite {
     display: none;
   }
+}
+
+// Dark mode: the category icons are drawn on white, so flip them to sit on the dark background (hues are kept).
+html[data-theme="dark"] {
+  .paper-icon img,
+  .theme-icon img {
+    filter: invert(1) hue-rotate(180deg);
+    mix-blend-mode: screen;
+  }
+}
+
+// Phones: keep embedded slides inside the page, and stop the edge of the people honeycomb from causing sideways scrolling.
+.post iframe {
+  max-width: 100%;
+}
+.people-bubbles {
+  overflow-x: clip;
 }

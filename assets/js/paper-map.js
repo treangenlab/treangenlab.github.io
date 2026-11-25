@@ -61,10 +61,14 @@
   svg.appendChild(el("line", { x1: sx(0), y1: T, x2: sx(0), y2: T + PH, class: "pm-threshold" }));
   svg.appendChild(el("line", { x1: L, y1: sy(0), x2: L + PW, y2: sy(0), class: "pm-threshold" }));
   // Axis labels sit outside the frame, one at each end of each axis.
-  svg.appendChild(el("text", { x: L, y: H - 16, "text-anchor": "start", class: "pm-axis" }, "← sequence algorithms & data structures"));
-  svg.appendChild(el("text", { x: L + PW, y: H - 16, "text-anchor": "end", class: "pm-axis" }, "statistics & machine learning →"));
-  svg.appendChild(el("text", { x: 16, y: T + PH, "text-anchor": "start", transform: "rotate(-90 16 " + (T + PH) + ")", class: "pm-axis" }, "← pathogen & microbial genomics"));
-  svg.appendChild(el("text", { x: 16, y: T, "text-anchor": "end", transform: "rotate(-90 16 " + T + ")", class: "pm-axis" }, "microbiome →"));
+  // On a phone the plot is drawn at about half size, so the labels are shortened and enlarged.
+  var narrow = window.matchMedia && window.matchMedia("(max-width: 576px)").matches;
+  if (narrow) svg.classList.add("is-narrow");
+  var yx = narrow ? 24 : 16;
+  svg.appendChild(el("text", { x: L, y: H - 16, "text-anchor": "start", class: "pm-axis" }, narrow ? "← sequence algorithms" : "← sequence algorithms & data structures"));
+  svg.appendChild(el("text", { x: L + PW, y: H - 16, "text-anchor": "end", class: "pm-axis" }, narrow ? "statistics & ML →" : "statistics & machine learning →"));
+  svg.appendChild(el("text", { x: yx, y: T + PH, "text-anchor": "start", transform: "rotate(-90 " + yx + " " + (T + PH) + ")", class: "pm-axis" }, narrow ? "← pathogens" : "← pathogen & microbial genomics"));
+  svg.appendChild(el("text", { x: yx, y: T, "text-anchor": "end", transform: "rotate(-90 " + yx + " " + T + ")", class: "pm-axis" }, "microbiome →"));
 
   // Mark shape shows the kind of paper: half-filled circle = preprint, full circle = published paper, square = published review.
   function mark(kind, cx, cy) {

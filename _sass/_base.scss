@@ -2251,7 +2251,38 @@ html[data-theme="dark"] .paper-map {
     fill-opacity: 0.28;
     stroke: var(--global-theme-color);
     stroke-opacity: 0.55;
-    stroke-width: 0.6;
+    stroke-width: calc(0.6px / var(--k, 1)); // the outline stays thin when zoomed
+  }
+  // City names, shown when zoomed in. They keep their size (1 / --k) and never take clicks.
+  .blog-city {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 14px;
+    margin: -7px 0 0 -2.5px;
+    font-size: 11px;
+    line-height: 14px;
+    white-space: nowrap;
+    color: var(--global-text-color);
+    text-shadow:
+      0 0 2px var(--global-bg-color),
+      0 0 2px var(--global-bg-color),
+      0 0 3px var(--global-bg-color);
+    transform: scale(calc(1 / var(--k, 1)));
+    transform-origin: 2.5px 50%;
+    pointer-events: none;
+    &[hidden] {
+      display: none;
+    }
+    &::before {
+      content: "";
+      flex: none;
+      width: 5px;
+      height: 5px;
+      margin-right: 4px;
+      border-radius: 50%;
+      background: var(--global-text-color);
+    }
   }
   .blog-pin {
     position: absolute;

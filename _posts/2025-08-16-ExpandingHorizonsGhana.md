@@ -35,7 +35,7 @@ Hi, my name is [Natalie Kokroko](https://treangenlab.com/profiles/nkokroko/), a 
 
 I was excited for the opportunity to contribute to the growing bioinformatics scene in Ghana by spending part of my summer at the West African Centre for Cell Biology of Infectious Pathogens [WACCBIP](https://www.waccbip.org/) where I once was an intern in the [Genomics and Bioinformatics](https://www.waccbip.org/research/research-groups/genomics-and-bioinformatics-group) unit.
 
-{% include figure.liquid loading="eager" path="assets/img/Natalie_Ghana2025.jpeg" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/Natalie_Ghana2025.jpeg" alt="The author at the entrance of the West African Centre for Cell Biology of Infectious Pathogens, University of Ghana" class="img-fluid rounded z-depth-1" %}
 
 
 ## Acknowledgement

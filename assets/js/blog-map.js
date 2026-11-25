@@ -1,6 +1,9 @@
 // Blog page world map: zoom in and out, drag to move when zoomed, and photos of posts at the
-// same place spread apart when the pointer is over them.
+// same place spread apart when the pointer is over them. Zooming in also loads a finer coastline
+// and city names (Natural Earth, public domain), with more cities shown the further you zoom.
 (function () {
+  var script = document.currentScript;
+  var detailUrl = script && script.getAttribute("data-detail");
   var stage = document.querySelector("#blog-map .blog-map-stage");
   if (!stage) return;
   var pins = Array.prototype.slice.call(stage.querySelectorAll(".blog-pin"));
@@ -19,6 +22,75 @@
   var spread = null; // photos currently fanned out, if any
   var zoomIn, zoomOut, resetBtn;
 
+  // Cities: loaded once, the first time the map is zoomed. Each entry is [name, latitude, longitude, rank];
+  // rank 0 is the largest world cities, and the list is ordered most important first.
+  var cities = null,
+    detailAsked = false,
+    cityLayer = document.createElement("div");
+  cityLayer.className = "blog-map-cities";
+  cityLayer.setAttribute("aria-hidden", "true");
+  canvas.insertBefore(cityLayer, canvas.querySelector(".blog-pin"));
+  function loadDetail() {
+    if (detailAsked || !detailUrl || !window.fetch) return;
+    detailAsked = true;
+    fetch(detailUrl)
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (d) {
+        var land = canvas.querySelector(".blog-map-land");
+        if (land && d.land) land.setAttribute("d", d.land); // finer coastline
+        cities = (d.cities || []).map(function (c) {
+          var el = document.createElement("span");
+          el.className = "blog-city";
+          el.textContent = c[0];
+          // same projection as the map: longitude -180..180 across, latitude 85..-60 down
+          el.style.left = ((c[2] + 180) / 3.6).toFixed(3) + "%";
+          el.style.top = ((85 - c[1]) / 1.45).toFixed(3) + "%";
+          el.hidden = true;
+          cityLayer.appendChild(el);
+          return { el: el, fx: (c[2] + 180) / 360, fy: (85 - c[1]) / 145, rank: c[3], w: 12 + c[0].length * 6.3 };
+        });
+        showCities();
+      })
+      .catch(function () {
+        detailAsked = false; // try again on the next zoom
+      });
+  }
+  // Show the cities that suit the current zoom and are in view, skipping any whose label would overlap one already shown.
+  function showCities() {
+    if (!cities) return;
+    var maxRank = k < 1.5 ? -1 : k < 2.4 ? 0 : k < 3.8 ? 1 : k < 5.5 ? 2 : k < 7 ? 3 : 99;
+    var w = stage.clientWidth,
+      h = stage.clientHeight,
+      placed = [];
+    placed.push({ x: w - 150, y: 20, w: 150, h: 28 }); // nor under the zoom buttons
+    // labels are not drawn under the photos
+    pins.forEach(function (pin) {
+      var q = point(pin),
+        half = pin.offsetWidth / 2 + 4;
+      placed.push({ x: q.x - half, y: q.y, w: 2 * half, h: half + 7 });
+    });
+    cities.forEach(function (c) {
+      var show = c.rank <= maxRank;
+      if (show) {
+        var x = tx + c.fx * w * k,
+          y = ty + c.fy * h * k;
+        show = x > -10 && x < w + 10 && y > -10 && y < h + 10;
+        if (show) {
+          for (var i = 0; i < placed.length; i++) {
+            if (x < placed[i].x + placed[i].w && x + c.w > placed[i].x && Math.abs(y - placed[i].y) < (placed[i].h || 15)) {
+              show = false;
+              break;
+            }
+          }
+        }
+        if (show) placed.push({ x: x - 4, y: y, w: c.w + 6 });
+      }
+      if (c.el.hidden === show) c.el.hidden = !show;
+    });
+  }
+
   function apply() {
     var w = stage.clientWidth,
       h = stage.clientHeight;
@@ -31,6 +103,8 @@
       zoomOut.disabled = resetBtn.disabled = k <= 1.001;
       zoomIn.disabled = k >= KMAX - 0.001;
     }
+    if (k > 1.2) loadDetail();
+    showCities();
   }
   // Zoom by a factor, keeping the point (ax, ay) of the stage in place (defaults to the middle).
   function zoomBy(f, ax, ay) {

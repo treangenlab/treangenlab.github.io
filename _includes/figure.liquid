@@ -54,9 +54,8 @@
           {% endif %}
         "
       {% endif %}
-      {% if include.alt %}
-        alt="{{ include.alt }}"
-      {% endif %}
+      {% comment %} every image gets alt text for screen readers: the given alt, else its title or caption, else empty {% endcomment %}
+      alt="{{ include.alt | default: include.title | default: include.caption | strip_html | escape }}"
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}

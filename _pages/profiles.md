@@ -10,6 +10,10 @@ horizontal: false
 ---
 
 <!-- pages/profiles.md -->
+<script>
+  // Decide the view before the page is drawn, so the card grid does not flash before the hexagons appear.
+  document.documentElement.classList.add("people-hex-first");
+</script>
 <div class="people-view-toggle" id="people-toggle" role="group" aria-label="Choose how lab members are shown" hidden>
   <button type="button" data-view="hex" class="is-active">Hexagon view</button>
   <button type="button" data-view="grid">Grid view</button>
@@ -112,9 +116,9 @@ horizontal: false
     </button>
   </div>
   <p class="people-bubbles-legend">
-    <span class="key key-pi"></span>PI <span class="key key-current-members"></span>Current members
-    <span class="key key-lab-alumni"></span>Lab alumni
-    <span class="key key-future"></span>Future members
+    <span class="key-item"><span class="key key-pi"></span>PI</span> <span class="key-item"><span class="key key-current-members"></span>Current members</span>
+    <span class="key-item"><span class="key key-lab-alumni"></span>Lab alumni</span>
+    <span class="key-item"><span class="key key-future"></span>Future members</span>
   </p>
   <div id="people-detail" class="people-detail" aria-live="polite">
     <p class="people-detail-hint">Hover over a photo for details; click to open the profile.</p>

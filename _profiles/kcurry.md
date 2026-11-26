@@ -13,6 +13,7 @@ category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
 pub_key: kcurry
 related_publications: false
+badges: [tool_lead]
 ---
 
 Kristen completed a PhD in Computer Science at Rice in the Treangen Lab, working on community-level computational methods for microbiome analysis. Kristen is now a Postdoctoral Researcher at Institut Pasteur, working with Rayan Chikhi. In the lab, Kristen was lead author of [Emu](/projects/emu/), the lab's species-level profiler for full-length 16S nanopore reads.

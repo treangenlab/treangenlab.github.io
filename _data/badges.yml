@@ -1,0 +1,131 @@
+# Badges shown at the bottom of profile pages. A profile lists the ones it has under `badges:` in its front matter,
+# e.g. `badges: [rse, dog, runner]`. The PhD badge is added automatically for anyone with `phd_alum: true`.
+# Each badge: label (shown under the medal), icon (a Font Awesome solid icon name, without "fa-"),
+# colors (two colors for the medal's gradient), about (shown when the pointer rests on the badge).
+# Badges are shown in the order they appear in this file.
+
+phd:
+  label: "PhD, Treangen Lab"
+  icon: graduation-cap
+  colors: ["#7b4fc9", "#3d2a8c"]
+  about: "Earned a PhD in the Treangen Lab"
+
+ms:
+  label: "MS, Treangen Lab"
+  icon: scroll
+  colors: ["#8b5cf6", "#4c2fa8"]
+  about: "Earned a master's degree in the Treangen Lab"
+
+postdoc:
+  label: "Postdoc alum"
+  icon: flask
+  colors: ["#0ea5b7", "#0b5f73"]
+  about: "Was a postdoctoral scientist in the Treangen Lab"
+
+undergrad:
+  label: "Undergraduate researcher"
+  icon: lightbulb
+  colors: ["#facc15", "#ca8a04"]
+  about: "Did undergraduate research in the Treangen Lab"
+
+first_phd:
+  label: "First PhD graduate"
+  icon: award
+  colors: ["#f2b632", "#c9780a"]
+  about: "The first PhD student to graduate from the lab (December 2021)"
+
+first_member:
+  label: "First to join the lab"
+  icon: flag
+  colors: ["#14b8a6", "#0b6e78"]
+  about: "The first person to join the Treangen Lab"
+
+newest_member:
+  label: "Newest lab member"
+  icon: wand-sparkles
+  colors: ["#ec4899", "#7e22ce"]
+  about: "The most recent person to join the lab"
+
+tool_lead:
+  label: "Tool lead"
+  icon: screwdriver-wrench
+  colors: ["#2a78d6", "#1baf7a"]
+  about: "Lead developer of one of the lab's open-source tools"
+
+brrr:
+  label: "Makes tools go brrr"
+  icon: gauge-high
+  colors: ["#22d3ee", "#7c3aed"]
+  about: "Makes the lab's tools run fast"
+
+darpa:
+  label: "DARPA Bio-Attribution"
+  icon: dna
+  colors: ["#1e3a6e", "#eb6834"]
+  about: "Member of the lab's DARPA Bio-Attribution Challenge team (Highest Accuracy distinction, 2026)"
+
+faculty:
+  label: "Now faculty"
+  icon: building-columns
+  colors: ["#b45309", "#5b2c06"]
+  about: "Went on to a faculty position"
+
+future_faculty:
+  label: "Future Faculty Fellow"
+  icon: chalkboard-user
+  colors: ["#e0527a", "#8f1f4f"]
+  about: "Rice Engineering Future Faculty Fellow (2025)"
+
+nlm:
+  label: "NLM Training Fellow"
+  icon: book-open-reader
+  colors: ["#3b82c4", "#1f4f8a"]
+  about: "Supported by the NLM Training Program in Biomedical Informatics and Data Science"
+
+expanding_horizons:
+  label: "Expanding Horizons Fellow"
+  icon: earth-africa
+  colors: ["#f08a24", "#b3470e"]
+  about: "Expanding Horizons Fellowship, summer research in Ghana (2025)"
+
+international:
+  label: "International collaborator"
+  icon: earth-americas
+  colors: ["#22a06b", "#1d5fa8"]
+  about: "Worked with the lab from abroad"
+
+rse:
+  label: "Research software engineer"
+  icon: laptop-code
+  colors: ["#475569", "#0ea5b7"]
+  about: "Research software engineer"
+
+cat:
+  label: "Cat lover"
+  icon: cat
+  colors: ["#f59e42", "#d9480f"]
+  about: "Cat lover"
+
+dog:
+  label: "Dog lover"
+  icon: dog
+  colors: ["#a9745b", "#5c3a21"]
+  about: "Dog lover"
+
+vegetarian:
+  label: "Vegetarian"
+  icon: seedling
+  colors: ["#4cc38a", "#157a4c"]
+  about: "Vegetarian"
+
+runner:
+  label: "Runner"
+  icon: person-running
+  colors: ["#ef5a5a", "#b01e3c"]
+  about: "Runner"
+
+climber:
+  label: "Climber"
+  icon: mountain
+  colors: ["#64748b", "#27364a"]
+  about: "Climber"

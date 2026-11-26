@@ -9,6 +9,7 @@ joined: 2023.6
 category: Current members
 topics: ["microbiome analysis", "metagenomics"]
 related_publications: true
+badges: [tool_lead, expanding_horizons, dog]
 ---
 
 Natalie (4th year PhD student, Computer Science) obtained her Bachelor’s Degree in Biomedical engineering at the University of Ghana in November, 2021. Natalie hopes to make use of computational tools and algorithms to interpret and analyze clinical and environmental microbiome data. Generally, she is interested in Computational Biology, Bioinformatics, Genomics and Metagenomic data analysis. 

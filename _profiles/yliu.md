@@ -13,6 +13,7 @@ category: Lab alumni
 topics: ["metagenomics", "wastewater surveillance", "viral genomics"]
 pub_key: yliu
 related_publications: false
+badges: [tool_lead]
 ---
 
 Yunxi completed a PhD in Computer Science at Rice in the Treangen Lab, developing computational tools for contaminant detection and error correction in genomic and metagenomic datasets. Yunxi is now a postdoctoral scientist at Texas Children's Hospital, working with Tor Savidge. In the lab, Yunxi was lead author of [Crykey](/projects/crykey/).

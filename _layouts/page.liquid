@@ -78,6 +78,28 @@ layout: default
     </div>
   {% endif %}
 
+  {% comment %} Badges (profiles only): defined in _data/badges.yml, listed per person under `badges:`; the PhD badge comes from `phd_alum`. {% endcomment %}
+  {% if page.collection == 'profiles' %}
+    {% if page.badges or page.phd_alum %}
+      <h2 class="merit-heading">Badges</h2>
+      <ul class="merit-badges" aria-label="Badges">
+        {% for entry in site.data.badges %}
+          {% assign key = entry[0] %}
+          {% assign badge = entry[1] %}
+          {% assign has = false %}
+          {% if page.badges contains key %}{% assign has = true %}{% endif %}
+          {% if key == 'phd' and page.phd_alum %}{% assign has = true %}{% endif %}
+          {% if has %}
+            <li class="merit-badge" title="{{ badge.about | escape }}" style="--b1: {{ badge.colors[0] }}; --b2: {{ badge.colors[1] }};">
+              <span class="merit-medal" aria-hidden="true"><i class="fa-solid fa-{{ badge.icon }}"></i></span>
+              <span class="merit-label">{{ badge.label }}</span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
   {% endif %}

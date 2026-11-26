@@ -9,6 +9,7 @@ joined: 2022.61
 category: Current members
 topics: ["protein function", "machine learning", "synthetic DNA screening"]
 related_publications: true
+badges: [darpa, cat, vegetarian, brrr]
 ---
 
 Felix (5th year PhD Student, Computer Science) received his BS in Computer Science at Lehigh University. During his undergraduate studies, he worked on biophysical and structural biology, exploring the intersection between molecular dynamics and pattern recognition to predict protein-protein and protein-ligand binding. Before entering his PhD program, Felix worked as a software validation engineer for Intel Corporation, validating legacy security technologies for existing and upcoming enterprise products. His current focus is on protein function in the age of big data and the subsequent effects of function prediction from generative methods. Felix is supported by the lab's [DTRA project](/projects/fund_dtra/) on in-field pathogen detection. In his free time, Felix enjoys running and watching movies with his cats.

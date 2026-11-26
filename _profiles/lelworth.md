@@ -11,6 +11,7 @@ category: Lab alumni
 topics: ["pathogen detection", "metagenomics"]
 pub_key: lelworth
 related_publications: false
+badges: [postdoc]
 ---
 
 Leo was an NLM Biomedical Informatics postdoctoral fellow in the Treangen Lab after completing a PhD in Computer Science at Rice. Leo co-led the lab's COVID-19 diagnostics work and contributed to SeqScreen and many of the lab's metagenomics tools.

@@ -169,6 +169,11 @@
 
   var dragged = false;
   pins.forEach(function (pin) {
+    // A tap fires the hover event just before the click, so a first tap on a stack is recognised when the finger goes down.
+    var firstTap = false;
+    pin.addEventListener("pointerdown", function (ev) {
+      firstTap = ev.pointerType !== "mouse" && !(spread && spread.members.indexOf(pin) >= 0);
+    });
     pin.addEventListener("mouseenter", function () {
       fanOut(pin);
     });
@@ -181,7 +186,9 @@
         return;
       }
       // touch: the first tap on a stack of photos spreads it; the next tap opens a post
-      if (fanOut(pin)) ev.preventDefault();
+      var stacked = fanOut(pin) || (spread && spread.members.indexOf(pin) >= 0);
+      if (firstTap && stacked) ev.preventDefault();
+      firstTap = false;
     });
   });
   stage.addEventListener("mousemove", function (ev) {

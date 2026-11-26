@@ -13,6 +13,7 @@ category: Lab alumni
 topics: ["microbiome analysis", "metagenomics"]
 pub_key: qwang
 related_publications: false
+badges: [first_phd]
 ---
 
 Qi was the first PhD student to graduate from the Treangen Lab, defending her thesis on December 1, 2021, in Rice's Systems, Synthetic, and Physical Biology (SSPB) program. She is now a Bioinformatics Scientist at Illumina, working on platform development, production bioinformatics and agentic AI for multi-omics. Qi was lead author of [Bakdrive](/projects/bakdrive/).

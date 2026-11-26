@@ -13,6 +13,7 @@ category: Lab alumni
 topics: ["pathogen detection", "metagenomics", "machine learning"]
 pub_key: abalaji
 related_publications: false
+badges: [first_member]
 ---
 
 Advait completed a PhD in Computer Science at Rice in the Treangen Lab, with a thesis on graph and machine learning approaches for characterizing novel pathogens. Advait is now a Staff Machine Learning Engineer in applied research and model development at a startup in Boston, MA. In the lab, Advait was lead author of [SeqScreen](/projects/seqscreen/) and [KOMB](/projects/komb/).

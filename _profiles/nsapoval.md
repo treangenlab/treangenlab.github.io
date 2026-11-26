@@ -13,6 +13,7 @@ category: Lab alumni
 topics: ["metagenomics", "machine learning", "viral genomics"]
 pub_key: nsapoval
 related_publications: false
+badges: [tool_lead, future_faculty]
 ---
 
-Nicolae completed a PhD in Computer Science at Rice in the Treangen Lab and is now a postdoctoral associate in Luay Nakhleh's lab in the Rice Department of Computer Science. In the lab, Nicolae led work on [Lemur and MAGnet](/projects/lemur_magnet/) and on SARS-CoV-2 genomic analysis.
+Nicolae completed a PhD in Computer Science at Rice in the Treangen Lab and is now a postdoctoral associate in Luay Nakhleh's lab in the Rice Department of Computer Science. In the lab, Nicolae led work on [Lemur and MAGnet](/projects/lemur_magnet/) and on SARS-CoV-2 genomic analysis. His current work is on [his personal website](https://nsapoval.github.io/).

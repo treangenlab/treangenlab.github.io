@@ -11,6 +11,7 @@ category: Lab alumni
 topics: ["long-read sequencing", "microbiome analysis", "wastewater surveillance"]
 pub_key: pkalvapalle
 related_publications: true
+badges: [postdoc, tool_lead]
 ---
 
 Prashant (now a postdoctoral scientist in the Khakhar Lab in the [Department of Biology](https://www.biology.colostate.edu/staff/) at Colorado State University) was a postdoc in the Treangen Lab from January 2025 through May 2026, where he was the main developer of [somatem](https://github.com/treangenlab/somatem), the lab's modular Nextflow toolkit for long-read microbiome analysis. Prashant also collaborated with the lab on wastewater pathogen monitoring {% cite wu2024multiplexed wang2024olivar %}.

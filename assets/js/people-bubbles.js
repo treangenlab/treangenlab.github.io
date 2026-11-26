@@ -170,7 +170,12 @@
 
   // Hovering (or keyboard focus) shows a person's details; clicking opens their profile.
   // On touch screens there is no hover, so the first tap shows the details and the second opens the profile.
+  // (A tap also fires the hover event just before the click, so the tap has to be recognised when the finger goes down.)
   bubbles.forEach(function (b) {
+    var firstTap = false;
+    b.addEventListener("pointerdown", function (ev) {
+      firstTap = ev.pointerType !== "mouse" && !b.classList.contains("is-selected");
+    });
     b.addEventListener("mouseenter", function () {
       select(b);
     });
@@ -178,11 +183,12 @@
       select(b);
     });
     b.addEventListener("click", function () {
-      if (b.classList.contains("is-selected")) {
+      if (b.classList.contains("is-selected") && !firstTap) {
         window.location.href = b.getAttribute("data-url");
       } else {
         select(b);
       }
+      firstTap = false;
     });
   });
 
@@ -211,6 +217,9 @@
     if (img && !img.complete) img.addEventListener("load", place);
   });
   show(true);
+  // The page was drawn with space held for the hexagons (see .people-hex-first in the stylesheet); hand over to this script.
+  stage.classList.add("is-placed");
+  document.documentElement.classList.remove("people-hex-first");
 })();
 
 // People page: pie chart of where lab alumni are now (academia or industry).

@@ -11,6 +11,7 @@ category: Lab alumni
 topics: ["microbiome analysis", "long-read sequencing"]
 pub_key: amarshall
 related_publications: true
+badges: [postdoc, faculty, dog]
 ---
 
 Austin is now a Research Assistant Professor in the [Department of Molecular Genetics & Microbiology](https://mgm.ufl.edu/departments/faculty/) at the University of Florida College of Medicine. He received his BS in Biomolecular Science and PhD in Biotechnology from Clarkson University. As a graduate student, Austin researched applications of nanopore sequencing technology on many environmental sample types. His projects included low-biomass aerosol sampling and analysis as well as spatial characterization of water microbiomes from the St. Lawrence River (see more about the Lampsilis 2022 mission [here](https://www.cbc.ca/newsinteractives/features/what-goes-in-the-water)). Nearing the end of his PhD, he interned at NASA Johnson Space Center with the [JSC microbiology team](https://www.nasa.gov/directorates/esdmd/hhp/microbiology/) where he performed temporal evaluation of microbiomes within dust samples from the International Space Station using both amplicon and metagenomic nanopore sequencing. 

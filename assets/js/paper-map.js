@@ -248,6 +248,11 @@
       link.appendChild(mark(p.kind, 0, 0));
       var d = { p: p, link: link, px: sx(p.x + jitter(p.key, 1) * 0.6), py: sy(p.y + jitter(p.key, 7) * 0.6), X: 0, Y: 0, ox: 0, oy: 0 };
       dots.push(d);
+      // A tap fires the hover event just before the click, so a first tap is recognised when the finger goes down.
+      var firstTap = false;
+      link.addEventListener("pointerdown", function (ev) {
+        firstTap = ev.pointerType !== "mouse" && !link.classList.contains("is-selected");
+      });
       link.addEventListener("mouseenter", function () {
         fanOut(d);
         show(d);
@@ -267,7 +272,8 @@
           ev.preventDefault();
           return;
         }
-        if (!link.classList.contains("is-selected")) {
+        if (firstTap || !link.classList.contains("is-selected")) {
+          firstTap = false;
           ev.preventDefault();
           fanOut(d);
           show(d);

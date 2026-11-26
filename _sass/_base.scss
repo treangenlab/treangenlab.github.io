@@ -2833,24 +2833,22 @@ html.people-hex-first {
       animation: tool-cursor 1s steps(1) infinite;
     }
   }
-  // a drawn application window (the Gingr view)
+  // a screen recording of a desktop tool (Gingr)
   .tool-visual {
     margin-top: 0.8rem;
     max-width: 760px;
     border-radius: 8px;
     overflow: hidden;
-    background: #fff;
+    border: 1px solid var(--global-divider-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    .tool-term-bar {
-      background: #e2e8f0;
-      b {
-        color: #475569;
-      }
-    }
-    canvas {
+    video {
       display: block;
       width: 100%;
+      height: auto;
     }
+  }
+  .tool-web-card .tool-gitlab-title i {
+    color: var(--global-theme-color);
   }
   .tools-footnote {
     margin-top: 1.5rem;

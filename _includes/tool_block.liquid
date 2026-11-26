@@ -22,13 +22,16 @@
 {%- endif -%}
 </ul>
 <div class="tool-card">
-{%- if tool.host == 'gitlab' -%}
+{%- if tool.host == 'web' -%}
+<a class="tool-gitlab-card tool-web-card" href="{{ tool.url }}"><span class="tool-gitlab-title"><i class="fa-solid fa-globe" aria-hidden="true"></i> {{ tool.url | remove: 'https://' | remove: '/' }}</span><span class="tool-gitlab-desc">{{ tool.description }}</span><span class="tool-gitlab-host">Open {{ tool.name }} in your browser</span></a>
+{%- elsif tool.host == 'gitlab' -%}
 <a class="tool-gitlab-card" href="https://gitlab.com/{{ tool.repo }}"><span class="tool-gitlab-title"><i class="fa-brands fa-gitlab" aria-hidden="true"></i> {{ tool.repo }}</span><span class="tool-gitlab-desc">{{ tool.description }}</span><span class="tool-gitlab-host">GitLab</span></a>
 {%- else -%}
 {%- include repository/repo.liquid repository=tool.repo -%}
 {%- endif -%}
 </div>
 {%- if tool.note -%}<p class="tool-note">{{ tool.note }}</p>{%- endif -%}
+{%- if tool.demo -%}
 <div class="tool-term" data-tool="{{ tool.name | escape }}">
 <div class="tool-term-bar" aria-hidden="true"><span></span><span></span><span></span><b>{{ tool.name | downcase }} demo</b></div>
 <pre class="tool-term-body">{% for step in tool.demo %}<span class="t-prompt">$</span> <span class="t-cmd">{{ step.cmd | escape }}</span>
@@ -37,11 +40,11 @@
 {% endfor %}{% endfor %}</pre>
 <script type="application/json" class="tool-term-data">{{ tool.demo | jsonify }}</script>
 </div>
-{%- if tool.visual -%}
-<div class="tool-visual" data-visual="{{ tool.visual }}" data-src="{{ '/assets/json/' | append: tool.visual | append: '-demo.json' | relative_url }}">
-<div class="tool-term-bar" aria-hidden="true"><span></span><span></span><span></span><b>{{ tool.visual_title }}</b></div>
-<canvas role="img" aria-label="{{ tool.visual_alt | escape }}"></canvas>
+{%- endif -%}
+{%- if tool.video -%}
+<div class="tool-visual">
+<video class="tool-video" muted loop playsinline preload="none" width="1000" height="640" poster="{{ '/assets/img/' | append: tool.video_poster | relative_url }}" aria-label="{{ tool.video_alt | escape }}"><source src="{{ '/assets/video/' | append: tool.video | relative_url }}" type="video/mp4"></video>
 </div>
-<p class="tool-note">{{ tool.visual_caption }}</p>
+<p class="tool-note">{{ tool.video_caption }}</p>
 {%- endif -%}
 </section>

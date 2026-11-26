@@ -52,11 +52,10 @@ The lab's open-source tools, grouped by main programming language. Hover over a 
 {% include tool_block.liquid tool=tool %}
 {%- endfor -%}
 {%- endfor -%}
-<p class="tools-footnote">The terminal demos are illustrations. Each command follows the tool's own README. Where a repository ships example output, the lines shown are copied from it; otherwise the demo lists the output files the tool documents. The Gingr view is drawn from Parsnp's MERS-CoV example genomes.</p>
+<p class="tools-footnote">The terminal demos are illustrations. Each command follows the tool's own README. Where a repository ships example output, the lines shown are copied from it; otherwise the demo lists the output files the tool documents. The bronko output comes from running it on its own test data, and the Gingr clip is a screen recording.</p>
 </div>
 {:/nomarkdown}
 {% endif %}
 
 <script defer src="{{ '/assets/js/repo-stats.js' | relative_url }}"></script>
-<script defer src="{{ '/assets/js/gingr-demo.js' | relative_url }}"></script>
 <script defer src="{{ '/assets/js/tool-demos.js' | relative_url }}"></script>

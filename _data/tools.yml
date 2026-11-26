@@ -1,5 +1,5 @@
 # Tools shown on the Code page, one block per tool, grouped by main programming language.
-# name, repo (owner/name), host (github or gitlab), language, description,
+# name, repo (owner/name), host (github, gitlab, or web with a url), language, description,
 # themes (any of: biosecurity, pathogen, microbiome, algorithms), leads (profile file names, or plain names
 # for people without a profile), page (file name of the tool's page in _projects, if it has one),
 # demo: the terminal animation. Each step has a command (cmd), then either run: true (shows the tool working)
@@ -25,7 +25,7 @@
     - "Enterococcus faecalis\tread_pvalue+neighbor_check\t1\t9"
   real_output: false
   page: onsight
-- name: Gingr
+- name: Gingr2
   repo: marbl/gingr
   host: github
   language: C++
@@ -34,8 +34,7 @@
   - algorithms
   - pathogen
   leads:
-  - Todd Treangen
-  - Brian Ondov
+  - mnute
   demo:
   - cmd: parsnp -r examples/mers_virus/ref/England1.fna -d examples/mers_virus/genomes/*.fna -o examples-out
     run: true
@@ -43,10 +42,11 @@
     out:
     - (Gingr opens the alignment, variants and tree in a window)
   real_output: false
-  visual: gingr
-  visual_title: "Gingr: parsnp.ggr"
-  visual_alt: Gingr view of MERS-CoV genomes. A tree on the left, one row per genome, and coloured marks where a genome differs from the reference. The view zooms from the whole genome down to single bases and back.
-  visual_caption: A drawing of the Gingr view, not a screen recording. It uses 16 of the MERS-CoV genomes from Parsnp's example data, with the tree on the left, one row per genome, and a coloured mark wherever a genome differs from the England1 reference.
+  video: gingr-demo.mp4
+  video_poster: gingr-demo-poster.jpg
+  video_alt: 'Screen recording of Gingr: a phylogenetic tree beside the Parsnp core-genome alignment of 47 MERS-CoV genomes, zooming from the whole genome down to single bases and back.'
+  video_caption: Screen recording of Gingr on Parsnp's core-genome alignment of 47 MERS-CoV genomes (parsnp.ggr from the Harvest documentation), zooming from the whole genome to single bases.
+  note: The repository card and the recording show the original Gingr.
 - name: KOMB
   repo: treangenlab/komb
   host: github
@@ -85,7 +85,7 @@
     - "0.853596\t36/1000\t1\t1.7048e-184\tgenome2.fna"
     - "0.861792\t44/1000\t1\t5.00742e-229\tgenome3.fna"
   real_output: true
-- name: Parsnp
+- name: Parsnp2
   repo: marbl/parsnp
   host: github
   language: C++
@@ -95,7 +95,6 @@
   - algorithms
   leads:
   - bkille
-  - Todd Treangen
   demo:
   - cmd: parsnp -r examples/mers_virus/ref/England1.fna -d examples/mers_virus/genomes/*.fna -o examples-out
     run: true
@@ -142,6 +141,8 @@
   - microbiome
   - algorithms
   leads:
+  - rdoughty
+  - fquinanta
   - abalaji
   - bkille
   demo:
@@ -432,9 +433,16 @@
   leads:
   - rluo
   demo:
-  - cmd: ./strainify --genome_folder path/to/genomes --fastq_folder path/to/fastqs --outdir results
+  - cmd: ./strainify --genome_folder example/genomes --fastq_folder example/fastqs/single --read_type single --outdir example/results
     run: true
-  real_output: false
+  - cmd: cat example/results/abundance_estimates_combined.csv
+    out:
+    - strain name,10x_ratio_2
+    - E24377A,23.7987
+    - H10407,24.8376
+    - Sakai,24.9406
+    - UTI89,26.423
+  real_output: true
   page: strainify
 - name: bronko
   repo: treangenlab/bronko
@@ -447,11 +455,19 @@
   leads:
   - rdoughty
   demo:
-  - cmd: bronko build -g reference_genomes/*.fa -o bronko_db
+  - cmd: bronko call -d test_data/hpv.bkdb -1 test_data/rep1_R1.fastq.gz -2 test_data/rep1_R2.fastq.gz -o out
     run: true
-  - cmd: bronko call -d bronko_db.bkdb -1 reads/*_R1.fastq -2 reads/*_R2.fastq -o output
-    run: true
-  real_output: false
+  - cmd: grep -v '^##' out/rep1_R1.vcf | cut -f 1,2,4,5,8 | cut -d';' -f1-2
+    out:
+    - '#CHROM    POS   REF  ALT  INFO'
+    - HPV16REF  4192  T    G    DP=94710;AF=0.494
+    - HPV16REF  4196  G    T    DP=94831;AF=0.497
+    - HPV16REF  4784  T    A    DP=24072;AF=0.014
+  - cmd: cut -f 2-4,7,8 out/bronko_overview.tsv
+    out:
+    - selected_genome  num_major_snp  num_minor_snp  breadth_coverage  depth_coverage
+    - HPV16            0              3              0.9947            34288.2668
+  real_output: true
   page: bronko
 - name: mft-tools
   repo: treangenlab/mft-tools
@@ -470,3 +486,33 @@
     run: true
   real_output: false
   page: mft
+- name: QuaID
+  repo: treangenlab/quaid
+  host: gitlab
+  language: Python
+  description: Earlier detection of recently emerged SARS-CoV-2 variants of concern in wastewater, using quasi-unique mutations.
+  themes:
+  - pathogen
+  - algorithms
+  leads:
+  - nsapoval
+  demo:
+  - cmd: ./run_analyses.sh TST08082022
+    run: true
+  - cmd: python quaid.py MSA_precomputed/vdb_lineage_df_week.csv MSA_precomputed/metadata.tsv ./Variant-calling-combined ./Coverage --concat-output --occurence-cutoff 2 --inclusion-cutoff 0.5 --exclusion-cutoff 0.5 --time-window 4 --level 4
+    run: true
+  - cmd: head -1 output/*.csv
+    out:
+    - Date,Plant,Total AF,Total QU count,# QU possible,Fraction covered,WHO name
+  real_output: false
+- name: Omi
+  host: web
+  url: https://omi.rice.edu/
+  language: Web app
+  description: 'A metagenomics co-pilot: ask about assembly graphs, taxonomic profiling, quality control, tool parameters, pipeline configuration and your own metagenomic results.'
+  themes:
+  - microbiome
+  - algorithms
+  leads:
+  - dongwei
+  note: Built by the Treangen Lab and RushLab at Rice.

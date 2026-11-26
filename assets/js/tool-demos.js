@@ -5,7 +5,13 @@
 (function () {
   var blocks = Array.prototype.slice.call(document.querySelectorAll(".tools .tool-block"));
   if (!blocks.length) return;
-  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // no automatic playback: give recordings their own play button instead
+    Array.prototype.forEach.call(document.querySelectorAll(".tools video.tool-video"), function (v) {
+      v.controls = true;
+    });
+    return;
+  }
 
   var SPIN = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
   var demos = blocks.map(function (block) {
@@ -13,7 +19,7 @@
     var data = block.querySelector(".tool-term-data");
     var steps = [];
     try {
-      steps = JSON.parse(data.textContent);
+      if (data) steps = JSON.parse(data.textContent);
     } catch (e) {}
     return { block: block, body: body, steps: steps, still: body ? body.innerHTML : "", timer: null, token: 0 };
   });
@@ -24,25 +30,34 @@
     s.textContent = text || "";
     return s;
   }
-  // lets a tool's own drawing (the Gingr view) start and stop with its terminal demo
-  function signal(d, name) {
+  // a tool's screen recording (Gingr) starts and stops with its terminal demo
+  function video(d, on) {
+    var v = d.block.querySelector("video.tool-video");
+    if (!v) return;
     try {
-      d.block.dispatchEvent(new CustomEvent(name));
+      if (on) {
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        v.pause();
+        v.currentTime = 0;
+      }
     } catch (e) {}
   }
   function stop(d) {
     if (!d) return;
     d.token++; // anything still scheduled for this demo sees a new token and gives up
     clearTimeout(d.timer);
-    d.body.innerHTML = d.still;
+    if (d.body) d.body.innerHTML = d.still;
     d.block.classList.remove("is-active");
-    signal(d, "tooldemo:stop");
+    video(d, false);
   }
   function play(d) {
-    if (!d || !d.body || !d.steps.length) return;
-    var token = ++d.token;
+    if (!d) return;
     d.block.classList.add("is-active");
-    signal(d, "tooldemo:play");
+    video(d, true);
+    if (!d.body || !d.steps.length) return;
+    var token = ++d.token;
     // keep the block's height while the text is typed, so the page does not jump
     d.body.style.minHeight = d.body.offsetHeight + "px";
     function wait(ms, fn) {

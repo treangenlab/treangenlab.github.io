@@ -12,7 +12,7 @@ category: Lab alumni
 topics: ["genome alignment", "string algorithms", "high-performance computing"]
 pub_key: bkille
 related_publications: true
-badges: [rse, dog, brrr]
+badges: [bcm_hackathon, brrr, industry, rse, dog]
 ---
 
 Bryce (now Bioinformatics Scientist at Illumina) received his PhD from Rice University in CS (Treangen lab) MS in Bioinformatics and BS in 

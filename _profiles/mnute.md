@@ -11,7 +11,7 @@ category: Lab alumni
 topics: ["genome alignment", "microbiome analysis", "biosecurity"]
 pub_key: mnute
 related_publications: true
-badges: [postdoc, darpa, brrr]
+badges: [postdoc, bcm_hackathon, brrr, darpa, industry]
 ---
 
 Mike (now a Data Scientist at United Airlines) was a Research Scientist in the Treangen Lab, which he joined as a Postdoc in 2020 and was part of except for a brief stint away to work on a startup. Mike received his Ph.D. in Statistics in 2019 from the University of Illinois at Urbana-Champaign where he was advised by Dr. Tandy Warnow in the Department of Computer Science and worked on algorithms related to multiple sequence alignment and phylogenetic tree estimation, in particular applying these methods to studying microbial communities. He was co-advised by Dr. Rebecca Stumpf in the Department of Anthropology where he and other lab members developed novel methods to compare the microbiomes of human and non-human primates. From 2012 to 2014, Mike was also an assistant coach for the [Illini Rowing Club](https://illinirowing.com).

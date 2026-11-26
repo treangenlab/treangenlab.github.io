@@ -12,7 +12,7 @@ category: Lab alumni
 topics: ["pathogen detection", "metagenomics"]
 pub_key: dnasko
 related_publications: false
-badges: [postdoc]
+badges: [postdoc, industry]
 ---
 
 Dan was a postdoctoral scientist in the Treangen Lab and a contributor to SeqScreen. Dan is now a Staff Bioinformatics Scientist at PacBio.

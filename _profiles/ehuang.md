@@ -9,7 +9,7 @@ joined: 2022.6
 category: Current members
 topics: ["microbiome analysis", "machine learning", "high-performance computing"]
 related_publications: true
-badges: [cat, climber]
+badges: [tool_lead, ai_ml, cat, climber]
 ---
 
 Eddy (5th year PhD student, Computer Science) obtained a B.S. degree with Honors in Computer Science and a minor in Mathematics from North Carolina State University. Before she entered the journey of computer science, she obtained a B.S. degree in Preventive Medicine from the Southwest Medical University in China and spent a year working as a chronic disease analyst at the Center for Disease Control and Prevention in Zigong city. During her study at NCSU, she did research in multi-agent reinforcement learning in social computing. Eddy's primary research interests are in the area of computational biology with a focus on microbial community analysis and applications of deep learning in heterogeneous multi-omics data analysis. Outside the lab, she dedicates her life to rock climbing and believes the philosophy of solving a climbing puzzle harmonizes with the research activities of a computer scientist.

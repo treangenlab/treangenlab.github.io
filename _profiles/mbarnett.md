@@ -10,7 +10,7 @@ sector: industry
 category: Lab alumni
 topics: ["genome alignment", "variant calling"]
 related_publications: false
-badges: [rse]
+badges: [industry, rse]
 ---
 
 Matt (now a Senior Software Engineer at Signature Science) received his undergraduate degree in Computer Science from Rice University. As a Software Engineer in the Treangen lab, Matt provided professional software engineering support to multiple research projects, including Harvest Variants and variant calling research endeavors specific to Illumina and Oxford Nanopore Sequencing.

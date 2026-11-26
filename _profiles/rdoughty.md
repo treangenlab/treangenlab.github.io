@@ -9,7 +9,7 @@ joined: 2024.6
 category: Current members
 topics: ["string algorithms", "viral genomics", "metagenomics", "biosecurity"]
 related_publications: true
-badges: [darpa, tool_lead, nlm, runner, brrr]
+badges: [tool_lead, bcm_hackathon, brrr, darpa, nlm, industry, runner]
 ---
 
 Ryan (3rd year PhD student, Computer Science), obtained his BS in Computer Science from Case Western Reserve University. During his undergraduate studies, he worked with Todd Treangen on large-scale wastewater analyses and targeted metagenomic sequencing methods. He also spent six months in Vigo, Spain, working in Dr. David Posada’s lab, focusing on gut-virome biomarkers in colorectal cancer. Additionally, Ryan interned at Intellia Therapeutics for a summer, where he contributed to developing machine learning methods for CRISPR Cas-9 guide design. His current research interests center around string algorithms for high-performance genomics and comprehending the global virosphere through viral genomic analyses. Ryan is an NLM predoctoral fellow, supported by the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/) (NIH T15LM007093, PI: Lydia Kavraki), with additional support from the Ken Kennedy Institute's [AI for Biosecurity and Microbial Monitoring](https://kenkennedy.rice.edu/cluster-aimm) cluster.

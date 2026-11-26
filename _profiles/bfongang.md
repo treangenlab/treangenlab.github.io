@@ -11,7 +11,7 @@ sector: academia
 category: Lab alumni
 topics: ["protein function", "machine learning"]
 related_publications: false
-badges: [postdoc, faculty]
+badges: [postdoc, ai_ml, faculty]
 ---
 
 Bernard joined the Treangen Lab as a bioinformatics scientist from UTMB Galveston and worked on protein-protein interaction prediction. Bernard is now an Associate Professor at UTSA.

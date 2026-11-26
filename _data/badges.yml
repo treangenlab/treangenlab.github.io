@@ -52,6 +52,18 @@ tool_lead:
   colors: ["#2a78d6", "#1baf7a"]
   about: "Lead developer of one of the lab's open-source tools"
 
+ai_ml:
+  label: "AI/ML developer"
+  icon: brain
+  colors: ["#a855f7", "#2563eb"]
+  about: "Develops machine learning and AI methods"
+
+bcm_hackathon:
+  label: "I survived a BCM hackathon"
+  icon: mug-hot
+  colors: ["#dc2626", "#1e3a8a"]
+  about: "Took part in a Baylor College of Medicine structural variation hackathon"
+
 brrr:
   label: "Makes tools go brrr"
   icon: gauge-high
@@ -93,6 +105,12 @@ international:
   icon: earth-americas
   colors: ["#22a06b", "#1d5fa8"]
   about: "Worked with the lab from abroad"
+
+industry:
+  label: "Industry experience"
+  icon: briefcase
+  colors: ["#0f766e", "#334155"]
+  about: "Has worked in industry"
 
 rse:
   label: "Research software engineer"

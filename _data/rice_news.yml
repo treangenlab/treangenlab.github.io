@@ -5,11 +5,36 @@
   year: 2026
   url: https://news.rice.edu/news/2026/rice-computer-scientists-race-ahead-pathogen-detection-darpa-challenge
   people: [treangen, rdoughty, fquinanta, mnute]
+- title: "Scientists demonstrate first-time use of AI for genetic circuit design"
+  source: Rice News
+  year: 2026
+  url: https://news.rice.edu/news/2026/scientists-demonstrate-first-time-use-ai-genetic-circuit-design
+  people: [bkille, kcurry]
 - title: "New cohort of Future Faculty Fellows prepares for academic careers"
   source: Rice Engineering
   year: 2025
   url: https://engineering.rice.edu/news/new-cohort-future-faculty-fellows-prepares-academic-careers
   people: [nsapoval]
+- title: "Rice and Texas Medical Center experts train researchers on reproducible and responsible analysis of genomic data"
+  source: Rice Engineering
+  year: 2025
+  url: https://engineering.rice.edu/news/rice-and-texas-medical-center-experts-train-researchers-reproducible-and-responsible-analysis
+  people: [treangen, mnute, rluo]
+- title: "A \"fun summer problem\" helps tame the deluge of genomic data"
+  source: Rice Computer Science
+  year: 2025
+  url: https://csweb.rice.edu/news/fun-summer-problem-helps-tame-deluge-genomic-data
+  people: [treangen, bkille]
+- title: "Todd Treangen wins SoE Teaching + Research Excellence Award"
+  source: Rice Computer Science
+  year: 2024
+  url: https://csweb.rice.edu/news/todd-treangen-wins-soe-teaching-research-excellence-award
+  people: [treangen]
+- title: "Rice engineers develop innovative microbiome analysis software tools"
+  source: Rice News
+  year: 2024
+  url: https://news.rice.edu/news/2024/rice-engineers-develop-innovative-microbiome-analysis-software-tools
+  people: [treangen, kcurry]
 - title: "Todd Treangen promoted to associate professor with tenure"
   source: Rice Computer Science
   year: 2023
@@ -19,6 +44,11 @@
   source: Rice News
   year: 2023
   url: https://news.rice.edu/news/2023/rices-todd-treangen-wins-nsf-career-award
+  people: [treangen]
+- title: "NSF backs Rice processor design, chip security research"
+  source: Rice News
+  year: 2023
+  url: https://news.rice.edu/news/2023/nsf-backs-rice-processor-design-chip-security-research
   people: [treangen]
 - title: "Squeegee helps identify contaminants in microbiome samples"
   source: Rice Computer Science
@@ -40,11 +70,31 @@
   year: 2022
   url: https://csweb.rice.edu/news/horned-owl-genome-sequenced-students-rice-university
   people: [treangen]
+- title: "How computer science will help prevent the next pandemic"
+  source: Rice Engineering
+  year: 2022
+  url: https://engineering.rice.edu/news/how-computer-science-will-help-prevent-next-pandemic
+  people: [treangen]
+- title: "COVID-19 variants can't hide from Variabel"
+  source: Rice News
+  year: 2022
+  url: https://news.rice.edu/news/2022/covid-19-variants-cant-hide-variabel
+  people: [treangen, yliu, bkille]
 - title: "Bioinformatics tool accurately tracks synthetic DNA"
   source: Rice News
   year: 2021
   url: https://news.rice.edu/news/2021/bioinformatics-tool-accurately-tracks-synthetic-dna
   people: [treangen, qwang, bkille]
+- title: "Treangen, Stadler confirm presence of omicron in Houston wastewater treatment plants"
+  source: Ken Kennedy Institute
+  year: 2021
+  url: https://kenkennedy.rice.edu/news/current-news/treangen-stadler-confirm-presence-omicron-houston-wastewater-treatment-plants
+  people: [treangen, nsapoval]
+- title: "RAMBO speeds searches on huge DNA databases"
+  source: Rice News
+  year: 2021
+  url: https://news.rice.edu/news/2021/rambo-speeds-searches-huge-dna-databases
+  people: [treangen, bkille, lelworth]
 - title: "Treangen and multi-institutional team awarded $11M to study multi-drug resistant infections"
   source: Rice Computer Science
   year: 2020
@@ -55,3 +105,13 @@
   year: 2020
   url: https://news.rice.edu/news/2020/rice-computer-science-lab-collaborates-design-novel-sars-cov-2-test
   people: [treangen, nsapoval, lelworth, bkille, yliu, yfu]
+- title: "Treangen Lab co-authors study on mitochondrial stress and spaceflight"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/treangen-lab-co-authors-study-mitochondrial-stress-and-spaceflight
+  people: [treangen, nsapoval, lelworth]
+- title: "Treangen Granted C3.ai DTI Award for AI-Driven COVID-19 Research"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/treangen-granted-c3ai-dti-award-ai-driven-covid-19-research
+  people: [treangen]

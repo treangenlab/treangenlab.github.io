@@ -27,12 +27,12 @@ nav_order: 5
 
 {% if site.data.repositories.github_repos %}
 
-## GitHub Repositories
+## Tools and source code
 
-Source code for the lab's tools, listed by GitHub stars.
+The lab's open-source tools, grouped by main programming language. Hover over a tool, or scroll to it, to watch it run.
 
 <div id="repo-langs" class="repo-langs" data-repos="{{ site.data.repositories.github_repos | join: ',' }}">
-  <svg class="repo-langs-pie" viewBox="0 0 120 120" role="img" aria-label="Share of code by language across the repositories below"></svg>
+  <svg class="repo-langs-pie" viewBox="0 0 120 120" role="img" aria-label="Share of code by language across the lab's GitHub repositories"></svg>
   <div class="repo-langs-body">
     <p class="repo-langs-summary">Language breakdown is loading.</p>
     <ul class="repo-langs-legend"></ul>
@@ -42,11 +42,21 @@ Source code for the lab's tools, listed by GitHub stars.
 </div>
 <noscript>Across these repositories, counting only C/C++, Rust, Python and Java: roughly 60% Python, 35% C/C++, 3% Rust and 1% Java (November 2026).</noscript>
 
-<div id="repo-list" class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
+{::nomarkdown}
+<div class="tools">
+{%- assign languages = site.data.tools | map: "language" | uniq | sort -%}
+{%- for language in languages -%}
+<h2 class="category" id="{{ language | replace: '+', 'p' | slugify }}">{{ language }}</h2>
+{%- assign items = site.data.tools | where: "language", language | sort_natural: "name" -%}
+{%- for tool in items -%}
+{% include tool_block.liquid tool=tool %}
+{%- endfor -%}
+{%- endfor -%}
+<p class="tools-footnote">The terminal demos are illustrations. Each command follows the tool's own README. Where a repository ships example output, the lines shown are copied from it; otherwise the demo lists the output files the tool documents. The Gingr view is drawn from Parsnp's MERS-CoV example genomes.</p>
 </div>
+{:/nomarkdown}
 {% endif %}
 
 <script defer src="{{ '/assets/js/repo-stats.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/gingr-demo.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/tool-demos.js' | relative_url }}"></script>

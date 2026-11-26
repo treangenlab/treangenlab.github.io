@@ -10,7 +10,7 @@ github_users:
 
 repo_description_lines_max: 3
 
-# Listed by GitHub stars (snapshot, November 2026). The Code page re-sorts by live star counts when the GitHub API is reachable.
+# GitHub repositories counted in the language pie chart on the Code page. The tool list itself is in _data/tools.yml.
 github_repos:
   - marbl/mash
   - marbl/parsnp

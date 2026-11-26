@@ -1,4 +1,4 @@
-// Code page: sort repository cards by GitHub stars and draw the language breakdown.
+// Code page: draw the language breakdown. (Cards are no longer sorted by stars: the page lists tools by language.)
 // Uses the public GitHub API from the visitor's browser (no token). Results are cached
 // for a week; if the API cannot be reached, a built-in snapshot is shown instead.
 (function () {
@@ -110,7 +110,7 @@
       angle = next;
     });
     box.querySelector(".repo-langs-summary").textContent =
-      "Across the " + repos.length + " repositories below, counting only C/C++, Rust, Python and Java: " + parts.slice(0, 3).join(", ") + " and " + parts[3] + ", by bytes of code.";
+      "Across the lab's " + repos.length + " GitHub repositories, counting only C/C++, Rust, Python and Java: " + parts.slice(0, 3).join(", ") + " and " + parts[3] + ", by bytes of code.";
     box.querySelector(".repo-langs-note").textContent = note;
   }
 

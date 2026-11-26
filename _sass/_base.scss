@@ -1421,7 +1421,8 @@ html[data-theme="dark"] .repo-langs {
 
 // Section headings on the Projects and People pages: left-aligned and prominent
 .projects h2.category,
-.profiles h2.category {
+.profiles h2.category,
+.tools h2.category {
   color: var(--global-text-color);
   text-align: left;
   font-weight: 500;
@@ -2646,5 +2647,219 @@ html.people-hex-first {
   }
   .merit-badge:hover .merit-medal {
     transform: none;
+  }
+}
+
+// Code page: one block per tool (assets/js/tool-demos.js runs the terminal demos)
+.tools {
+  --term-bg: #0f172a;
+  --term-fg: #e2e8f0;
+  .tool-block {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.1rem 1.1rem;
+    border: 1px solid var(--global-divider-color);
+    border-left: 4px solid var(--global-divider-color);
+    border-radius: 6px;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    &:focus {
+      outline: none;
+    }
+    &.is-active {
+      border-left-color: var(--global-theme-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+  }
+  .tool-name {
+    margin: 0 0 0.2rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+  .tool-desc {
+    margin: 0 0 0.6rem;
+  }
+  .tool-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.6rem;
+    list-style: none;
+    margin: 0 0 0.8rem;
+    padding: 0;
+    font-size: 0.85rem;
+  }
+  .tool-theme {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.1rem 0.65rem 0.1rem 0.25rem;
+    border: 1px solid var(--pm-c, var(--global-divider-color));
+    border-radius: 999px;
+    color: var(--pm-c, var(--global-text-color));
+    img {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+    &.t-bio {
+      --pm-c: #2a78d6;
+    }
+    &.t-path {
+      --pm-c: #eb6834;
+    }
+    &.t-micro {
+      --pm-c: #1baf7a;
+    }
+    &.t-algo {
+      --pm-c: #6250d6;
+    }
+  }
+  .tool-leads {
+    color: var(--global-text-color);
+    i {
+      color: var(--global-text-color-light);
+      margin-right: 0.2rem;
+    }
+  }
+  .tool-card {
+    max-width: 420px;
+    .repo {
+      max-width: none;
+      padding: 0 !important;
+      text-align: left !important;
+    }
+  }
+  .tool-gitlab-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    color: var(--global-text-color);
+    text-decoration: none;
+    &:hover {
+      border-color: #fc6d26;
+    }
+    .tool-gitlab-title {
+      font-weight: 600;
+      color: var(--global-theme-color);
+      i {
+        color: #fc6d26;
+        margin-right: 0.25rem;
+      }
+    }
+    .tool-gitlab-desc {
+      font-size: 0.85rem;
+    }
+    .tool-gitlab-host {
+      font-size: 0.75rem;
+      color: var(--global-text-color-light);
+    }
+  }
+  .tool-note {
+    margin: 0.4rem 0 0;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+  // the terminal
+  .tool-term {
+    margin-top: 0.8rem;
+    max-width: 760px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--term-bg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+  .tool-term-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: #1e293b;
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ef4444;
+      &:nth-child(2) {
+        background: #f59e0b;
+      }
+      &:nth-child(3) {
+        background: #22c55e;
+      }
+    }
+    b {
+      margin-left: 8px;
+      font:
+        500 0.72rem/1 "Roboto Mono",
+        monospace;
+      color: #94a3b8;
+    }
+  }
+  .tool-term-body {
+    margin: 0;
+    padding: 0.75rem 0.9rem 0.85rem;
+    background: transparent;
+    color: var(--term-fg);
+    border: 0;
+    border-radius: 0;
+    font:
+      0.78rem/1.5 "Roboto Mono",
+      ui-monospace,
+      monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    tab-size: 4;
+    .t-prompt {
+      color: #4ade80;
+    }
+    .t-cmd {
+      color: #f8fafc;
+    }
+    .t-run {
+      color: #fbbf24;
+    }
+    .t-out {
+      color: #93c5fd;
+    }
+    .t-cursor {
+      display: inline-block;
+      width: 0.55em;
+      height: 1em;
+      vertical-align: text-bottom;
+      background: #e2e8f0;
+      animation: tool-cursor 1s steps(1) infinite;
+    }
+  }
+  // a drawn application window (the Gingr view)
+  .tool-visual {
+    margin-top: 0.8rem;
+    max-width: 760px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    .tool-term-bar {
+      background: #e2e8f0;
+      b {
+        color: #475569;
+      }
+    }
+    canvas {
+      display: block;
+      width: 100%;
+    }
+  }
+  .tools-footnote {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--global-text-color-light);
+  }
+}
+@keyframes tool-cursor {
+  50% {
+    opacity: 0;
   }
 }

@@ -1,0 +1,47 @@
+{%- comment -%} One tool on the Code page. Data comes from _data/tools.yml. {%- endcomment -%}
+{%- assign tool = include.tool -%}
+<section class="tool-block" id="tool-{{ tool.name | slugify }}" tabindex="0" aria-label="{{ tool.name }}">
+<h3 class="tool-name">{% if tool.page %}<a href="{{ '/projects/' | append: tool.page | append: '/' | relative_url }}">{{ tool.name }}</a>{% else %}{{ tool.name }}{% endif %}</h3>
+<p class="tool-desc">{{ tool.description }}</p>
+<ul class="tool-meta">
+{%- for theme in tool.themes -%}
+{%- case theme -%}
+{%- when 'biosecurity' -%}{%- assign theme_name = 'Biosecurity and Synthetic DNA Screening' -%}{%- assign theme_class = 't-bio' -%}
+{%- when 'pathogen' -%}{%- assign theme_name = 'Pathogen Genomics and Wastewater Surveillance' -%}{%- assign theme_class = 't-path' -%}
+{%- when 'microbiome' -%}{%- assign theme_name = 'Microbiome Profiling and Metagenomics' -%}{%- assign theme_class = 't-micro' -%}
+{%- else -%}{%- assign theme_name = 'Scalable Algorithms and AI for Microbial Genomics' -%}{%- assign theme_class = 't-algo' -%}
+{%- endcase -%}
+<li class="tool-theme {{ theme_class }}"><picture><source srcset="{{ '/assets/anim/papers/' | append: theme | append: '.png' | relative_url }}" media="(prefers-reduced-motion: reduce)"><img src="{{ '/assets/anim/papers/' | append: theme | append: '.gif' | relative_url }}" width="28" height="28" alt=""></picture>{{ theme_name }}</li>
+{%- endfor -%}
+{%- if tool.leads.size > 0 -%}
+<li class="tool-leads"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Led by {% for lead in tool.leads -%}
+{%- assign person = site.profiles | where: "slug", lead | first -%}
+{%- if person -%}<a href="{{ person.url | relative_url }}">{{ person.title | remove: 'Dr. ' }}</a>{%- else -%}{{ lead }}{%- endif -%}
+{%- unless forloop.last -%}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{%- endunless -%}
+{%- endfor -%}</li>
+{%- endif -%}
+</ul>
+<div class="tool-card">
+{%- if tool.host == 'gitlab' -%}
+<a class="tool-gitlab-card" href="https://gitlab.com/{{ tool.repo }}"><span class="tool-gitlab-title"><i class="fa-brands fa-gitlab" aria-hidden="true"></i> {{ tool.repo }}</span><span class="tool-gitlab-desc">{{ tool.description }}</span><span class="tool-gitlab-host">GitLab</span></a>
+{%- else -%}
+{%- include repository/repo.liquid repository=tool.repo -%}
+{%- endif -%}
+</div>
+{%- if tool.note -%}<p class="tool-note">{{ tool.note }}</p>{%- endif -%}
+<div class="tool-term" data-tool="{{ tool.name | escape }}">
+<div class="tool-term-bar" aria-hidden="true"><span></span><span></span><span></span><b>{{ tool.name | downcase }} demo</b></div>
+<pre class="tool-term-body">{% for step in tool.demo %}<span class="t-prompt">$</span> <span class="t-cmd">{{ step.cmd | escape }}</span>
+{% if step.run %}<span class="t-run">✓ done</span>
+{% endif %}{% for line in step.out %}<span class="t-out">{{ line | escape }}</span>
+{% endfor %}{% endfor %}</pre>
+<script type="application/json" class="tool-term-data">{{ tool.demo | jsonify }}</script>
+</div>
+{%- if tool.visual -%}
+<div class="tool-visual" data-visual="{{ tool.visual }}" data-src="{{ '/assets/json/' | append: tool.visual | append: '-demo.json' | relative_url }}">
+<div class="tool-term-bar" aria-hidden="true"><span></span><span></span><span></span><b>{{ tool.visual_title }}</b></div>
+<canvas role="img" aria-label="{{ tool.visual_alt | escape }}"></canvas>
+</div>
+<p class="tool-note">{{ tool.visual_caption }}</p>
+{%- endif -%}
+</section>

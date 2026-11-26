@@ -13,7 +13,7 @@ category: Lab alumni
 topics: ["long-read sequencing", "genome alignment"]
 pub_key: yfu
 related_publications: false
-badges: [tool_lead, bcm_hackathon]
+badges: [tool_lead, bcm_hackathon, dog]
 ---
 
 Yilei completed a PhD in Computer Science at Rice in the Treangen Lab, working on accurate and efficient computational approaches for long-read alignment. Yilei is now a postdoctoral scientist at Baylor College of Medicine, working with Fritz Sedlazeck. In the lab, Yilei was lead author of [MethPhaser](/projects/methphaser/).

@@ -2593,6 +2593,13 @@ html.people-hex-first {
     font-size: 1.45rem;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   }
+  // badges with their own drawing in place of a Font Awesome icon
+  img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+  }
 }
 .merit-badge:hover .merit-medal {
   transform: translateY(-3px) rotate(-5deg) scale(1.06);

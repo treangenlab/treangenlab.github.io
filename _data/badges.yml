@@ -1,6 +1,7 @@
 # Badges shown at the bottom of profile pages. A profile lists the ones it has under `badges:` in its front matter,
 # e.g. `badges: [rse, dog, runner]`. The PhD badge is added automatically for anyone with `phd_alum: true`.
-# Each badge: label (shown under the medal), icon (a Font Awesome solid icon name, without "fa-"),
+# Each badge: label (shown under the medal), icon (a Font Awesome solid icon name, without "fa-")
+# or image (a white SVG drawing in assets/img/badges, for icons Font Awesome lacks),
 # colors (two colors for the medal's gradient), about (shown when the pointer rests on the badge).
 # Badges are shown in the order they appear in this file.
 
@@ -23,10 +24,22 @@ postdoc:
   about: "Was a postdoctoral scientist in the Treangen Lab"
 
 undergrad:
-  label: "Undergraduate researcher"
+  label: "Former Treangen lab undergraduate researcher"
   icon: lightbulb
   colors: ["#facc15", "#ca8a04"]
   about: "Did undergraduate research in the Treangen Lab"
+
+rice_undergrad:
+  label: "Former Rice undergrad"
+  image: assets/img/badges/owl.svg
+  colors: ["#5b76a8", "#00205b"]
+  about: "Earned an undergraduate degree at Rice University"
+
+sspb:
+  label: "SSPB"
+  icon: atom
+  colors: ["#06b6d4", "#4f46e5"]
+  about: "Rice Systems, Synthetic, and Physical Biology (SSPB) graduate program"
 
 first_phd:
   label: "First PhD graduate"
@@ -88,6 +101,12 @@ future_faculty:
   colors: ["#e0527a", "#8f1f4f"]
   about: "Rice Engineering Future Faculty Fellow (2025)"
 
+chateaubriand:
+  label: "Chateaubriand fellow"
+  image: assets/img/badges/eiffel.svg
+  colors: ["#2563eb", "#dc2626"]
+  about: "Chateaubriand Fellowship, supporting doctoral research in France"
+
 nlm:
   label: "NLM Training Fellow"
   icon: book-open-reader
@@ -135,6 +154,12 @@ vegetarian:
   icon: seedling
   colors: ["#4cc38a", "#157a4c"]
   about: "Vegetarian"
+
+powerlifter:
+  label: "Powerlifter"
+  icon: dumbbell
+  colors: ["#52525b", "#b91c1c"]
+  about: "Powerlifter"
 
 runner:
   label: "Runner"

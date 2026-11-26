@@ -9,7 +9,7 @@ joined: 2025.0
 category: Current members
 topics: ["strain-level analysis", "genome alignment", "metagenomics"]
 related_publications: true
-badges: [tool_lead, dog, runner]
+badges: [sspb, tool_lead, dog, runner]
 ---
 
 Rossie (2nd year PhD student, SSPB) worked in the synthetic biology industry for two years before starting her PhD program in Systems, Synthetic and Physical Biology (SSPB) at Rice. 

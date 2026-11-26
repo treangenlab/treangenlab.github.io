@@ -10,7 +10,7 @@ joined: 2026.6
 category: Current members
 topics: ["wastewater metagenomics", "string algorithms", "petabyte-scale computational methods"]
 related_publications: false
-badges: [newest_member]
+badges: [undergrad, rice_undergrad, newest_member]
 ---
 
 Yin Min Thant (1st year PhD student, Computer Science) joined the Treangen lab in 2026 and is pursuing a Ph.D. in Computer Science at Rice University with a focus on bioinformatics. Her research interests include wastewater metagenomics, string algorithms, and petabyte-scale computational methods. Yin Min earned her Bachelor's degree in Mathematics and Computer Science from Rice University in 2026. She represented Myanmar at the 2020 International Mathematical Olympiad. Yin Min is supported by the Houston Health Department and CDC through the [Houston Wastewater Epidemiology Center of Excellence](/projects/fund_wastewater/).

@@ -72,7 +72,7 @@ layout: default
       {% bibliography --query @*[lab_authors ~= {{page.pub_key}}] %}
     </div>
   {% elsif page.related_publications %}
-    <h2>References</h2>
+    <h2>{% if page.collection == 'profiles' %}Papers{% else %}References{% endif %}</h2>
     <div class="publications">
       {% bibliography --cited_in_order %}
     </div>
@@ -91,7 +91,7 @@ layout: default
           {% if key == 'phd' and page.phd_alum %}{% assign has = true %}{% endif %}
           {% if has %}
             <li class="merit-badge" title="{{ badge.about | escape }}" style="--b1: {{ badge.colors[0] }}; --b2: {{ badge.colors[1] }};">
-              <span class="merit-medal" aria-hidden="true"><i class="fa-solid fa-{{ badge.icon }}"></i></span>
+              <span class="merit-medal" aria-hidden="true">{% if badge.image %}<img src="{{ badge.image | relative_url }}" alt="">{% else %}<i class="fa-solid fa-{{ badge.icon }}"></i>{% endif %}</span>
               <span class="merit-label">{{ badge.label }}</span>
             </li>
           {% endif %}

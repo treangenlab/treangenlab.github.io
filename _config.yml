@@ -359,6 +359,7 @@ filtered_bibtex_keywords:
     comp_axis,
     bio_axis,
     paper_type,
+    papers_page,
     additional_info,
     altmetric,
     annotation,

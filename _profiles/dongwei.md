@@ -9,7 +9,7 @@ joined: 2024.61
 category: Current members
 topics: ["machine learning", "primer design"]
 related_publications: true
-badges: [tool_lead, ai_ml, cat]
+badges: [tool_lead, ai_ml, cat, asm_big_2026]
 ---
 
 Dongwei Li (3rd year Ph.D. student, Computer Science) is pursuing a Ph.D. in Computer Science at Rice University. She holds a Bachelor's degree in Computer Science from Shandong University and a Master of Computer Science (MCS) from Rice University. Prior to her doctoral studies, Dongwei worked as a bioinformatics programmer at Baylor College of Medicine, where she focused on research involving large language models (LLMs), graph neural networks (GNNs), and single-cell data analysis. Dongwei's primary research focuses on applying machine learning and large language models to computational biology, with a particular emphasis on genomics. Her research is supported by the lab's [NSF CAREER award](/projects/fund_career/) (IIS 2239114).

@@ -124,7 +124,11 @@
         return;
       }
       var h = tall * f[2] * 0.92;
-      var ratio = img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1.5;
+      // A photo's shape is only known once it has loaded (some are square, some 3:2). Until then it stays
+      // hidden, so it is never seen stretched to the wrong shape and then snapping into place.
+      if (!(img.complete && img.naturalWidth)) return;
+      img.classList.add("is-loaded");
+      var ratio = img.naturalWidth / img.naturalHeight;
       var w = h * ratio;
       var left = Math.min(0, Math.max(size - w, size / 2 - (f[0] / 100) * w));
       var top = Math.min(0, Math.max(tall - h, tall * 0.47 - (f[1] / 100) * h));
@@ -214,7 +218,7 @@
   // Photos are not all the same shape, so lay out again once each one has loaded.
   bubbles.forEach(function (b) {
     var img = b.querySelector("img");
-    if (img && !img.complete) img.addEventListener("load", place);
+    if (img) img.addEventListener("load", place); // also fires again if the .webp fails and the .jpg fallback loads
   });
   show(true);
   // The page was drawn with space held for the hexagons (see .people-hex-first in the stylesheet); hand over to this script.

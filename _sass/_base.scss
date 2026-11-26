@@ -1579,6 +1579,12 @@ html[data-theme="dark"] .repo-langs {
     img {
       position: absolute;
       max-width: none;
+      // shown by people-bubbles.js once the photo has loaded and been fitted to its hexagon
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      &.is-loaded {
+        opacity: 1;
+      }
     }
   }
   .people-bubble:nth-child(3n + 1) .people-bubble-photo {
@@ -2101,6 +2107,15 @@ html[data-theme="dark"] .alumni-sectors {
         background: var(--pm-other);
       }
     }
+  }
+  .pm-dot.is-filtered {
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  .paper-map-filter {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 0 0.2rem;
   }
   .paper-map-detail {
     min-height: 2.6em;

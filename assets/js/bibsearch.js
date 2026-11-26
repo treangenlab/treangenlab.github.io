@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Simply add unloaded class to all non-matching items if Browser does not support CSS highlights
       document.querySelectorAll(".bibliography > li").forEach((element, index) => {
-        const text = element.innerText.toLowerCase();
+        const text = element.textContent.toLowerCase(); // textContent, so the hidden search words count too
         if (text.indexOf(searchTerm) == -1) {
           element.classList.add("unloaded");
         }

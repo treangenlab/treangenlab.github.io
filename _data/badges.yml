@@ -107,6 +107,12 @@ chateaubriand:
   colors: ["#2563eb", "#dc2626"]
   about: "Chateaubriand Fellowship, supporting doctoral research in France"
 
+asm_big_2026:
+  label: "ASM BIG 2026 talk"
+  icon: person-chalkboard
+  colors: ["#3aa0e8", "#1d4f9c"]
+  about: "Gave a talk at ASM BIG 2026"
+
 nlm:
   label: "NLM Training Fellow"
   icon: book-open-reader

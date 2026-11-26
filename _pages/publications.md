@@ -28,6 +28,6 @@ nav_order: 4
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @*[papers_page!=false] %}
 
 </div>

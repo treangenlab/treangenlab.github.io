@@ -69,6 +69,10 @@
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
+    {% if page.permalink == '/publications/' %}
+      {% comment %} Words the search box can match but that are not shown: research area, project, and the abstract's words. {% endcomment %}
+      <span class="bib-search-words" hidden>{{ entry.theme }} {{ entry.project }} {{ site.data.paper_keywords[entry.key] }}</span>
+    {% endif %}
     {% if entry.theme %}
       <div class="topic-tags paper-theme">
         <a class="topic-tag theme-{{ paper_icon }}" href="{{ '/projects/' | relative_url }}#{{ entry.theme | uri_escape }}" title="Research area">{{ entry.theme }}</a>

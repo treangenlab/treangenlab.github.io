@@ -3,6 +3,8 @@
 # comp_axis: statistics and machine learning terms (positive) versus sequence algorithm and data structure terms (negative).
 # bio_axis: microbiome terms (positive) versus pathogen and microbial genomics terms (negative).
 # paper_type (preprint, paper or review) sets the shape of the mark; it defaults to paper.
+# Entries with papers_page = {false} (papers by lab members without the PI as an author) are left off the plot
+# and the papers page; they still appear on the member's profile.
 # Both positions come from how densely each kind of term appears in the title, abstract and, where openly available, full text.
 require "bibtex"
 
@@ -19,6 +21,7 @@ module Jekyll
       papers = []
       BibTeX.open(path, filter: :latex).each do |entry|
         next unless entry.respond_to?(:key) && entry.field?(:comp_axis) && entry.field?(:bio_axis)
+        next if entry.field?(:papers_page) && entry[:papers_page].to_s.strip == "false"
 
         url = nil
         if entry.field?(:html) && entry[:html].to_s.include?("://")

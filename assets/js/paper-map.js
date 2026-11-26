@@ -388,5 +388,48 @@
     li.appendChild(document.createTextNode(k[1]));
     legend.appendChild(li);
   });
+  // The plot follows the search box above the list: a paper that the search hides in the list is hidden here too.
+  // The list's own search (bibsearch.js) marks hidden entries with the class "unloaded"; this reads that back.
+  var search = document.getElementById("bibsearch");
+  var note = document.createElement("p");
+  note.className = "paper-map-filter";
+  note.hidden = true;
+  box.insertBefore(note, detail);
+  function syncFilter() {
+    var term = search ? search.value.trim() : "";
+    var shown = 0;
+    dots.forEach(function (d) {
+      var entry = document.getElementById(d.p.key);
+      var li = entry && entry.closest ? entry.closest("li") : null;
+      var off = !!(term && li && li.classList.contains("unloaded"));
+      d.link.classList.toggle("is-filtered", off);
+      if (off) {
+        d.link.setAttribute("tabindex", "-1");
+        d.link.setAttribute("aria-hidden", "true");
+      } else {
+        d.link.removeAttribute("tabindex");
+        d.link.removeAttribute("aria-hidden");
+        shown++;
+      }
+    });
+    note.hidden = !term;
+    if (term) note.textContent = shown + " of " + dots.length + " papers match \u201c" + term + "\u201d (title, authors, venue, research area or abstract).";
+    if (selected && selected.classList.contains("is-filtered")) {
+      selected.classList.remove("is-selected");
+      selected = null;
+      tip.hidden = true;
+    }
+  }
+  if (search) {
+    var filterTimer;
+    var queue = function () {
+      window.clearTimeout(filterTimer);
+      filterTimer = window.setTimeout(syncFilter, 420); // the list search waits 300 ms before it runs
+    };
+    search.addEventListener("input", queue);
+    window.addEventListener("hashchange", queue);
+    window.addEventListener("load", queue);
+    queue();
+  }
   detail.textContent = "Hover over a mark to see the paper. Crowded marks spread apart when you hover over them; use + and − to zoom, then drag to move around.";
 })();

@@ -7,6 +7,7 @@
 #   come from running the tool here or from example files in its repository; otherwise they list documented files.
 # Optional picture or clip under the terminal: image (in assets/img) or video (in assets/video) with video_poster
 #   (in assets/img), each with _w, _h, _alt and _caption.
+# diy: the set-up commands shown in DIY mode (install, get the example data); diy_note: one line on what else is needed.
 - name: onsight
   repo: treangenlab/onsight
   host: github
@@ -34,6 +35,11 @@
   video_h: 460
   video_alt: 'Animation of onsight on its example data: raw nanopore signal arrives read by read, and the two panel targets, S. aureus and E. faecalis, are marked present at reads 4 and 9.'
   video_caption: 'Drawn from a run of onsight on its example data (160 simulated reads, two-target panel): the signal traces are the reads'' raw signal and the calls are the ones onsight wrote. The full 24-target panel covers the ESKAPE pathogens.'
+  diy:
+  - git clone https://github.com/treangenlab/onsight.git && cd onsight
+  - conda env create -f environment.yml && conda activate onsight
+  - make -j 8 && make install
+  diy_note: The example reads and panel are in the repository.
 - name: Gingr2
   repo: marbl/gingr
   host: github
@@ -58,6 +64,10 @@
   note: The repository card and the recording show the original Gingr.
   video_w: 1000
   video_h: 640
+  diy:
+  - conda install -c bioconda parsnp
+  - git clone https://github.com/marbl/parsnp.git && cd parsnp
+  diy_note: Gingr is a desktop application; get it from the Gingr repository. The example genomes are in the Parsnp repository.
 - name: KOMB
   repo: treangenlab/komb
   host: github
@@ -89,6 +99,9 @@
   image_h: 506
   image_alt: 'Two plots from a KOMB run. Left: the KOMB profile, the number of unitigs in each k-core shell, with most unitigs in low shells and a few dense shells out to 700. Right: unitig degree against coreness, with 12,261 anomalous unitigs highlighted below the main trend.'
   image_caption: 'From a KOMB run on the first 600,000 read pairs of the Shakya et al. mock community (SRR606249). Left: the KOMB profile. Right: anomalous unitigs, those with a CORE-A score above Q3 + 1.5 IQR.'
+  diy:
+  - git clone https://github.com/treangenlab/komb.git && cd komb
+  diy_note: KOMB is built from source and needs ggcat, bwa-mem2 and igraph; the README has the steps. Use your own paired reads in place of reads1.fastq and reads2.fastq.
 - name: Mash
   repo: marbl/mash
   host: github
@@ -112,6 +125,9 @@
     - "0.853596\t36/1000\t1\t1.7048e-184\tgenome2.fna"
     - "0.861792\t44/1000\t1\t5.00742e-229\tgenome3.fna"
   real_output: true
+  diy:
+  - conda install -c bioconda mash
+  diy_note: Use your own genomes and reads in place of the file names.
 - name: Parsnp2
   repo: marbl/parsnp
   host: github
@@ -137,6 +153,15 @@
   real_output: true
   page: parsnp
   note: 'Open parsnp.ggr in Gingr to browse the alignment and tree: see the Gingr2 recording.'
+  image: tools/parsnp-tree.png
+  image_w: 1100
+  image_h: 946
+  image_alt: Phylogenetic tree of 47 MERS-CoV genomes from Parsnp, with the Al-Hasa 2013 genomes forming one tight cluster and camel-derived genomes another.
+  image_caption: The tree Parsnp wrote for its MERS-CoV example (parsnp.tree), drawn with Biopython.
+  diy:
+  - conda install -c bioconda parsnp
+  - git clone https://github.com/marbl/parsnp.git && cd parsnp
+  diy_note: The example genomes are in the repository.
 - name: Seqwin
   repo: treangenlab/seqwin
   host: github
@@ -164,6 +189,10 @@
     - 0-VXJV01000015.1-52097:52442,345
   real_output: true
   page: seqwin
+  diy:
+  - conda create -n seqwin seqwin --channel conda-forge --channel bioconda --strict-channel-priority
+  - conda activate seqwin
+  diy_note: targets.txt and non-targets.txt list the paths of your own genome files.
 - name: SeqScreen
   repo: treangenlab/seqscreen
   host: gitlab
@@ -199,6 +228,7 @@
   image_h: 385
   image_alt: 'SeqScreen HTML report: a table with one row per query sequence, its organism, gene name and GO terms, and one column per function of concern, with a red 1 where a function is present.'
   image_caption: 'SeqScreen''s HTML report, from the SeqScreen wiki: one row per sequence and one column per FunSoC, with a 1 where the function is present. The report can be sorted and filtered.'
+  diy_note: Installing SeqScreen and its databases (hundreds of gigabytes) is described in the <a href="https://gitlab.com/treangenlab/seqscreen/wikis/home">SeqScreen wiki</a>.
 - name: somatem
   repo: treangenlab/somatem
   host: github
@@ -224,6 +254,10 @@
   real_output: false
   page: somatem
   note: 'Other workflows: pre_processing, taxonomic_profiling, assembly_mags, isolate_analysis, seqscreen and genome_dynamics. Each writes an HTML summary report.'
+  diy:
+  - micromamba create -n somatem -c bioconda somatem
+  - micromamba activate somatem
+  diy_note: The first command of the example downloads the example data; the first run of a workflow also downloads its database.
 - name: Crykey
   repo: treangenlab/crykey
   host: github
@@ -246,6 +280,9 @@
     - 1012023,Test,C27131T;T27176C,M:N203N;M:A218A,13,289
   real_output: true
   page: crykey
+  diy:
+  - git clone https://github.com/treangenlab/crykey.git && cd crykey
+  diy_note: The dependencies are listed in the README; the demo data is in the repository.
 - name: Emu
   repo: treangenlab/emu
   host: github
@@ -267,6 +304,17 @@
     - 1310     0.25       Streptococcus sobrinus
   real_output: true
   page: emu
+  image: tools/emu-demo.png
+  image_w: 1100
+  image_h: 286
+  image_alt: 'Bar chart of the three species Emu reports for its example reads: Sphingobacterium puteale 50%, Streptococcus sobrinus 25%, Mycobacterium saskatchewanense 25%.'
+  image_caption: Emu's result on the example reads in its repository.
+  diy:
+  - conda config --add channels bioconda && conda config --add channels conda-forge
+  - conda install emu
+  - git clone https://github.com/treangenlab/emu.git && cd emu
+  - export EMU_DATABASE_DIR=$PWD/emu_database
+  diy_note: The example reads and a default database are in the repository.
 - name: Harvest
   repo: marbl/harvest
   host: github
@@ -297,6 +345,10 @@
     out:
     - '(opens the alignment and tree in Gingr: see the Gingr2 recording)'
   real_output: true
+  diy:
+  - conda install -c bioconda parsnp harvesttools
+  - git clone https://github.com/marbl/parsnp.git && cd parsnp
+  diy_note: Gingr is a desktop application; get it from the Gingr repository.
 - name: Kente
   repo: treangenlab/Kente
   host: github
@@ -319,6 +371,9 @@
     - sample_genus_blocks.tsv
   real_output: false
   page: kente
+  diy:
+  - git clone https://github.com/treangenlab/Kente.git && cd Kente
+  diy_note: Kente needs Kraken2 with a database, minigraph, and the <a href="https://zenodo.org/records/18895175">Kente pangenome graph database</a> (2.5 GB), which comes with example contigs.
 - name: Lemur
   repo: treangenlab/lemur
   host: github
@@ -338,6 +393,10 @@
     - "Listeria monocytogenes\tListeria\t1.0"
   real_output: true
   page: lemur_magnet
+  diy:
+  - conda install -c bioconda lemur
+  - git clone https://github.com/treangenlab/lemur.git && cd lemur
+  diy_note: The example reads and database are in the repository.
 - name: MAGnet
   repo: treangenlab/magnet
   host: github
@@ -359,6 +418,10 @@
     - Bacillus sp. FMQ74      0.002592275317516481  10.36                Absent
   real_output: true
   page: lemur_magnet
+  diy:
+  - git clone https://github.com/treangenlab/magnet.git && cd magnet
+  - conda env create -n magnet -f magnet_env.yml && conda activate magnet
+  diy_note: Use a Lemur report and your own reads in place of the file names.
 - name: MethPhaser
   repo: treangenlab/methphaser
   host: github
@@ -369,12 +432,25 @@
   leads:
   - yfu
   demo:
-  - cmd: meth_phaser_parallel -b test_data/HLA.R10.haplotagged.bam -r test_data/GRCh38.chr6.fna -g test_data/LSK.filtered.gtf -vc test_data/HLA.R10.phased.vcf.gz -o test_data/work
+  - cmd: meth_phaser_parallel -b test_data/HLA.R10.haplotagged.bam -r test_data/GCA_000001405.15_GRCh38_no_alt_analysis_set.chr6.fna -g test_data/LSK.filtered.gtf -vc test_data/HLA.R10.phased.vcf.gz -o test_data/work
     run: true
+  - cmd: cut -d, -f 2,3,6,7,8 test_data/work/chr6/0_3.csv
+    out:
+    - snp_phased_block_1,snp_phased_block_2,myth_phasing_relationship,same_hap_num,diff_hap_num
+    - '"(30927529, 31700433)","(29000000, 30738854)",cannot decide,,'
+    - '"(29000000, 30738854)","(30798118, 30854714)",not same,7,140'
+    - '"(30798118, 30854714)","(30927529, 31700433)",cannot decide,,'
   - cmd: meth_phaser_post_processing -ib test_data/HLA.R10.haplotagged.bam -if test_data/work/ -ov test_data/output.vcf -ob test_data/output -vc test_data/HLA.R10.phased.vcf.gz
     run: true
-  real_output: false
+  - cmd: ls test_data | grep output
+    out:
+    - output.chr6.methtagged.bam
+    - output.vcf
+  real_output: true
   page: methphaser
+  diy:
+  - mamba install -c bioconda methphaser
+  diy_note: Download the <a href="https://zenodo.org/record/8360845">test data</a> (about 335 MB) into a folder named test_data.
 - name: Mimic
   repo: treangenlab/Mimic
   host: github
@@ -400,6 +476,10 @@
     out:
     - simulated.fasta
   real_output: true
+  diy:
+  - git clone https://github.com/collaborativebioinformatics/Mimic.git && cd Mimic
+  - conda env create -f mimic_env.yml && conda activate mimic
+  diy_note: Use your own reads and a Lemur database in place of the names shown.
 - name: Olivar
   repo: treangenlab/olivar
   host: github
@@ -422,6 +502,11 @@
     - "EPI_ISL_402124\t360\t379\tEPI_ISL_402124_1_RIGHT_1\t1\t-\tGACCTCCTCCACGGAGTCT"
   real_output: true
   page: olivar
+  diy:
+  - conda create -n olivar olivar --channel conda-forge --channel bioconda --strict-channel-priority
+  - conda activate olivar
+  - git clone https://github.com/treangenlab/Olivar.git && cd Olivar
+  diy_note: The example input is in the repository.
 - name: Olivia
   repo: treangenlab/Olivia
   host: github
@@ -445,6 +530,11 @@
     - Olivia,400,2,hev_stratified_aligned_2_LEFT,forward,GCCCACCCAAGATCCATTAATG
   real_output: true
   page: olivia
+  diy:
+  - git clone https://github.com/treangenlab/Olivia.git && cd Olivia
+  - conda env create -f environment.yml && conda activate olivia
+  - pip install -e .
+  diy_note: Olivia also needs NUPACK, installed separately as the README describes.
 - name: PlasmidScreen
   repo: treangenlab/PlasmidScreen
   host: github
@@ -468,6 +558,10 @@
     - Natural     read_unclassified  NA                    1.0                      0.00%
   real_output: true
   page: plasmidscreen
+  diy:
+  - git clone https://github.com/treangenlab/PlasmidScreen.git && cd PlasmidScreen
+  - pip install .
+  diy_note: This example uses the test files in the repository, so it needs no Kraken database; the database path is only a placeholder.
 - name: Rhea
   repo: treangenlab/rhea
   host: github
@@ -494,6 +588,10 @@
   video_h: 640
   video_alt: Animation of the cheese rind co-assembly graph at weeks 2, 3, 4, 9 and 13. Each piece of assembled genome is a line coloured by its read coverage that week, so different parts of the graph light up as the community changes.
   video_caption: 'Drawn from rhea''s published results on a washed-rind cheese time series (weeks 2, 3, 4, 9 and 13): the co-assembly graph, with each piece coloured by rhea''s coverage colour for that week.'
+  diy:
+  - git clone https://github.com/treangenlab/rhea.git && cd rhea
+  - conda env create -f environment.yml && conda activate rhea
+  diy_note: Use your own time-series read files, in order, in place of the file names.
 - name: Strainify
   repo: treangenlab/strainify
   host: github
@@ -516,6 +614,10 @@
     - UTI89,26.423
   real_output: true
   page: strainify
+  diy:
+  - git clone https://github.com/treangenlab/Strainify.git && cd Strainify
+  - conda env create -f environment.yml && conda activate strainify
+  diy_note: The example genomes and reads are in the repository.
 - name: bronko
   repo: treangenlab/bronko
   host: github
@@ -529,18 +631,25 @@
   demo:
   - cmd: bronko call -d test_data/hpv.bkdb -1 test_data/rep1_R1.fastq.gz -2 test_data/rep1_R2.fastq.gz -o out
     run: true
-  - cmd: grep -v '^##' out/rep1_R1.vcf | cut -f 1,2,4,5,8 | cut -d';' -f1-2
+  - cmd: grep -w 4784 out/rep1_R1.vcf | cut -f 1,2,4,5,8 | cut -d';' -f1-2
     out:
-    - '#CHROM    POS   REF  ALT  INFO'
-    - HPV16REF  4192  T    G    DP=94710;AF=0.494
-    - HPV16REF  4196  G    T    DP=94831;AF=0.497
     - HPV16REF  4784  T    A    DP=24072;AF=0.014
-  - cmd: cut -f 2-4,7,8 out/bronko_overview.tsv
+  - cmd: cut -f 2,7,8 out/bronko_overview.tsv
     out:
-    - selected_genome  num_major_snp  num_minor_snp  breadth_coverage  depth_coverage
-    - HPV16            0              3              0.9947            34288.2668
+    - selected_genome  breadth_coverage  depth_coverage
+    - HPV16            0.9947            34288.2668
   real_output: true
   page: bronko
+  video: bronko-demo.mp4
+  video_poster: bronko-demo-poster.jpg
+  video_w: 1000
+  video_h: 580
+  video_alt: 'IGV screenshots of the HPV16 test reads aligned with minimap2, zooming from the whole genome to position 4,784, where 307 of 26,135 aligned reads (1.2%) carry an A in place of the reference T. bronko reports the same variant at 1.4% without aligning.'
+  video_caption: 'Checked against an alignment: the same test reads mapped with minimap2 and viewed in IGV. At position 4,784, 307 of 26,135 reads (1.2%) carry the A that bronko calls at 1.4% (333 of 24,072) from k-mers alone.'
+  diy:
+  - conda create -n bronko -c conda-forge -c bioconda bronko && conda activate bronko
+  - git clone https://github.com/treangenlab/bronko.git && cd bronko
+  diy_note: The test data is in the repository.
 - name: mft-tools
   repo: treangenlab/mft-tools
   host: github
@@ -564,6 +673,10 @@
     - PPAAAOPPPAHHAPPPFHHHDIIIOAAAPKFIIIAAAIIAPJJJJPAAAAPPPOAAPPAA
   real_output: true
   page: mft
+  diy:
+  - mamba create -n mft-tools -c conda-forge -c bioconda mft-tools && mamba activate mft-tools
+  - git clone https://github.com/treangenlab/mft-tools.git && cd mft-tools
+  diy_note: England1.fna stands for any genome in FASTA format; the mapping tables are in the repository.
 - name: QuaID
   repo: treangenlab/quaid
   host: gitlab
@@ -583,6 +696,10 @@
     out:
     - Date,Plant,Total AF,Total QU count,# QU possible,Fraction covered,WHO name
   real_output: false
+  diy:
+  - git clone https://gitlab.com/treangenlab/quaid.git && cd quaid
+  - conda create -n quaid-env --file quaid-env-list.txt && conda activate quaid-env
+  diy_note: QuaID needs SARS-CoV-2 lineage data from GISAID, which requires your own GISAID access.
 - name: Omi
   host: web
   url: https://omi.rice.edu/

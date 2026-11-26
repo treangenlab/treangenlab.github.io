@@ -11,7 +11,7 @@
 {%- when 'microbiome' -%}{%- assign theme_name = 'Microbiome Profiling and Metagenomics' -%}{%- assign theme_class = 't-micro' -%}
 {%- else -%}{%- assign theme_name = 'Scalable Algorithms and AI for Microbial Genomics' -%}{%- assign theme_class = 't-algo' -%}
 {%- endcase -%}
-<li class="tool-theme {{ theme_class }}"><picture><source srcset="{{ '/assets/anim/papers/' | append: theme | append: '.png' | relative_url }}" media="(prefers-reduced-motion: reduce)"><img src="{{ '/assets/anim/papers/' | append: theme | append: '.gif' | relative_url }}" width="28" height="28" alt=""></picture>{{ theme_name }}</li>
+<li class="tool-theme {{ theme_class }}"><picture><source srcset="{{ '/assets/anim/papers/' | append: theme | append: '.png' | relative_url }}" media="(prefers-reduced-motion: reduce)"><img src="{{ '/assets/anim/papers/' | append: theme | append: '.gif' | relative_url }}" data-still="{{ '/assets/anim/papers/' | append: theme | append: '.png' | relative_url }}" width="28" height="28" alt=""></picture>{{ theme_name }}</li>
 {%- endfor -%}
 {%- if tool.leads.size > 0 -%}
 <li class="tool-leads"><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Led by {% for lead in tool.leads -%}
@@ -39,7 +39,32 @@
 {% endif %}{% for line in step.out %}<span class="t-out">{{ line | escape }}</span>
 {% endfor %}{% endfor %}</pre>
 <script type="application/json" class="tool-term-data">{{ tool.demo | jsonify }}</script>
+<div class="tool-term-step" hidden><button type="button" class="tool-step-btn">Run</button><span class="tool-step-hint">Replay of a recorded run: press Run (or Enter) for each command.</span></div>
 </div>
+{%- endif -%}
+{%- if tool.diy or tool.diy_note -%}
+<details class="tool-diy">
+<summary><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Run {{ tool.name }} yourself</summary>
+<p class="tool-diy-lead">These run on your own computer. Nothing on this page runs the tool.</p>
+<ol>
+{%- if tool.diy -%}
+<li><span class="tool-diy-step">Set up</span>
+{%- for c in tool.diy -%}
+<div class="tool-copy"><code>{{ c | escape }}</code><button type="button" class="tool-copy-btn">Copy</button></div>
+{%- endfor -%}
+</li>
+{%- endif -%}
+{%- if tool.demo -%}
+<li><span class="tool-diy-step">Run the example</span>
+{%- for step in tool.demo -%}
+<div class="tool-copy"><code>{{ step.cmd | escape }}</code><button type="button" class="tool-copy-btn">Copy</button></div>
+{%- endfor -%}
+</li>
+<li><span class="tool-diy-step">Compare</span> Your output should look like the replay above.</li>
+{%- endif -%}
+</ol>
+{%- if tool.diy_note -%}<p class="tool-diy-note">{{ tool.diy_note }}</p>{%- endif -%}
+</details>
 {%- endif -%}
 {%- if tool.video -%}
 <div class="tool-visual">

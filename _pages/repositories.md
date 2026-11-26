@@ -44,6 +44,11 @@ The lab's open-source tools, grouped by main programming language. Hover over a 
 
 {::nomarkdown}
 <div class="tools">
+<div class="tools-controls" hidden>
+<button type="button" class="tools-toggle" id="tools-anim" aria-pressed="true"><i class="fa-solid fa-film" aria-hidden="true"></i> Animations: <b>on</b></button>
+<button type="button" class="tools-toggle" id="tools-diy" aria-pressed="false"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> DIY mode: <b>off</b></button>
+<span class="tools-controls-note" id="tools-controls-note"></span>
+</div>
 {%- assign languages = site.data.tools | map: "language" | uniq | sort -%}
 {%- for language in languages -%}
 <h2 class="category" id="{{ language | replace: '+', 'p' | slugify }}">{{ language }}</h2>
@@ -52,7 +57,7 @@ The lab's open-source tools, grouped by main programming language. Hover over a 
 {% include tool_block.liquid tool=tool %}
 {%- endfor -%}
 {%- endfor -%}
-<p class="tools-footnote">The terminal demos replay commands from each tool's own documentation. Output lines come from running the tool on its example data, or from example files and documentation in its repository; a few tools that need large databases show their documented output files instead. Clips and plots are described under each one.</p>
+<p class="tools-footnote">The terminal demos replay commands from each tool's own documentation; nothing runs in your browser. Output lines come from running the tool on its example data, or from example files and documentation in its repository; a few tools that need large databases show their documented output files instead. Clips and plots are described under each one. The set-up commands in each "Run it yourself" panel come from the tool's README.</p>
 </div>
 {:/nomarkdown}
 {% endif %}

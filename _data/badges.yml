@@ -155,6 +155,12 @@ vegetarian:
   colors: ["#4cc38a", "#157a4c"]
   about: "Vegetarian"
 
+chef:
+  label: "Professional chef"
+  icon: utensils
+  colors: ["#f2a93b", "#b4551a"]
+  about: "Professional chef"
+
 powerlifter:
   label: "Powerlifter"
   icon: dumbbell

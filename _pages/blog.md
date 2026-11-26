@@ -4,7 +4,7 @@ permalink: /blog/
 title: blog
 nav: true
 giscus_comments: true
-nav_order: 7
+nav_order: 6
 pagination:
   enabled: true
   collection: posts

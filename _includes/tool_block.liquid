@@ -43,8 +43,14 @@
 {%- endif -%}
 {%- if tool.video -%}
 <div class="tool-visual">
-<video class="tool-video" muted loop playsinline preload="none" width="1000" height="640" poster="{{ '/assets/img/' | append: tool.video_poster | relative_url }}" aria-label="{{ tool.video_alt | escape }}"><source src="{{ '/assets/video/' | append: tool.video | relative_url }}" type="video/mp4"></video>
+<video class="tool-video" muted loop playsinline preload="none" width="{{ tool.video_w | default: 1000 }}" height="{{ tool.video_h | default: 640 }}" poster="{{ '/assets/img/' | append: tool.video_poster | relative_url }}" aria-label="{{ tool.video_alt | escape }}"><source src="{{ '/assets/video/' | append: tool.video | relative_url }}" type="video/mp4"></video>
 </div>
 <p class="tool-note">{{ tool.video_caption }}</p>
+{%- endif -%}
+{%- if tool.image -%}
+<div class="tool-visual">
+<a href="{{ '/assets/img/' | append: tool.image | relative_url }}"><img src="{{ '/assets/img/' | append: tool.image | relative_url }}" width="{{ tool.image_w }}" height="{{ tool.image_h }}" loading="lazy" alt="{{ tool.image_alt | escape }}"></a>
+</div>
+<p class="tool-note">{{ tool.image_caption }}</p>
 {%- endif -%}
 </section>

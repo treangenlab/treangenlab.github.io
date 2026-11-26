@@ -4,7 +4,9 @@
 # for people without a profile), page (file name of the tool's page in _projects, if it has one),
 # demo: the terminal animation. Each step has a command (cmd), then either run: true (shows the tool working)
 #   or out: lines of output. Commands follow each tool's README. real_output: true means the output lines
-#   are copied from example files in the tool's repository; otherwise they list the documented output files.
+#   come from running the tool here or from example files in its repository; otherwise they list documented files.
+# Optional picture or clip under the terminal: image (in assets/img) or video (in assets/video) with video_poster
+#   (in assets/img), each with _w, _h, _alt and _caption.
 - name: onsight
   repo: treangenlab/onsight
   host: github
@@ -19,12 +21,19 @@
   demo:
   - cmd: onsight --pore r10 --panel-dir example/panel -o example_out/ -t 4 example/reads.pod5
     run: true
-  - cmd: grep neighbor_check example_out/target_calls.tsv | cut -f1-4
+  - cmd: cut -f 1,2,6,7 example_out/target_calls.tsv | grep -e entry -e neighbor_check
     out:
-    - "Staphylococcus aureus\tread_pvalue+neighbor_check\t1\t4"
-    - "Enterococcus faecalis\tread_pvalue+neighbor_check\t1\t9"
-  real_output: false
+    - entry        rule                        called  first_call_reads
+    - S. aureus    read_pvalue+neighbor_check  1       4
+    - E. faecalis  read_pvalue+neighbor_check  1       9
+  real_output: true
   page: onsight
+  video: onsight-demo.mp4
+  video_poster: onsight-demo-poster.jpg
+  video_w: 1000
+  video_h: 460
+  video_alt: 'Animation of onsight on its example data: raw nanopore signal arrives read by read, and the two panel targets, S. aureus and E. faecalis, are marked present at reads 4 and 9.'
+  video_caption: 'Drawn from a run of onsight on its example data (160 simulated reads, two-target panel): the signal traces are the reads'' raw signal and the calls are the ones onsight wrote. The full 24-target panel covers the ESKAPE pathogens.'
 - name: Gingr2
   repo: marbl/gingr
   host: github
@@ -41,12 +50,14 @@
   - cmd: gingr examples-out/parsnp.ggr
     out:
     - (Gingr opens the alignment, variants and tree in a window)
-  real_output: false
+  real_output: true
   video: gingr-demo.mp4
   video_poster: gingr-demo-poster.jpg
   video_alt: 'Screen recording of Gingr: a phylogenetic tree beside the Parsnp core-genome alignment of 47 MERS-CoV genomes, zooming from the whole genome down to single bases and back.'
   video_caption: Screen recording of Gingr on Parsnp's core-genome alignment of 47 MERS-CoV genomes (parsnp.ggr from the Harvest documentation), zooming from the whole genome to single bases.
   note: The repository card and the recording show the original Gingr.
+  video_w: 1000
+  video_h: 640
 - name: KOMB
   repo: treangenlab/komb
   host: github
@@ -58,10 +69,26 @@
   leads:
   - abalaji
   demo:
-  - cmd: python KOMB.py -i example_data/reads1.fastq -j example_data/reads2.fastq -k 51
+  - cmd: KOMB.py -i reads1.fastq -j reads2.fastq -k 51
     run: true
-  real_output: false
+  - cmd: head -4 output/kcore.tsv
+    out:
+    - '#VID  Name    Coreness  Degree'
+    - 0     43505   2         2
+    - 1     104790  3         6
+    - 2     157574  3         3
+  - cmd: head -3 output/CoreA_anomaly.txt
+    out:
+    - 0  0.060455
+    - 1  0.974224
+    - 2  0.178875
+  real_output: true
   page: komb
+  image: tools/komb-demo.png
+  image_w: 1100
+  image_h: 506
+  image_alt: 'Two plots from a KOMB run. Left: the KOMB profile, the number of unitigs in each k-core shell, with most unitigs in low shells and a few dense shells out to 700. Right: unitig degree against coreness, with 12,261 anomalous unitigs highlighted below the main trend.'
+  image_caption: 'From a KOMB run on the first 600,000 read pairs of the Shakya et al. mock community (SRR606249). Left: the KOMB profile. Right: anomalous unitigs, those with a CORE-A score above Q3 + 1.5 IQR.'
 - name: Mash
   repo: marbl/mash
   host: github
@@ -98,11 +125,18 @@
   demo:
   - cmd: parsnp -r examples/mers_virus/ref/England1.fna -d examples/mers_virus/genomes/*.fna -o examples-out
     run: true
+    out:
+    - Aligned 47 genomes in 2.93 seconds
   - cmd: ls examples-out
     out:
-    - parsnp.ggr  parsnp.snps.mblocks  parsnp.tree  parsnp.xmfa
-  real_output: false
+    - England1.fna.ref  config  log  parsnp.ggr  parsnp.maf
+    - parsnp.snps.mblocks  parsnp.tree  parsnp.xmfa  parsnpAligner.ini
+  - cmd: head -c 96 examples-out/parsnp.tree
+    out:
+    - (((Riyadh_4_2013.fna:0.01917180179598590092,(Riyadh_3_2013.fna:0.03704946230388730249,(Wadi-Ad-D
+  real_output: true
   page: parsnp
+  note: 'Open parsnp.ggr in Gingr to browse the alignment and tree: see the Gingr2 recording.'
 - name: Seqwin
   repo: treangenlab/seqwin
   host: github
@@ -134,7 +168,7 @@
   repo: treangenlab/seqscreen
   host: gitlab
   language: Nextflow
-  description: Functional screening of pathogenic sequences via ensemble learning.
+  description: 'Functional screening of sequences: flags functions of sequences of concern (FunSoCs) in each query, with taxonomy and gene annotation.'
   themes:
   - biosecurity
   - pathogen
@@ -146,21 +180,30 @@
   - abalaji
   - bkille
   demo:
-  - cmd: seqscreen --fasta input.fasta --databases /path/to/seqscreen_databases/ --working output_directory
+  - cmd: seqscreen --fasta example_data/test_seqs.fasta --databases /path/to/seqscreen_databases/ --working output_directory
     run: true
-  - cmd: head -3 output_directory/report_generation/*report.tsv | cut -f1,11,13,15
+  - cmd: grep -e '^#' -e Oct29_255 -e Oct29_194 -e Oct29_142 output_directory/report_generation/seqscreen_report.tsv | cut -f 1,7-10
     out:
-    - "#query\tsize\torganism\tgene_name"
-    - "Oct29_142\t504\tDickeya dadantii\thypothetical protein"
-    - "Oct29_199\t296\tTomato golden mosaic virus-Yellow vein\tReplication-associated protein"
+    - '#query     evasion  cytotoxicity  degrade_ecm  disable_organ'
+    - Oct29_142  0        0             0            0
+    - Oct29_255  0        1             0            1
+    - Oct29_194  1        0             0            0
+  - cmd: ls output_directory/report_generation
+    out:
+    - seqscreen_html_report.zip  seqscreen_report.tsv
   real_output: true
   page: seqscreen
   note: SeqScreen is hosted on GitLab; SeqScreen2 is coming to GitHub.
+  image: tools/seqscreen-html-report.png
+  image_w: 1190
+  image_h: 385
+  image_alt: 'SeqScreen HTML report: a table with one row per query sequence, its organism, gene name and GO terms, and one column per function of concern, with a red 1 where a function is present.'
+  image_caption: 'SeqScreen''s HTML report, from the SeqScreen wiki: one row per sequence and one column per FunSoC, with a 1 where the function is present. The report can be sorted and filtered.'
 - name: somatem
   repo: treangenlab/somatem
   host: github
   language: Nextflow
-  description: A modular, open-source Nextflow toolkit for long-read microbiome analysis.
+  description: 'A modular, open-source Nextflow toolkit for long-read microbiome analysis: preprocessing, 16S and metagenomic profiling, assembly and MAG recovery, isolate analysis, pathogen screening and genome dynamics, each with an HTML summary.'
   themes:
   - microbiome
   leads:
@@ -169,9 +212,18 @@
   - cmd: somatem examples --outdir somatem-examples
     run: true
   - cmd: somatem 16S --outdir results
-    run: true
+    out:
+    - '[PROCESS 02/d8c805] ORCHESTRATE_SOMATEM:SOMATEM:PREPROCESSING:RawNanoPlot (mock1)'
+    - '[PROCESS 4a/467bf4] ORCHESTRATE_SOMATEM:SOMATEM:PREPROCESSING:CHOPPER (mock1)'
+    - '[PROCESS 0d/abcb1e] ORCHESTRATE_SOMATEM:SOMATEM:PREPROCESSING:FinalNanoPlot (mock1)'
+    - '[PROCESS 4b/7642d7] ORCHESTRATE_SOMATEM:SOMATEM:TAXONOMIC_PROFILING:EMU_ABUNDANCE (mock1)'
+    - '...'
+  - cmd: ls results/summary_reports
+    out:
+    - 16S_summary_report.html  pre_processing_summary_report.html
   real_output: false
   page: somatem
+  note: 'Other workflows: pre_processing, taxonomic_profiling, assembly_mags, isolate_analysis, seqscreen and genome_dynamics. Each writes an HTML summary report.'
 - name: Crykey
   repo: treangenlab/crykey
   host: github
@@ -207,10 +259,13 @@
   demo:
   - cmd: emu abundance example/full_length.fa
     run: true
-  - cmd: ls results
+  - cmd: cut -f 1-3 results/full_length_rel-abundance.tsv | head -4
     out:
-    - full_length_rel-abundance.tsv
-  real_output: false
+    - tax_id   abundance  species
+    - 2420510  0.5        Sphingobacterium puteale
+    - 220927   0.25       Mycobacterium saskatchewanense
+    - 1310     0.25       Streptococcus sobrinus
+  real_output: true
   page: emu
 - name: Harvest
   repo: marbl/harvest
@@ -224,12 +279,24 @@
   - Todd Treangen
   - Brian Ondov
   demo:
-  - cmd: parsnp -r ref.fna -d genomes/ -o out
+  - cmd: parsnp -r examples/mers_virus/ref/England1.fna -d examples/mers_virus/genomes/*.fna -o examples-out
     run: true
-  - cmd: gingr out/parsnp.ggr
     out:
-    - (opens the alignment and tree in Gingr)
-  real_output: false
+    - Aligned 47 genomes in 2.93 seconds
+  - cmd: harvesttools -i examples-out/parsnp.ggr -V variants.vcf
+    out:
+    - Loading examples-out/parsnp.ggr...
+    - Writing variants.vcf...
+  - cmd: grep -v '^##' variants.vcf | cut -f 2,4,5,7 | head -4
+    out:
+    - POS  REF  ALT  FILTER
+    - 300  C    T    PASS
+    - 340  C    A    PASS
+    - 380  C    T    PASS
+  - cmd: gingr examples-out/parsnp.ggr
+    out:
+    - '(opens the alignment and tree in Gingr: see the Gingr2 recording)'
+  real_output: true
 - name: Kente
   repo: treangenlab/Kente
   host: github
@@ -284,28 +351,14 @@
   demo:
   - cmd: magnet -c lemur_report.tsv -i reads.fastq -o magnet_out -m ont
     run: true
-  - cmd: ls magnet_out
+  - cmd: cut -d, -f 10,17,22,23 magnet_out/cluster_representative.csv | grep -e Species -e Listeria -e Pseudomonas -e FMQ74
     out:
-    - cluster_representative.tsv
-  real_output: false
+    - Species                 Primary Breadth       Combined PS and ANI  Presence/Absence
+    - Listeria sp. LM90SB2    1.0                   99.79                Present
+    - Pseudomonas aeruginosa  0.9736029157761855    96.34                Present
+    - Bacillus sp. FMQ74      0.002592275317516481  10.36                Absent
+  real_output: true
   page: lemur_magnet
-- name: MetAMOS
-  repo: marbl/metamos
-  host: github
-  language: Python
-  description: A modular framework for metagenomic assembly, analysis and validation.
-  themes:
-  - microbiome
-  - algorithms
-  leads:
-  - Todd Treangen
-  - Sergey Koren
-  demo:
-  - cmd: initPipeline -f -m carsonella_pe_filt.fna -d test1 -i 500:3500
-    run: true
-  - cmd: runPipeline -a soap -c kraken -g fraggenescan -p 15 -d test1 -k 55
-    run: true
-  real_output: false
 - name: MethPhaser
   repo: treangenlab/methphaser
   host: github
@@ -336,14 +389,17 @@
   demo:
   - cmd: python mimic.py -i sample.fastq -o output -r 100000 --db lemur_db -t 8
     run: true
-  - cmd: ls output/lemur output/magnet
+  - cmd: head -5 output/nanosim/abundances.tsv
     out:
-    - 'output/lemur:'
-    - relative_abundance.tsv
-    - ''
-    - 'output/magnet:'
-    - cluster_representative.tsv
-  real_output: false
+    - Size                          100000
+    - Paraburkholderia fungorum     0.97
+    - Paraburkholderia phenazinium  2.9
+    - Caballeronia udeis            2.42
+    - Paraburkholderia sp. BCC1885  0.48
+  - cmd: ls output/simulated_data
+    out:
+    - simulated.fasta
+  real_output: true
 - name: Olivar
   repo: treangenlab/olivar
   host: github
@@ -381,10 +437,13 @@
     run: true
   - cmd: olivia tiling example/out/ref/hepatitis_e_aln.olvr -o example/out/nondeg -p 16
     run: true
-  - cmd: ls example/out/nondeg
+  - cmd: head -4 benchmark/output/HEV_400amp_newer/designed_primers.csv
     out:
-    - olivia-design.csv  olivia-design.olvd  olivia-design.primer.bed
-  real_output: false
+    - tool,amplicon_size,pool,name,direction,primer
+    - Olivia,400,1,hev_stratified_aligned_1_LEFT,forward,ACTACTGCCATTGAGCAGGC
+    - Olivia,400,1,hev_stratified_aligned_1_RIGHT,reverse,ACGGGTGGGGGCAGAA
+    - Olivia,400,2,hev_stratified_aligned_2_LEFT,forward,GCCCACCCAAGATCCATTAATG
+  real_output: true
   page: olivia
 - name: PlasmidScreen
   repo: treangenlab/PlasmidScreen
@@ -397,11 +456,17 @@
   leads:
   - fquinanta
   demo:
-  - cmd: plasmidscreen build
+  - cmd: plasmidscreen screen tests/fixtures/reads.fa report.txt /path/to/kraken/db --skip-codon-usage --no-run-kraken --kraken-output-path tests/fixtures/kraken.out
     run: true
-  - cmd: plasmidscreen screen reads.fa report.txt /path/to/kraken/db --diamond-db /path/to/protein.dmnd
-    run: true
-  real_output: false
+    out:
+    - 'Screen complete: 1/3 read(s) engineered overall → report.txt'
+  - cmd: cut -f 1-5 report.txt
+    out:
+    - Label       Read_ID            Methods               P-Value                  Eng-Coverage Percentage
+    - Natural     read_natural_1     NA                    1.0                      0.00%
+    - Engineered  read_synthetic_1   engineered_kmer_scan  1.0000000000000014e-198  100.00%
+    - Natural     read_unclassified  NA                    1.0                      0.00%
+  real_output: true
   page: plasmidscreen
 - name: Rhea
   repo: treangenlab/rhea
@@ -414,14 +479,21 @@
   leads:
   - kcurry
   demo:
-  - cmd: python ./rhea.py example/t0.fasta example/t1.fasta
+  - cmd: python rhea.py week02.fasta week03.fasta week04.fasta week09.fasta week13.fasta
     run: true
-  - cmd: ls rhea_results
+  - cmd: head -3 rhea_results/structual_variants.tsv | cut -f 1-6
     out:
-    - edge_coverage-c1.tsv  node_coverage.csv  node_coverage_norm.csv
-    - structual_variants-c1.tsv
-  real_output: false
+    - node    node_id  node_length  t0-SV_type  t0-neighbor1  t0-neighbor2
+    - edge_1  1        585290       deletion    22            20
+    - edge_2  2        1227         insertion   1             2780
+  real_output: true
   page: rhea
+  video: rhea-demo.mp4
+  video_poster: rhea-demo-poster.jpg
+  video_w: 1000
+  video_h: 640
+  video_alt: Animation of the cheese rind co-assembly graph at weeks 2, 3, 4, 9 and 13. Each piece of assembled genome is a line coloured by its read coverage that week, so different parts of the graph light up as the community changes.
+  video_caption: 'Drawn from rhea''s published results on a washed-rind cheese time series (weeks 2, 3, 4, 9 and 13): the co-assembly graph, with each piece coloured by rhea''s coverage colour for that week.'
 - name: Strainify
   repo: treangenlab/strainify
   host: github
@@ -480,11 +552,17 @@
   leads:
   - rdoughty
   demo:
-  - cmd: mft define-mapping -k 5 -s 11011 -o mapping_tables/k5_11011.txt
-    run: true
   - cmd: mft define-order -k 3 -s 42 -o order_seed42.txt
     run: true
-  real_output: false
+  - cmd: mft transform -g England1.fna -k 3 -w 5 -m mapping_tables/k3_XX-.txt -b order_seed42.txt -o genome_mft.fasta
+    run: true
+  - cmd: sed -n 2p England1.fna | cut -c 1-60
+    out:
+    - ATTTAAGTGAATAGCTTGGCTATCTCACTTCCCCTCGTTCTCTTGCAGAACTTTGATTTT
+  - cmd: grep -v '>' genome_mft.fasta | head -c 60
+    out:
+    - PPAAAOPPPAHHAPPPFHHHDIIIOAAAPKFIIIAAAIIAPJJJJPAAAAPPPOAAPPAA
+  real_output: true
   page: mft
 - name: QuaID
   repo: treangenlab/quaid
@@ -509,10 +587,16 @@
   host: web
   url: https://omi.rice.edu/
   language: Web app
-  description: 'A metagenomics co-pilot: ask about assembly graphs, taxonomic profiling, quality control, tool parameters, pipeline configuration and your own metagenomic results.'
+  description: 'An LLM-powered copilot for metagenomics analysis: ask about tools, parameters and results, and Omi configures and launches Somatem pipelines and returns live reports.'
   themes:
   - microbiome
   - algorithms
   leads:
   - dongwei
   note: Built by the Treangen Lab and RushLab at Rice.
+  video: omi-demo.mp4
+  video_poster: omi-demo-poster.jpg
+  video_w: 1000
+  video_h: 620
+  video_alt: 'Five steps of using Omi, shown with screenshots: ask a question in the chat, Omi answers with the tools it supports, asks follow-up questions, fills in the pipeline configuration, and returns live reports such as a taxonomy chart.'
+  video_caption: How Omi works, in five steps, using screenshots of Omi from the team's slides.

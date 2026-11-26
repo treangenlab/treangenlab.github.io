@@ -4,7 +4,7 @@ title: news
 permalink: /news/
 description: Lab news since the Treangen Lab launched in 2018
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
 {% assign items = site.news | sort: "date" | reverse %}

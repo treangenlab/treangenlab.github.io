@@ -4,7 +4,7 @@ permalink: /repositories/
 title: code
 description: Treangen lab Github repositories
 nav: true
-nav_order: 5
+nav_order: 3
 ---
 
 {% if site.data.repositories.github_users %}
@@ -29,7 +29,7 @@ nav_order: 5
 
 ## Tools and source code
 
-The lab's open-source tools, grouped by main programming language. Hover over a tool, or scroll to it, to watch it run.
+The lab's open-source tools, grouped by main programming language. Hover over a tool, or scroll to it, to watch it run and see its output.
 
 <div id="repo-langs" class="repo-langs" data-repos="{{ site.data.repositories.github_repos | join: ',' }}">
   <svg class="repo-langs-pie" viewBox="0 0 120 120" role="img" aria-label="Share of code by language across the lab's GitHub repositories"></svg>
@@ -52,7 +52,7 @@ The lab's open-source tools, grouped by main programming language. Hover over a 
 {% include tool_block.liquid tool=tool %}
 {%- endfor -%}
 {%- endfor -%}
-<p class="tools-footnote">The terminal demos are illustrations. Each command follows the tool's own README. Where a repository ships example output, the lines shown are copied from it; otherwise the demo lists the output files the tool documents. The bronko output comes from running it on its own test data, and the Gingr clip is a screen recording.</p>
+<p class="tools-footnote">The terminal demos replay commands from each tool's own documentation. Output lines come from running the tool on its example data, or from example files and documentation in its repository; a few tools that need large databases show their documented output files instead. Clips and plots are described under each one.</p>
 </div>
 {:/nomarkdown}
 {% endif %}

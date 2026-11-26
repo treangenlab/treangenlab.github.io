@@ -2467,10 +2467,11 @@ html[data-theme="dark"] {
   overflow-wrap: break-word;
 }
 
-// Menu: "people + projects = papers". The signs are drawn into the existing gaps before the projects and
-// papers links, only while the menu is horizontal; they are not links and screen readers do not see them as items.
+// Menu: "people + projects + code = papers". The signs are drawn into the existing gaps before the projects,
+// code and papers links, only while the menu is horizontal; they are not links and screen readers do not see them as items.
 @media (min-width: 576px) {
   .navbar .navbar-nav .nav-link[href$="/projects/"],
+  .navbar .navbar-nav .nav-link[href$="/repositories/"],
   .navbar .navbar-nav .nav-link[href$="/publications/"] {
     position: relative;
     &::before {
@@ -2483,7 +2484,8 @@ html[data-theme="dark"] {
       pointer-events: none;
     }
   }
-  .navbar .navbar-nav .nav-link[href$="/projects/"]::before {
+  .navbar .navbar-nav .nav-link[href$="/projects/"]::before,
+  .navbar .navbar-nav .nav-link[href$="/repositories/"]::before {
     content: "+";
     content: "+" / ""; // empty alternative text, where the browser supports it
   }
@@ -2841,7 +2843,9 @@ html.people-hex-first {
     overflow: hidden;
     border: 1px solid var(--global-divider-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-    video {
+    background: #fff;
+    video,
+    img {
       display: block;
       width: 100%;
       height: auto;

@@ -1936,6 +1936,23 @@ html[data-theme="dark"] .alumni-sectors {
   border-bottom: 2px solid var(--global-theme-color);
 }
 
+// News page: research-area icons beside an item
+.news-by-year .news-themes {
+  float: right;
+  margin: 0 0 0.2rem 0.6rem;
+  white-space: nowrap;
+  a {
+    display: inline-block;
+    margin-left: 0.15rem;
+    line-height: 0;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+}
+
 // Papers page: scatter plot of papers by application and algorithm focus
 .paper-map {
   --pm-bio: #2a78d6;

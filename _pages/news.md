@@ -25,6 +25,7 @@ nav_order: 5
       {% if item.year_only %}{{ item.date | date: "%Y" }}{% elsif item.approx_date %}{{ item.date | date: "%b %Y" }}{% else %}{{ item.date | date: "%b %d, %Y" }}{% endif %}
     </th>
     <td>
+      {% if item.themes %}<span class="news-themes">{% for theme in item.themes %}{% case theme %}{% when 'biosecurity' %}{% assign tn = 'Biosecurity and Synthetic DNA Screening' %}{% when 'pathogen' %}{% assign tn = 'Pathogen Genomics and Wastewater Surveillance' %}{% when 'microbiome' %}{% assign tn = 'Microbiome Profiling and Metagenomics' %}{% else %}{% assign tn = 'Scalable Algorithms and AI for Microbial Genomics' %}{% endcase %}<a href="{{ '/projects/' | relative_url }}" title="{{ tn }}"><img src="{{ '/assets/anim/papers/' | append: theme | append: '.png' | relative_url }}" width="24" height="24" alt="{{ tn }}" loading="lazy"></a>{% endfor %}</span>{% endif %}
       {% if item.inline %}
         {{ item.content | remove: "<p>" | remove: "</p>" | emojify }}
       {% else %}

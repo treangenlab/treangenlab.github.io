@@ -127,7 +127,8 @@
   real_output: true
   diy:
   - conda install -c bioconda mash
-  diy_note: Use your own genomes and reads in place of the file names.
+  - git clone https://github.com/marbl/Mash.git && cd Mash/test
+  diy_note: The three genomes and two read files are the test data in the Mash repository.
 - name: Parsnp2
   repo: marbl/parsnp
   host: github
@@ -304,11 +305,12 @@
     - 1310     0.25       Streptococcus sobrinus
   real_output: true
   page: emu
-  image: tools/emu-demo.png
-  image_w: 1100
-  image_h: 286
-  image_alt: 'Bar chart of the three species Emu reports for its example reads: Sphingobacterium puteale 50%, Streptococcus sobrinus 25%, Mycobacterium saskatchewanense 25%.'
-  image_caption: Emu's result on the example reads in its repository.
+  video: emu-demo.mp4
+  video_poster: emu-demo-poster.jpg
+  video_w: 1000
+  video_h: 560
+  video_alt: 'Animation of Emu estimates on the ZymoBIOMICS mock community across its 22 expectation-maximization iterations. Estimates for the 8 species in the sample move onto the ground truth, while species not in the sample fall from 43 to 6 and the L1 error falls from 0.254 to 0.034.'
+  video_caption: 'Redrawn from the benchmark data behind the Emu paper (the per-iteration results in treangenlab/emu-benchmark): full-length 16S nanopore reads from the ZymoBIOMICS mock community. Each expectation-maximization iteration moves the estimates toward the ground truth; false positive species drop from 43 to 6 and L1 error from 0.254 to 0.034.'
   diy:
   - conda config --add channels bioconda && conda config --add channels conda-forge
   - conda install emu

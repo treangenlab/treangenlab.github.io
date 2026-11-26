@@ -179,6 +179,12 @@ runner:
   colors: ["#ef5a5a", "#b01e3c"]
   about: "Runner"
 
+chess:
+  label: "Avid chess player"
+  icon: chess-knight
+  colors: ["#8b6b4a", "#2d2a26"]
+  about: "Avid chess player"
+
 climber:
   label: "Climber"
   icon: mountain

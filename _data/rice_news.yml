@@ -10,6 +10,26 @@
   year: 2026
   url: https://news.rice.edu/news/2026/scientists-demonstrate-first-time-use-ai-genetic-circuit-design
   people: [bkille, kcurry]
+- title: "How AI can help detect disease and accelerate medical breakthroughs"
+  source: Rice News
+  year: 2025
+  url: https://news.rice.edu/news/2025/how-ai-can-help-detect-disease-and-accelerate-medical-breakthroughs
+  people: [treangen]
+- title: "Rice undergraduate builds tool to help NASA scientists monitor microbes in space"
+  source: Rice News
+  year: 2025
+  url: https://news.rice.edu/news/2025/rice-undergraduate-builds-tool-help-nasa-scientists-monitor-microbes-space
+  people: [treangen]
+- title: "Biotechnology governance entreaties released, echoing legacy of 1975 recombinant DNA guidelines"
+  source: Rice University
+  year: 2025
+  url: https://www.eurekalert.org/news-releases/1087526
+  people: [treangen]
+- title: "Rice Engineering and Computing honors excellence at annual awards ceremony"
+  source: Rice Engineering
+  year: 2025
+  url: https://engineering.rice.edu/news/rice-engineering-and-computing-honors-excellence-annual-awards-ceremony
+  people: [treangen]
 - title: "New cohort of Future Faculty Fellows prepares for academic careers"
   source: Rice Engineering
   year: 2025
@@ -34,6 +54,21 @@
   source: Rice News
   year: 2024
   url: https://news.rice.edu/news/2024/rice-engineers-develop-innovative-microbiome-analysis-software-tools
+  people: [treangen, kcurry]
+- title: "Research casts a wider net in wastewater analysis"
+  source: Houston Wastewater Epidemiology
+  year: 2023
+  url: https://www.hou-wastewater-epi.org/news/research-casts-wider-net-wastewater-analysis
+  people: [treangen, lelworth, rdoughty]
+- title: "Rice and Houston Health Department publish wastewater SARS-CoV-2 research in Nature Communications"
+  source: Rice Computer Science
+  year: 2023
+  url: https://csweb.rice.edu/news/rice-and-houston-health-department-publish-wastewater-sars-cov-2-research-nature
+  people: [treangen, nsapoval, yliu]
+- title: "Rice Global Paris to Host CINEMA Metagenome Analysis Workshop"
+  source: Rice Computer Science
+  year: 2023
+  url: https://csweb.rice.edu/cinema
   people: [treangen, kcurry]
 - title: "Todd Treangen promoted to associate professor with tenure"
   source: Rice Computer Science
@@ -80,6 +115,16 @@
   year: 2022
   url: https://news.rice.edu/news/2022/covid-19-variants-cant-hide-variabel
   people: [treangen, yliu, bkille]
+- title: "Treangen Lab research shows SARS-CoV-2 getting better at spreading through breath"
+  source: Rice Computer Science
+  year: 2021
+  url: https://csweb.rice.edu/news/treangen-lab-research-shows-sars-cov-2-getting-better-spreading-through-breath
+  people: [treangen, nsapoval]
+- title: "Treangen Lab awarded CDC grant for real-time SARS-CoV-2 variant tracking"
+  source: Rice Computer Science
+  year: 2021
+  url: https://csweb.rice.edu/news/treangen-lab-awarded-cdc-grant-real-time-sars-cov-2-variant-tracking
+  people: [treangen, mbarnett, bkille, yliu]
 - title: "Bioinformatics tool accurately tracks synthetic DNA"
   source: Rice News
   year: 2021

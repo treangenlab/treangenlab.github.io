@@ -13,7 +13,7 @@ category: Lab alumni
 topics: ["metagenomics", "machine learning", "viral genomics"]
 pub_key: nsapoval
 related_publications: false
-badges: [tool_lead, ai_ml, bcm_hackathon, future_faculty, industry, cat, dog]
+badges: [tool_lead, ai_ml, bcm_hackathon, future_faculty, asm_big_2026, industry, cat, dog]
 ---
 
 Nicolae completed a PhD in Computer Science at Rice in the Treangen Lab and is now a postdoctoral associate in Luay Nakhleh's lab in the Rice Department of Computer Science. In the lab, Nicolae led work on [Lemur and MAGnet](/projects/lemur_magnet/), on [KombOver](https://doi.org/10.1142/9789811286421_0039), which scales the lab's [KOMB](/projects/komb/) approach for tracking microbiome dynamics to large study cohorts, and on [QuaID](https://doi.org/10.1038/s41467-023-38184-3), a tool that detects emerging SARS-CoV-2 variants of concern in wastewater up to three weeks earlier.

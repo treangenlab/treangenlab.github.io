@@ -17,5 +17,7 @@ Natalie's research is supported by the lab's [NSF MIM award](/projects/fund_mim/
 
 In her free time, Natalie loves to play tennis and watch movies with a big bowl of ice-cream. Dogs are her favorite.
 
+Read more about Natalie's journey: she is featured on Rice Graduate Studies' [Quad Talk](https://graduate.rice.edu/current-news/quad-talk-finding-home-rice-through-art-science-and-community) ([video](https://youtu.be/lVnsz-wq22g)), serves as a Rice [Graduate Student Ambassador](https://graduate.rice.edu/people/natalie-kokroko), and wrote about her [summer of bioinformatics in Ghana](/blog/2025/ExpandingHorizonsGhana/).
+
 
 A few of Natalie's recent publications: {% cite kokroko2026kente bravo2026advancing amaral2024probiotic sapoval2024lightweight %}.

@@ -10,6 +10,11 @@
   year: 2026
   url: https://news.rice.edu/news/2026/scientists-demonstrate-first-time-use-ai-genetic-circuit-design
   people: [bkille, kcurry]
+- title: "Space Germs!"
+  source: Rice Magazine
+  year: 2026
+  url: https://magazine.rice.edu/winter-2026/space-germs
+  people: [treangen]
 - title: "How AI can help detect disease and accelerate medical breakthroughs"
   source: Rice News
   year: 2025
@@ -21,9 +26,9 @@
   url: https://news.rice.edu/news/2025/rice-undergraduate-builds-tool-help-nasa-scientists-monitor-microbes-space
   people: [treangen]
 - title: "Biotechnology governance entreaties released, echoing legacy of 1975 recombinant DNA guidelines"
-  source: Rice University
+  source: Rice News
   year: 2025
-  url: https://www.eurekalert.org/news-releases/1087526
+  url: https://news.rice.edu/news/2025/biotechnology-governance-entreaties-released-echoing-legacy-1975-recombinant-dna
   people: [treangen]
 - title: "Rice Engineering and Computing honors excellence at annual awards ceremony"
   source: Rice Engineering
@@ -45,6 +50,11 @@
   year: 2025
   url: https://csweb.rice.edu/news/fun-summer-problem-helps-tame-deluge-genomic-data
   people: [treangen, bkille]
+- title: "The Ken Kennedy Institute's April Member of the Month: Todd Treangen"
+  source: Ken Kennedy Institute
+  year: 2024
+  url: https://kenkennedy.rice.edu/news/current-news/ken-kennedy-institutes-april-member-month-todd-treangen
+  people: [treangen]
 - title: "Todd Treangen wins SoE Teaching + Research Excellence Award"
   source: Rice Computer Science
   year: 2024
@@ -140,6 +150,21 @@
   year: 2021
   url: https://news.rice.edu/news/2021/rambo-speeds-searches-huge-dna-databases
   people: [treangen, bkille, lelworth]
+- title: "Second COVID Symposium Reveals Better Understanding of COVID-19"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/second-covid-symposium-reveals-better-understanding-covid-19
+  people: [treangen, lelworth]
+- title: "Treangen awarded $1.5 million to develop new DNA screening tools"
+  source: Rice Engineering
+  year: 2020
+  url: https://engineering.rice.edu/news/treangen-awarded-15-million-develop-new-dna-screening-tools
+  people: [treangen, lelworth, bkille]
+- title: "Treangen co-organizes international symposium on COVID-19"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/treangen-co-organizes-international-symposium-covid-19
+  people: [treangen, lelworth]
 - title: "Treangen and multi-institutional team awarded $11M to study multi-drug resistant infections"
   source: Rice Computer Science
   year: 2020
@@ -160,3 +185,23 @@
   year: 2020
   url: https://csweb.rice.edu/news/treangen-granted-c3ai-dti-award-ai-driven-covid-19-research
   people: [treangen]
+- title: "Treangen among IBB honorees"
+  source: Rice Computer Science
+  year: 2020
+  url: https://csweb.rice.edu/news/treangen-among-ibb-honorees
+  people: [treangen]
+- title: "Lu contributes to algorithm, identifies threats to humans, crops"
+  source: Rice Computer Science
+  year: 2019
+  url: https://csweb.rice.edu/news/lu-contributes-algorithm-identifies-threats-humans-crops
+  people: [treangen]
+- title: "Treangen gets grant for DNA screening tools"
+  source: Rice Computer Science
+  year: 2019
+  url: https://csweb.rice.edu/news/treangen-gets-grant-dna-screening-tools
+  people: [treangen]
+- title: "Flood of genome data hinders efforts to ID bacteria"
+  source: Rice Computer Science
+  year: 2018
+  url: https://csweb.rice.edu/news/flood-genome-data-hinders-efforts-id-bacteria
+  people: [treangen, dnasko]

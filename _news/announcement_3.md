@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Genome Sleuths'24 has concluded, huge thanks to all of the undergrad participants and grad student mentors
+[Genome Sleuths](https://ouri.rice.edu/genome-sleuths) '24, the lab's summer research program for undergraduates, has concluded. Huge thanks to all of the undergrad participants and grad student mentors

@@ -24,7 +24,7 @@ Todd also leads the [AI for Biosecurity and Microbial Monitoring](https://kenken
 #### At Rice
 
 - Associate Professor of [Computer Science](https://csweb.rice.edu), with joint appointments in [BioSciences](https://biosciences.rice.edu) and [Bioengineering](https://bioengineering.rice.edu) (Assistant Professor 2018-2023)
-- Lead of the [AI for Biosecurity and Microbial Monitoring](https://kenkennedy.rice.edu/cluster-aimm) cluster at the [Ken Kennedy Institute](https://kenkennedy.rice.edu)
+- Lead of the [AI for Biosecurity and Microbial Monitoring](https://kenkennedy.rice.edu/cluster-aimm) cluster at the [Ken Kennedy Institute](https://kenkennedy.rice.edu) since July 2026; lead of the institute's AI2Health cluster from 2024 to 2026
 - Faculty in the [Systems, Synthetic, and Physical Biology (SSPB)](https://sspb.rice.edu) Ph.D. program
 - Training faculty for the Gulf Coast Consortia [NLM Training Program in Biomedical Informatics and Data Science](https://www.gulfcoastconsortia.org/home/training/bmi-nlm/)
 - Lead instructor for COMP 182, Algorithmic Thinking (spring semesters), and COMP 416/519, Genome-Scale Algorithms

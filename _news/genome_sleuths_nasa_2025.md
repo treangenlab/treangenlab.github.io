@@ -6,4 +6,4 @@ related_posts: false
 themes: [microbiome]
 ---
 
-Rice undergraduate Ankhi Banerjee's Genome Sleuths summer project on monitoring microbes aboard the International Space Station, co-mentored by Todd Treangen and Sarah Wallace of NASA Johnson Space Center: [Rice News](https://news.rice.edu/news/2025/rice-undergraduate-builds-tool-help-nasa-scientists-monitor-microbes-space)
+In the eighth summer of [Genome Sleuths](https://ouri.rice.edu/genome-sleuths), Rice undergraduate Ankhi Banerjee builds a pipeline for monitoring microbes aboard the International Space Station, co-mentored by Todd Treangen and Sarah Wallace of NASA Johnson Space Center: [Rice News](https://news.rice.edu/news/2025/rice-undergraduate-builds-tool-help-nasa-scientists-monitor-microbes-space), [Rice Magazine](https://magazine.rice.edu/winter-2026/space-germs)

@@ -14,6 +14,13 @@
     box.hidden = true;
     return;
   }
+  // research questions by paper key (_data/paper_questions.yml); the plot works without them
+  var questions = {};
+  try {
+    questions = JSON.parse(document.getElementById("paper-map-questions").textContent) || {};
+  } catch (e) {
+    questions = {};
+  }
 
   var THEMES = [
     { name: "Biosecurity and Synthetic DNA Screening", label: "Biosecurity", cls: "t-bio" },
@@ -223,11 +230,34 @@
     detail.appendChild(a);
     detail.appendChild(document.createTextNode(" (" + [p.venue, p.year].filter(Boolean).join(", ") + ")"));
     var b = svg.getBoundingClientRect();
-    tip.textContent = p.title + (p.year ? " (" + p.year + ")" : "");
+    // A paper with a research question gets a speech bubble: the question, then the title. Others show the title only.
+    var q = questions[p.key];
+    var label = p.title + (p.year ? " (" + p.year + ")" : "");
+    tip.textContent = "";
+    tip.className = "paper-map-tip" + (q ? " is-bubble " + themeOf(p).cls : "");
+    if (q) {
+      var qe = document.createElement("span");
+      qe.className = "pm-q";
+      qe.textContent = q;
+      tip.appendChild(qe);
+      var te = document.createElement("span");
+      te.className = "pm-q-title";
+      te.textContent = label;
+      tip.appendChild(te);
+    } else {
+      tip.textContent = label;
+    }
     tip.hidden = false;
     var x = ((d.X + d.ox) * b.width) / W;
-    tip.style.left = Math.max(110, Math.min(b.width - 110, x)) + "px";
-    tip.style.top = ((d.Y + d.oy - 9) * b.height) / H + "px";
+    var y = ((d.Y + d.oy) * b.height) / H;
+    var half = q ? Math.min(150, b.width / 2 - 6) : 110;
+    var left = Math.max(half + 4, Math.min(b.width - half - 4, x));
+    tip.style.left = left + "px";
+    // near the top of the plot the bubble goes below the dot; its tail always points at the dot
+    var below = !!q && y < tip.offsetHeight + 30;
+    tip.classList.toggle("is-below", below);
+    tip.style.top = (below ? y + 16 : y - (q ? 16 : (9 * b.height) / H)) + "px";
+    tip.style.setProperty("--tail-x", Math.max(18, Math.min(2 * half - 18, x - left + half)) + "px");
   }
 
   var dragged = false;
@@ -238,7 +268,11 @@
     })
     .forEach(function (p) {
       p.href = p.url || "#" + p.key;
-      var link = el("a", { href: p.href, class: "pm-dot " + themeOf(p).cls, "aria-label": p.title });
+      var link = el("a", {
+        href: p.href,
+        class: "pm-dot " + themeOf(p).cls,
+        "aria-label": (questions[p.key] ? questions[p.key] + " " : "") + p.title,
+      });
       if (p.url) {
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener");
@@ -277,6 +311,8 @@
           ev.preventDefault();
           fanOut(d);
           show(d);
+          // draw the chosen dot last, so a neighbour's touch area cannot cover it and the second tap reaches it
+          if (plot.lastChild !== link) plot.appendChild(link);
         }
       });
       plot.appendChild(link);

@@ -34,10 +34,22 @@ Welcome to the Treangen lab website, a bioinformatics and computational biology 
 
 <div id="recruiting" style="overflow: hidden; margin: 1.25rem 0; padding: 1rem 1.25rem; border-left: 5px solid var(--global-theme-color); border-radius: 6px; background-color: rgba(128, 128, 128, 0.12);">
   <p style="margin: 0 0 0.35rem 0; font-size: 1.15rem; font-weight: 600; color: var(--global-theme-color);">We're recruiting!</p>
-  <p style="margin: 0;">The Treangen Lab has three open positions: a <strong>PhD student</strong>, a <strong>Postdoctoral Scientist</strong> and a <strong>Research Engineer</strong>. <a href="{{ '/news/hiring_2026/' | relative_url }}">Read about the open positions</a>, or contact Todd Treangen at <a href="mailto:treangen@rice.edu">treangen@rice.edu</a>.</p>
+  <p style="margin: 0;">The Treangen Lab has three open positions: a <strong>PhD student</strong>, a <strong>Postdoctoral Scientist</strong> and a <strong>Research Engineer</strong>. <a href="{{ '/news/hiring_2026/' | relative_url }}">Read about the open positions</a>.</p>
 </div>
 
-Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to: (i) biosecurity and synthetic DNA screening {% include theme_icon.liquid name="biosecurity" %}, (ii) pathogen genomics and wastewater surveillance {% include theme_icon.liquid name="pathogen" %}, (iii) microbiome profiling and metagenomics {% include theme_icon.liquid name="microbiome" %}, and (iv) scalable algorithms and AI for microbial genomics {% include theme_icon.liquid name="algorithms" %}.
+Since launching in 2018, the Treangen lab has focused on developing scalable and accurate computational algorithms, methods, and open-source software tools to answer research questions specific to: (i) biosecurity and synthetic DNA screening {% include theme_icon.liquid name="biosecurity" %}, (ii) pathogen genomics and wastewater surveillance {% include theme_icon.liquid name="pathogen" %}, (iii) microbiome profiling and metagenomics {% include theme_icon.liquid name="microbiome" %}, and (iv) scalable algorithms and AI/ML for microbial genomics {% include theme_icon.liquid name="algorithms" %}.
+
+<div class="site-guide">
+  <p class="site-guide-title">Explore the site</p>
+  <ul>
+    <li><i class="fa-solid fa-users" aria-hidden="true"></i><span><a href="{{ '/people/' | relative_url }}">People</a>: profiles of current Treangen lab members and alumni.</span></li>
+    <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span><a href="{{ '/projects/' | relative_url }}">Projects</a>: active research areas.</span></li>
+    <li><i class="fa-solid fa-code" aria-hidden="true"></i><span><a href="{{ '/repositories/' | relative_url }}">Code</a>: open-source tools and demos.</span></li>
+    <li><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span><a href="{{ '/publications/' | relative_url }}">Papers</a>: complete listing of all preprints and publications.</span></li>
+    <li><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><span><a href="{{ '/news/' | relative_url }}">News</a>: news items of note since lab launch in 2018.</span></li>
+    <li><i class="fa-solid fa-pen-nib" aria-hidden="true"></i><span><a href="{{ '/blog/' | relative_url }}">Blog</a>: posts from lab members focusing on research, conferences, and travel.</span></li>
+  </ul>
+</div>
 
 Current funding includes NSF (CAREER, SHF, MIM), NIH (NIAID GCID), and DTRA, among others. Prior support from: c3.ai DTI, DHS, IARPA, and NIH. 
 

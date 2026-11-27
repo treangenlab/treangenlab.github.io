@@ -10,9 +10,10 @@
   --global-theme-color: #{$blue-color};
   --global-hover-color: #{$blue-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-dark};
-  --global-footer-text-color: #{$grey-color-light};
-  --global-footer-link-color: #{$white-color};
+  // footer: white bar with blue text (a slightly deeper blue than the theme color, so the small print stays readable)
+  --global-footer-bg-color: #{$white-color};
+  --global-footer-text-color: #0064c8;
+  --global-footer-link-color: #0064c8;
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
@@ -75,9 +76,10 @@ html[data-theme="dark"] {
   --global-theme-color: #{$cyan-color};
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
+  // footer in dark mode: the page's dark background with light blue text
+  --global-footer-bg-color: #{$grey-color-dark};
+  --global-footer-text-color: #6cc3e0;
+  --global-footer-link-color: #6cc3e0;
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};

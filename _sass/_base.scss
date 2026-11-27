@@ -1936,6 +1936,13 @@ html[data-theme="dark"] .alumni-sectors {
   border-bottom: 2px solid var(--global-theme-color);
 }
 
+// News page: today's date (filled in by the visitor's browser, so it is always current)
+.news-today {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+}
+
 // News page: research-area icons beside an item
 .news-by-year .news-themes {
   float: right;
@@ -2366,34 +2373,7 @@ html[data-theme="dark"] .paper-map {
   display: none;
 }
 
-// Home page: hiding turkey (assets/js/turkey-chase.js). It sits behind the lab photo and funding logos; a click cooks it.
-.chase-sprite {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  cursor: pointer;
-  will-change: transform;
-  -webkit-tap-highlight-color: transparent;
-  &:focus {
-    outline: none;
-  }
-  &:focus-visible {
-    outline: 2px dashed var(--global-theme-color);
-    outline-offset: 2px;
-  }
-  // once cooked, the platter comes out in front of the photo and logos
-  &.is-cooked {
-    z-index: 3;
-  }
-  img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
+// Home page: lab photo and funding logos
 .lab-slideshow,
 .funding-logos {
   position: relative;
@@ -2402,16 +2382,12 @@ html[data-theme="dark"] .paper-map {
 .funding-logos {
   width: fit-content;
 }
-@media print {
-  .chase-sprite {
-    display: none;
-  }
-}
-
 // Dark mode: the category icons are drawn on white, so flip them to sit on the dark background (hues are kept).
 html[data-theme="dark"] {
   .paper-icon img,
-  .theme-icon img {
+  .theme-icon img,
+  .tools .tool-theme img,
+  .news-themes img {
     filter: invert(1) hue-rotate(180deg);
     mix-blend-mode: screen;
   }
@@ -2423,17 +2399,6 @@ html[data-theme="dark"] {
 }
 .people-bubbles {
   overflow-x: clip;
-}
-
-// Home page turkey: extra hiding places are raised above it.
-.chase-cover {
-  position: relative;
-  z-index: 2;
-}
-#recruiting.chase-cover {
-  // solid backing under the box's translucent tint, so the turkey does not show through
-  background-color: var(--global-bg-color) !important;
-  background-image: linear-gradient(rgba(128, 128, 128, 0.12), rgba(128, 128, 128, 0.12));
 }
 
 // Papers plot: zoom buttons, panning, and crowded marks that spread apart on hover

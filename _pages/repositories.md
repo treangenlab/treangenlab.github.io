@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: code
-description: Treangen lab Github repositories
+description: Open-source tools from the Treangen Lab
 nav: true
 nav_order: 3
 ---

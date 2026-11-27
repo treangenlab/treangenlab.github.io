@@ -60,4 +60,3 @@ Current funding includes NSF (CAREER, SHF, MIM), NIH (NIAID GCID), and DTRA, amo
     {% endif %}
 </div>
 
-<script defer src="{{ '/assets/js/turkey-chase.js' | relative_url }}" data-base="{{ '/assets/img/chase/' | relative_url }}"></script>

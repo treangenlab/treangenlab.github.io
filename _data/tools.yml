@@ -387,7 +387,7 @@
   leads:
   - nsapoval
   demo:
-  - cmd: lemur -i examples/example-data/example.fastq -o example-output -d examples/example-db --tax-path examples/example-db/taxnomy.tsv -r species
+  - cmd: lemur -i examples/example-data/example.fastq -o example-output -d examples/example-db --tax-path examples/example-db/taxonomy.tsv -r species
     run: true
   - cmd: cut -f1,2,9 example-output/relative_abundance-species.tsv
     out:
@@ -479,7 +479,7 @@
     - simulated.fasta
   real_output: true
   diy:
-  - git clone https://github.com/collaborativebioinformatics/Mimic.git && cd Mimic
+  - git clone https://github.com/treangenlab/Mimic.git && cd Mimic
   - conda env create -f mimic_env.yml && conda activate mimic
   diy_note: Use your own reads and a Lemur database in place of the names shown.
 - name: Olivar
@@ -508,7 +508,7 @@
   - conda create -n olivar olivar --channel conda-forge --channel bioconda --strict-channel-priority
   - conda activate olivar
   - git clone https://github.com/treangenlab/Olivar.git && cd Olivar
-  diy_note: The example input is in the repository.
+  diy_note: The example input is in the repository. Cloning the example BLAST database (example_input/Human) needs Git LFS.
 - name: Olivia
   repo: treangenlab/Olivia
   host: github
@@ -583,6 +583,7 @@
     - edge_1  1        585290       deletion    22            20
     - edge_2  2        1227         insertion   1             2780
   real_output: true
+  note: 'The output shown is from the published results on the cheese time series. The current release writes one file per pair of time points (structural_variants-c0.tsv, structural_variants-c1.tsv, ...).'
   page: rhea
   video: rhea-demo.mp4
   video_poster: rhea-demo-poster.jpg

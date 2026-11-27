@@ -9,6 +9,18 @@ nav_order: 5
 
 {% assign items = site.news | sort: "date" | reverse %}
 {% assign current_year = "" %}
+<p class="news-today" id="news-today" hidden><i class="fa-regular fa-calendar" aria-hidden="true"></i> Today is <time></time></p>
+<script>
+  (function () {
+    var p = document.getElementById("news-today");
+    if (!p) return;
+    var now = new Date();
+    var t = p.querySelector("time");
+    t.textContent = now.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+    t.setAttribute("datetime", now.getFullYear() + "-" + ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2));
+    p.hidden = false;
+  })();
+</script>
 <div class="news news-by-year">
 {% for item in items %}
   {% assign item_year = item.date | date: "%Y" %}

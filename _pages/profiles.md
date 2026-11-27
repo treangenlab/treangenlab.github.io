@@ -204,4 +204,4 @@ horizontal: false
   </div>
 </div>
 
-<script defer src="{{ '/assets/js/people-bubbles.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/people-bubbles.js' | relative_url | bust_file_cache }}"></script>

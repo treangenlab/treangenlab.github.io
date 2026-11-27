@@ -21,7 +21,7 @@ nav_order: 4
   <script type="application/json" id="paper-map-data">{{ site.data.paper_map | jsonify }}</script>
   <script type="application/json" id="paper-map-questions">{{ site.data.paper_questions | jsonify }}</script>
 </div>
-<script defer src="{{ '/assets/js/paper-map.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/paper-map.js' | relative_url | bust_file_cache }}"></script>
 
 <!-- Bibsearch Feature -->
 

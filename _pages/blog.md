@@ -125,7 +125,7 @@ pagination:
   </div>
   <p class="blog-map-note">Each photo indicates the location of focus for the blog post. Hover over to see the post and click to read it.</p>
 </div>
-<script defer src="{{ '/assets/js/blog-map.js' | relative_url }}" data-detail="{{ '/assets/json/blog-map-detail.json' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/blog-map.js' | relative_url | bust_file_cache }}" data-detail="{{ '/assets/json/blog-map-detail.json' | relative_url }}"></script>
 
 <div id="blog-list">
 

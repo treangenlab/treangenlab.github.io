@@ -62,5 +62,5 @@ The lab's open-source tools, grouped by main programming language. Hover over a 
 {:/nomarkdown}
 {% endif %}
 
-<script defer src="{{ '/assets/js/repo-stats.js' | relative_url }}"></script>
-<script defer src="{{ '/assets/js/tool-demos.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/repo-stats.js' | relative_url | bust_file_cache }}"></script>
+<script defer src="{{ '/assets/js/tool-demos.js' | relative_url | bust_file_cache }}"></script>

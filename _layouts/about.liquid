@@ -34,7 +34,7 @@ layout: default
               {% endfor %}
             </div>
           </div>
-          <script defer src="{{ '/assets/js/lab-slideshow.js' | relative_url }}"></script>
+          <script defer src="{{ '/assets/js/lab-slideshow.js' | relative_url | bust_file_cache }}"></script>
         {% elsif page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}

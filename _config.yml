@@ -215,6 +215,8 @@ latest_posts:
 # -----------------------------------------------------------------------------
 
 # Markdown and syntax highlight
+# Show news items and posts dated in the future (for example an upcoming talk dated on the day it happens).
+future: true
 markdown: kramdown
 highlighter: rouge
 kramdown:

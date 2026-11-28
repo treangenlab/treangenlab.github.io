@@ -24,7 +24,7 @@
     return a.d - b.d || a.y - b.y || a.x - b.x;
   });
 
-  // People take points in page order (PI, current members, alumni by departure date).
+  // People take points in page order (PI, current members, current undergraduate researchers, alumni by departure date, former undergraduates).
   var opens = Array.prototype.slice.call(stage.querySelectorAll(".people-bubble-open"));
   var people = bubbles.filter(function (b) {
     return opens.indexOf(b) < 0;
@@ -167,7 +167,9 @@
         : "") +
       '<p style="margin: 0.5rem 0 0"><a href="' +
       encodeURI(b.getAttribute("data-url")) +
-      '">' +
+      '"' +
+      (/^https?:/.test(b.getAttribute("data-url")) ? ' target="_blank" rel="noopener"' : "") +
+      ">" +
       esc(b.getAttribute("data-link-text") || "Full profile") +
       " &rarr;</a></p>";
   }
@@ -188,7 +190,10 @@
     });
     b.addEventListener("click", function () {
       if (b.classList.contains("is-selected") && !firstTap) {
-        window.location.href = b.getAttribute("data-url");
+        var url = b.getAttribute("data-url");
+        // Undergraduate researchers have no profile page here; their link (for example LinkedIn) opens in a new tab.
+        if (/^https?:/.test(url)) window.open(url, "_blank", "noopener");
+        else window.location.href = url;
       } else {
         select(b);
       }

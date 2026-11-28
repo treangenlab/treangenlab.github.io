@@ -1441,6 +1441,7 @@ html[data-theme="dark"] .repo-langs {
   --people-pi: #0076df;
   --people-current: #1f9d55;
   --people-departed: #7b4fc9;
+  --people-undergrad: #e8650e;
   margin: 0.5rem 0 1.5rem;
 
   .people-bubbles-stage {
@@ -1524,6 +1525,14 @@ html[data-theme="dark"] .repo-langs {
     &:focus-visible,
     &.is-selected {
       filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+    }
+  }
+  // Undergraduate researchers: orange border, same size and border width as current members
+  .people-bubble[data-category="undergrad"] {
+    --ring: var(--people-undergrad);
+    --base: 1.05;
+    .people-bubble-inner {
+      inset: var(--hex-border, 6px);
     }
   }
   // Open position ("You here?"): deliberately quiet
@@ -1633,6 +1642,9 @@ html[data-theme="dark"] .repo-langs {
     }
     .key-lab-alumni {
       opacity: 0.75;
+    }
+    .key-undergrad {
+      background: var(--people-undergrad);
     }
     .key-future {
       position: relative;
@@ -2530,6 +2542,9 @@ html[data-theme="dark"] {
 }
 .people-bubbles {
   overflow-x: clip;
+}
+.people-undergrad-card {
+  border-top: 4px solid #e8650e;
 }
 
 // Papers plot: zoom buttons, panning, and crowded marks that spread apart on hover

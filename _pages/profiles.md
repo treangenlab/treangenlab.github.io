@@ -59,6 +59,14 @@ horizontal: false
           <span class="people-bubble-name">{{ person.title }}</span>
         </button>
       {% endfor %}
+      {% comment %} Undergraduate researchers: current ones sit next to the current members, former ones after the alumni. {% endcomment %}
+      {% if category == "Current members" %}
+        {% assign ugs = site.data.undergrads | where: "status", "current" %}
+        {% for person in ugs %}{% include undergrad_bubble.liquid %}{% endfor %}
+      {% elsif category == "Lab alumni" %}
+        {% assign ugs = site.data.undergrads | where: "status", "alum" %}
+        {% for person in ugs %}{% include undergrad_bubble.liquid %}{% endfor %}
+      {% endif %}
     {% endfor %}
     <button
       type="button"
@@ -118,6 +126,7 @@ horizontal: false
   <p class="people-bubbles-legend">
     <span class="key-item"><span class="key key-pi"></span>PI</span> <span class="key-item"><span class="key key-current-members"></span>Current members</span>
     <span class="key-item"><span class="key key-lab-alumni"></span>Lab alumni</span>
+    {% if site.data.undergrads.size > 0 %}<span class="key-item"><span class="key key-undergrad"></span>Undergraduate researchers</span>{% endif %}
     <span class="key-item"><span class="key key-future"></span>Future members</span>
   </p>
   <div id="people-detail" class="people-detail" aria-live="polite">
@@ -157,6 +166,34 @@ horizontal: false
   </div>
   {% endif %}
   {% endfor %}
+
+  {% if site.data.undergrads.size > 0 %}
+  <a id="undergraduate-researchers" href=".#undergraduate-researchers">
+    <h2 class="category">Undergraduate researchers</h2>
+  </a>
+  <div class="row row-cols-1 row-cols-md-3">
+    {% for person in site.data.undergrads %}
+    <div class="col">
+      <a href="{{ person.link }}" rel="noopener">
+        <div class="card h-100 hoverable people-undergrad-card">
+          {% if person.img %}
+            {% include figure.liquid loading="lazy" path=person.img sizes="300px" alt="" class="card-img-top" %}
+          {% endif %}
+          <div class="card-body">
+            <h2 class="card-title">{{ person.name }}</h2>
+            <p class="card-text">{{ person.short | default: person.description }}</p>
+            {% if person.topics %}
+              <div class="topic-tags">
+                {% for topic in person.topics %}<span class="topic-tag">{{ topic }}</span>{% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 
 {% else %}
 

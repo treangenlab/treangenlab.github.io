@@ -1,0 +1,22 @@
+# Undergraduate researchers shown on the people page as orange-bordered hexagons (and as cards in grid view).
+# They have no profile page; clicking opens `link`. Only add someone who has agreed to be listed.
+#   name, initials      as shown
+#   img                 photo in assets/img/ (optional; initials are shown without one)
+#   img_focus           "x,y,zoom": where the face is in the photo (percent from left, percent from top) and how far to zoom
+#   status              "current" (placed next to the current members) or "alum" (placed after the lab alumni)
+#   joined              year joined
+#   description         one or two sentences for the detail card
+#   topics              short tags (interests, tools contributed to)
+#   link, link_text     where a click goes (for example LinkedIn)
+- name: Richa Jayanti
+  slug: rjayanti
+  initials: RJ
+  img: assets/img/rjayanti.jpg
+  img_focus: "50,44,1.55"
+  status: current
+  joined: 2025
+  description: "Undergraduate researcher (BS Computer Science, 3rd year). Richa joined the Treangen Lab in 2025. She is interested in pangenomes and graph algorithms, and has contributed to the Plaster and Kente tools. Outside of research, she enjoys helping instruct Rice's introductory CS courses."
+  short: "Undergraduate researcher (BS Computer Science, 3rd year), interested in pangenomes and graph algorithms."
+  topics: ["pangenomes", "graph algorithms", "Kente", "Plaster"]
+  link: https://www.linkedin.com/in/richajayanti
+  link_text: LinkedIn

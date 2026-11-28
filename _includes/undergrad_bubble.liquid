@@ -1,0 +1,32 @@
+{% comment %} One undergraduate researcher as a hexagon on the people page (see _data/undergrads.yml). {% endcomment %}
+{% assign ext = person.img | split: "." | last | prepend: "." %}
+{% assign img_base = person.img | remove: ext %}
+<button
+  type="button"
+  class="people-bubble"
+  data-category="undergrad"
+  data-name="{{ person.name | escape }}"
+  data-description="{{ person.description | escape }}"
+  data-topics="{{ person.topics | join: '|' | escape }}"
+  data-url="{{ person.link }}"
+  data-link-text="{{ person.link_text | default: 'More' }}"
+  data-slug="{{ person.slug }}"
+  data-focus="{{ person.img_focus | default: '50,35,1.8' }}"
+  aria-label="{{ person.name | escape }}, undergraduate researcher"
+>
+  <span class="people-bubble-photo">
+    <span class="people-bubble-inner">
+      {% if person.img %}
+        <img
+          src="{{ img_base | relative_url }}-800.webp"
+          onerror="this.onerror=null; this.src='{{ person.img | relative_url }}';"
+          alt=""
+          loading="eager"
+        >
+      {% else %}
+        <span class="people-bubble-initials">{{ person.initials }}</span>
+      {% endif %}
+    </span>
+  </span>
+  <span class="people-bubble-name">{{ person.name }}</span>
+</button>
